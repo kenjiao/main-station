@@ -1,9 +1,9 @@
-package helpers;
+package com.rongzi.ms.helpers;
 import org.apache.log4j.Logger;
 
 public class Log {
 
-	private static Logger Log = Logger.getLogger(helpers.Log.class.getName());
+	private static Logger Log = Logger.getLogger(com.rongzi.ms.helpers.Log.class.getName());
 	
 	public static void startTestCase(String sTestCaseName){
 		Log.info("Started Test case");

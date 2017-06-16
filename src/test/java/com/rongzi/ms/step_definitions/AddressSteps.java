@@ -1,14 +1,13 @@
-package step_definitions;
+package com.rongzi.ms.step_definitions;
 
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import helpers.DataHelper;
-import modules.VerifyAddressProceed;
+import com.rongzi.ms.helpers.DataHelper;
+import com.rongzi.ms.modules.VerifyAddressProceed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import pageobjects.AddressPage;
+import com.rongzi.ms.pageobjects.AddressPage;
 
 import java.util.HashMap;
 import java.util.List;

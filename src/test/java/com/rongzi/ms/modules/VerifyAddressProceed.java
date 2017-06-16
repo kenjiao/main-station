@@ -1,8 +1,8 @@
-package modules;
+package com.rongzi.ms.modules;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
-import pageobjects.AddressPage;
+import com.rongzi.ms.pageobjects.AddressPage;
 
 import java.util.HashMap;
 import java.util.List;

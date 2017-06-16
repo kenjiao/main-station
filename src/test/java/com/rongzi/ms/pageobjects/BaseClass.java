@@ -1,4 +1,4 @@
-package pageobjects;
+package com.rongzi.ms.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 
