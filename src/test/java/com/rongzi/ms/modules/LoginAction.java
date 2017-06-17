@@ -22,6 +22,7 @@ public class LoginAction {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(LoginPage.login_title));
+        Log.info(" wait the login dialog open");
 
         LoginPage.username.sendKeys(username);
         Log.info(" is entered in UserName text box");
@@ -31,6 +32,7 @@ public class LoginAction {
         Log.info("Click action is performed on Submit button");
 
         wait.until(ExpectedConditions.visibilityOf(HappinessFrogPage.logged));
+        Log.info(" wait the logged message");
 
         Assert.assertTrue(HappinessFrogPage.logged.getText().contains(username));
 
