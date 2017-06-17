@@ -22,7 +22,6 @@ public class HappinessFrogSteps {
     public HappinessFrogSteps() {
 
         driver = Hooks.driver;
-        PageFactory.initElements(driver, HappinessFrogPage.class);
 
     }
 
