@@ -11,7 +11,8 @@ public class HappinessFrogAddressProceed {
 
     public static void Execute(WebDriver driver, String title) {
 
-        new WebDriverWait(driver, 10).until((ExpectedCondition<Boolean>) webDriver -> webDriver.getTitle().startsWith("Frog"));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until((ExpectedCondition<Boolean>) webDriver -> webDriver.getTitle().startsWith("Frog"));
         assertEquals(driver.getTitle(), title);
         Reporter.log("Happiness Frog page verify successful");
     }

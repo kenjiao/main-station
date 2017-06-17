@@ -11,5 +11,16 @@ public class HappinessFrogPage extends BaseClass {
 	{
 		super(driver);
 	}
-	
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"account-menu\"]")
+	public static WebElement account;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"login\"]")
+	public static WebElement login;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"logout\"]")
+	public static WebElement logout;
+
+	@FindBy(how=How.XPATH, using="//*[@data-translate=\"home.logged.message\"]")
+	public static WebElement logged;
 }
