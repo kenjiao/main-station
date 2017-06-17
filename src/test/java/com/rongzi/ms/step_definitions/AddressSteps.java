@@ -22,6 +22,8 @@ public class AddressSteps {
     public AddressSteps() {
         driver = Hooks.driver;
         datamap = DataHelper.data();
+        PageFactory.initElements(driver, AddressPage.class);
+
     }
 
     @When("^I open '(.*)' website$")
@@ -31,7 +33,6 @@ public class AddressSteps {
 
     @Then("^I verify address and proceed$")
     public void i_verify_address_and_proceed() throws Throwable {
-        PageFactory.initElements(driver, AddressPage.class);
         VerifyAddressProceed.Execute(driver, datamap);
 
     }
