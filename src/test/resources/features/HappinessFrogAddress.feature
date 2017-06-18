@@ -1,6 +1,8 @@
-Feature: Happiness Frog Address
-  Scenario: Happiness Frog
-    Given I am on the Happiness Frog page
-    Then the page title should start with "Frog"
-    And I sign in
-    Then I sign out
+# language: zh-CN
+  功能: 登陆幸福的青蛙网站
+    场景: 登陆，登出
+      假如 我在首页
+      那么 首页的主题是"Frog"
+      并且 我要登陆
+      那么 我还可以登出
+

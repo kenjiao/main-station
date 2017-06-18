@@ -5,46 +5,36 @@ import com.rongzi.ms.modules.LoginAction;
 import com.rongzi.ms.modules.LogoutAction;
 import com.rongzi.ms.pageobjects.HappinessFrogPage;
 import com.rongzi.ms.pageobjects.LoginPage;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import org.openqa.selenium.WebDriver;
+import cucumber.api.java.zh_cn.假如;
+import cucumber.api.java.zh_cn.并且;
+import cucumber.api.java.zh_cn.那么;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Created by Yuan on 2017/6/17.
+ * Created by Yuan on 2017/6/18.
  */
-public class HappinessFrogSteps {
+public class HappinessFrogSteps extends StepDefs {
 
-    public WebDriver driver;
-
-
-    public HappinessFrogSteps() {
-
-        driver = Hooks.driver;
-
-    }
-
-    @Given("^I am on the Happiness Frog page$")
-    public void I_am_on_the_Happiness_Frog_page() {
+    @假如("^我在首页$")
+    public void 我在首页() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
         driver.get("http://www.happiness-frog.cn");
-
     }
 
-    @Then("^the page title should start with \"([^\"]*)\"$")
-    public void the_page_title_should_start_with(String title) {
+    @那么("^首页的主题是\"([^\"]*)\"$")
+    public void 首页的主题是(String title) throws Throwable {
         HappinessFrogAddressProceed.Execute(driver, title);
     }
 
-    @And("^I sign in$")
-    public void iSignIn() throws Throwable {
+    @并且("^我要登陆$")
+    public void 我要登陆() throws Throwable {
         PageFactory.initElements(driver, HappinessFrogPage.class);
         PageFactory.initElements(driver, LoginPage.class);
-        LoginAction.execute(driver, "admin", "admin");
+        LoginAction.execute(driver, "user", "user");
     }
 
-    @Then("^I sign out$")
-    public void iSignOut() throws Throwable {
+    @那么("^我还可以登出$")
+    public void 我还可以登出() throws Throwable {
         LogoutAction.execute(driver);
     }
 }
