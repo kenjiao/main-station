@@ -24,4 +24,4 @@
 
     ![idea-test-2.png](quick-start/idea-test-2.png)
 
-生成报告 `mvn verify`, 在 *target/reports* 目录下就可以浏览生成的报告
+生成报告 `mvn verify`, 在 *target/reports* 目录下就可以浏览生成的报告.
