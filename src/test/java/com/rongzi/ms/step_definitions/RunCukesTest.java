@@ -11,8 +11,8 @@ import cucumber.api.junit.Cucumber;
         features = "classpath:features",
         plugin = {
                 "pretty",
-                "html:target/cucumber-html-report",
-                "json:cucumber.json"
+                "html:target/pretty",
+                "json:target/cucumber.json"
         },
         tags = {}
 )
