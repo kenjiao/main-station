@@ -3,6 +3,7 @@ package com.rongzi.ms.step_definitions;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.并且;
+import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
 
 /**
@@ -11,7 +12,7 @@ import cucumber.api.java.zh_cn.那么;
 public class RongziLoginSteps extends StepDefs {
 
 
-    @假如("^点击请登陆按钮$")
+    @当("^点击请登陆按钮$")
     public void 点击请登陆按钮() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
