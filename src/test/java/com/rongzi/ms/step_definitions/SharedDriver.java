@@ -21,8 +21,8 @@ public class SharedDriver extends EventFiringWebDriver {
         Runtime.getRuntime().addShutdownHook(CLOSE_THREAD);
     }
 
-    public SharedDriver(WebDriver driver) {
-        super(driver);
+    public SharedDriver() {
+        super(REAL_DRIVER);
     }
 
     @Override

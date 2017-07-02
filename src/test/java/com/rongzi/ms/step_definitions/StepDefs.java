@@ -10,6 +10,6 @@ public abstract class StepDefs {
 
     public StepDefs() {
 
-        driver = Hooks.driver;
+        driver = new SharedDriver();
     }
 }
