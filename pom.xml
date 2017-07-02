@@ -86,6 +86,47 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.lazerycode.selenium</groupId>
+                <artifactId>driver-binary-downloader-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>selenium</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <!--
+                               Run phantomjs by default. It probably works every where.
+
+                               Check the develop profile to configure which web driver to use
+                               when developing.
+                        -->
+                        <webdriver>phantomjs</webdriver>
+                        <!--Provided by the driver-binary-downloader-maven-plugin-->
+                        <!--suppress MavenModelInspection -->
+                        <webdriver.gecko.driver>${webdriver.gecko.driver}</webdriver.gecko.driver>
+                        <!--suppress MavenModelInspection -->
+                        <webdriver.chrome.driver>${webdriver.chrome.driver}
+                        </webdriver.chrome.driver>
+                        <!--suppress MavenModelInspection -->
+                        <webdriver.opera.driver>${webdriver.opera.driver}</webdriver.opera.driver>
+                        <!--suppress MavenModelInspection -->
+                        <phantomjs.binary.path>${phantomjs.binary.path}</phantomjs.binary.path>
+                        <!--suppress MavenModelInspection -->
+                        <webdriver.ie.driver>${webdriver.ie.driver}</webdriver.ie.driver>
+                        <!--suppress MavenModelInspection -->
+                        <webdriver.edge.driver>${webdriver.ie.driver}</webdriver.edge.driver>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18</version>
