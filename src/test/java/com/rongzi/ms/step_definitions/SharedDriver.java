@@ -36,6 +36,7 @@ public class SharedDriver extends EventFiringWebDriver {
     @Before
     public void deleteAllCookies() {
         manage().deleteAllCookies();
+        manage().window().maximize();
     }
 
     @After
