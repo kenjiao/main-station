@@ -34,3 +34,5 @@ mvn# main-station automation
     ![idea-test-2.png](quick-start/idea-test-2.png)
 
 生成报告 `mvn verify`, 在 *target/reports* 目录下就可以浏览生成的报告.
+
+根据tags来过滤场景 `mvn clean test -Dwebdriver=chrome -Dcucumber.options="--tags @please_login"`
