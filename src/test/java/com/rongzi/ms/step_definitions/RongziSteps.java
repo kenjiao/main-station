@@ -1,7 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
 import com.rongzi.ms.modules.RongziAddressProceed;
-import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.那么;
 
@@ -19,7 +18,7 @@ public class RongziSteps extends StepDefs {
 
     @那么("^主站首页的主题是\"([^\"]*)\"$")
     public void 主站首页的主题是(String title) throws Throwable {
-        RongziAddressProceed.Execute(driver,title);
+        RongziAddressProceed.execute(driver,title);
     }
 
 

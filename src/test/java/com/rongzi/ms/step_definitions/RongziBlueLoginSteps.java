@@ -1,28 +1,21 @@
 package com.rongzi.ms.step_definitions;
 
-import com.rongzi.ms.pageobjects.RongziLoginPage;
-import com.rongzi.ms.pageobjects.RongziPage;
-import cucumber.api.java.zh_cn.假如;
-import cucumber.api.java.zh_cn.并且;
-import cucumber.api.java.zh_cn.当;
-import cucumber.api.java.zh_cn.那么;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import cucumber.api.PendingException;
 
 /**
- * Created by lining on 2017/6/28.
+ * Created by lining on 2017/7/3.
  */
-public class RongziBlueLoginSteps extends StepDefs {
+public class RongziBlueLoginSteps {
 
-    @当("^填写登陆信息$")
-    public void 填写登陆信息() throws Throwable {
-        RongziLoginPage.telephone.sendKeys("18321950423");
-        RongziLoginPage.password.sendKeys("yzc32323232");
-        RongziLoginPage.verCode.sendKeys("1111");
+    @cucumber.api.java.zh_cn.当("^输入用户信息$")
+    public void 输入用户信息() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 
-    @那么("^登陆成功$")
-    public void 登陆成功() throws Throwable {
-        Assert.assertTrue(driver.getCurrentUrl().equals("http://www.rongzi.com/account/login"));
+    @cucumber.api.java.zh_cn.同时("^点击智能找贷款$")
+    public void 点击智能找贷款() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }
