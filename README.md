@@ -1,6 +1,6 @@
-mvn# main-station automation
+# main-station automation
 
-## index
+## doc
 
 [cucumber-jvm](https://cucumber.io/)
 
@@ -15,24 +15,15 @@ mvn# main-station automation
 
 ## Quickstart
 
-### maven
+本项目是用[maven](https://github.com/AimeeLee23/main-station.git)构建的，它是一种项目构建工具，可以管理项目的依赖以及打包方式，还可以根据不同的环境选择不同的配置文件
 
-设置 chrome web driver, `-Dwebdriver.chrome.driver=chromedriver_2.26.exe`
-
-运行 `mvn test -Dwebdriver.chrome.driver=chromedriver_2.26.exe` 
+运行 `mvn test` 
 
 ![mvn-test.png](quick-start/mvn-test.png) 
 
-### IntelliJ IDEA 
-
-1.  右击 *RunCukesTest* 直接运行
-
-    ![idea-test-1.png](quick-start/idea-test-1.png) 
-
-2.  右击 *feature* 文件直接运行
-
-    ![idea-test-2.png](quick-start/idea-test-2.png)
-
 生成报告 `mvn verify`, 在 *target/reports* 目录下就可以浏览生成的报告.
 
+通过设置环境变量来选择测试的浏览器 `mvn clean test -Dwebdriver=chrome`
+
 根据tags来过滤场景 `mvn clean test -Dwebdriver=chrome -Dcucumber.options="--tags @user_login"`
+
