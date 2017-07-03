@@ -70,7 +70,7 @@ Cucumber 之所以受到如此的推崇，与其 Executable Specification 这个
 
 这看似简单的两方面似乎关联并不是很大，但是如何能够在同一个基础（feature files）之上做到两者的融合，却是 Cucumber 最大的妙处。从项目管理人员的角度来看，Cucumber 是技术人员和非技术人员交流的桥梁，从更加深的层面来看，Cucumber 能够增加各个利益相关方的沟通，因为只有深入的沟通，在各方都理解了真正期望的功能这一基础之上，才能产出都认可的 Executable Specification！
 
-Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后缀。我们打开东方融资网测试案例为例子，需要如下的大致步骤：
+Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后缀。我们现在以 "打开东方融资网" 测试案例为例子，需要如下的大致步骤：
 
 1.  创建 feature 文件；
 
@@ -174,3 +174,10 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
 
 根据tags来过滤场景 `mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @user_login"`
 
+
+## 和 [jenkins](https://jenkins.io/)集成
+
+1.  创建jenkins job
+2.  设置启动测试脚本的条件，比如开发部署完新版本的应用后开始启动自动化测试的jenkins任务
+3.  jenkins 可以设置多台服务器同时跑自动化测试任务，比如总共有 100个测试案例，设置server1跑 1～50 的测试场景，设置server2 跑 51～100 的 测试场景，这样的话本来如果一台服务器跑1小时跑完所有场景的话，那么现在就是两台一起跑，那跑完所有测试只需要半小时了。
+    
