@@ -113,6 +113,7 @@
                 <artifactId>driver-binary-downloader-maven-plugin</artifactId>
                 <configuration>
                     <customRepositoryMap>${project.basedir}/src/test/resources/repo.xml</customRepositoryMap>
+                    <checkFileHashes>false</checkFileHashes>
                 </configuration>
                 <executions>
                     <execution>
