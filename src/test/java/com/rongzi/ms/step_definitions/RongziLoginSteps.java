@@ -17,6 +17,7 @@ public class RongziLoginSteps extends StepDefs {
 
     @当("^点击请登陆按钮$")
     public void 点击请登陆按钮() throws Throwable {
+
         PageFactory.initElements(driver, RongziPage.class);
         RongziPage.login_please.click();
 
