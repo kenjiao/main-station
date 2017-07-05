@@ -7,9 +7,9 @@ import org.openqa.selenium.support.How;
 
 import java.util.List;
 
-public class RongziBlueLoginPage extends BaseClass {
+public class RightIntelligentLoanPage extends BaseClass {
 
-	public RongziBlueLoginPage(WebDriver driver)
+	public RightIntelligentLoanPage(WebDriver driver)
 	{
 		super(driver);
 	}
@@ -32,7 +32,7 @@ public class RongziBlueLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@name=\"userMobile\"]")
 	public static WebElement userMobile;
 
-	@FindBy(how=How.CLASS_NAME, using="searchBtn freeBtn")
+	@FindBy(how=How.CSS, using=".searchBtn")
 	public static WebElement search_money;
 
 
