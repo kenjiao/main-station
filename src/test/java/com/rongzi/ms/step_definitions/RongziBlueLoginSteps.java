@@ -18,9 +18,8 @@ public class RongziBlueLoginSteps extends StepDefs {
 
     @当("^输入用户信息$")
     public void 输入用户信息() throws Throwable {
+        RongziBlueLoginPage.username.sendKeys("li");
 
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
 
     }
 
