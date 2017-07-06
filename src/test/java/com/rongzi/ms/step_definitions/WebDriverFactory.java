@@ -1,5 +1,7 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.helpers.BinaryType;
+import com.rongzi.ms.helpers.Env;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
