@@ -1,5 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,7 +8,13 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -15,12 +22,57 @@ import java.util.stream.Collectors;
  */
 final class WebDriverFactory {
 
+    private static Logger logger = Logger.getLogger(WebDriverFactory.class);
+
+    private static Map<String, String> binaries;
+
     private WebDriverFactory() {
 
     }
 
+    static {
+        binaries = new HashMap<>();
+
+        for (BinaryType binaryType : BinaryType.values()) {
+
+            for (String filename : binaryType.getBinaryFilenames()) {
+                binaries.put(filename, binaryType.getDriverSystemProperty());
+            }
+
+        }
+
+
+    }
+
+    private static void initEnv() {
+
+        String directory = Env.getProperty("binary.directory", "selenium_standalone");
+        try {
+            Path dir = Paths.get(directory);
+
+            logger.debug("binary directory:" + dir.toAbsolutePath().toString());
+
+            Files.walk(dir)
+                    .filter(path -> Files.isRegularFile(path))
+                    .forEach(path -> {
+                        String filename = path.getFileName().toString();
+                        if (binaries.containsKey(filename)) {
+                            String binaryPath = path.toAbsolutePath().toString();
+                            System.setProperty(binaries.get(filename), binaryPath);
+                            logger.debug("set system property:" + binaryPath);
+                        }
+
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     static WebDriver create() {
-        String webDriverProperty = System.getProperty("webdriver");
+
+        initEnv();
+
+        String webDriverProperty = Env.getProperty("webdriver");
 
         if (webDriverProperty == null || webDriverProperty.isEmpty()) {
             throw new IllegalStateException("The webdriver system property must be set");

@@ -16,6 +16,8 @@
         <picocontainer.version>2.15</picocontainer.version>
         <cucumber.picocontainer.version>1.2.5</cucumber.picocontainer.version>
         <selenium.version>3.4.0</selenium.version>
+        <binary.directory>selenium_standalone</binary.directory>
+        <webdriver>chrome</webdriver>
     </properties>
 
     <dependencies>
@@ -107,12 +109,19 @@
     </dependencies>
 
     <build>
+        <testResources>
+            <testResource>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/src/test/resources</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>com.lazerycode.selenium</groupId>
                 <artifactId>driver-binary-downloader-maven-plugin</artifactId>
                 <configuration>
                     <customRepositoryMap>${project.basedir}/src/test/resources/repo.xml</customRepositoryMap>
+                    <rootStandaloneServerDirectory>${binary.directory}</rootStandaloneServerDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -134,31 +143,6 @@
                         <version>2.18</version>
                     </dependency>
                 </dependencies>
-                <configuration>
-                    <systemPropertyVariables>
-                        <!--
-                               Run phantomjs by default. It probably works every where.
-
-                               Check the develop profile to configure which web driver to use
-                               when developing.
-                        -->
-                        <webdriver>phantomjs</webdriver>
-                        <!--Provided by the driver-binary-downloader-maven-plugin-->
-                        <!--suppress MavenModelInspection -->
-                        <webdriver.gecko.driver>${webdriver.gecko.driver}</webdriver.gecko.driver>
-                        <!--suppress MavenModelInspection -->
-                        <webdriver.chrome.driver>${webdriver.chrome.driver}
-                        </webdriver.chrome.driver>
-                        <!--suppress MavenModelInspection -->
-                        <webdriver.opera.driver>${webdriver.opera.driver}</webdriver.opera.driver>
-                        <!--suppress MavenModelInspection -->
-                        <phantomjs.binary.path>${phantomjs.binary.path}</phantomjs.binary.path>
-                        <!--suppress MavenModelInspection -->
-                        <webdriver.ie.driver>${webdriver.ie.driver}</webdriver.ie.driver>
-                        <!--suppress MavenModelInspection -->
-                        <webdriver.edge.driver>${webdriver.ie.driver}</webdriver.edge.driver>
-                    </systemPropertyVariables>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>net.masterthought</groupId>
