@@ -64,7 +64,7 @@ final class WebDriverFactory {
 
                     });
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
     }
 

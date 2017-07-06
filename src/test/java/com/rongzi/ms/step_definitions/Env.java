@@ -1,5 +1,7 @@
 package com.rongzi.ms.step_definitions;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -8,6 +10,8 @@ import java.util.Properties;
  * Created by Yuan on 2017/7/6.
  */
 public class Env {
+
+    private static Logger logger = Logger.getLogger(Env.class);
 
     private static Properties properties;
 
@@ -18,7 +22,7 @@ public class Env {
         try (InputStream in = ClassLoader.getSystemResourceAsStream("env.properties")) {
             properties.load(in);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
 
     }
