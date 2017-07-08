@@ -56,7 +56,7 @@ public class IntelligentLoanSteps extends StepDefs {
         Assert.assertTrue(element.isDisplayed());
     }
 
-    @当("^填写右部智能贷款个人信息:$")
+    @当("^填写右部智能贷款个人信息$")
     public void 填写右部智能贷款个人信息(List<UserLoanInfo> userLoanInfos) throws Throwable {
         PageFactory.initElements(driver, RightIntelligentLoanPage.class);
 

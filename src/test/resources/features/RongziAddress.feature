@@ -27,7 +27,7 @@
     @right_intelligent_loan
     场景: 右部智能贷
       假如 我在主站首页
-      当 填写右部智能贷款个人信息:
+      当 填写右部智能贷款个人信息
         | username | telephone  | identity  | loanMoney |
         | lining   | 18321950423| 企业主    |  3        |
         | AimeeLee | 18321718279| 上班族    |  5        |
