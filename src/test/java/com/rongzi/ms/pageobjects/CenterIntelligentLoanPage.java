@@ -14,25 +14,25 @@ public class CenterIntelligentLoanPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form li")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form li")
 	public static List<WebElement> selects;
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form > div.inforBox.nameBox > input")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.inforBox.nameBox > input")
 	public static WebElement username;
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form > div.inforBox.nameBox > div")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.inforBox.nameBox > div")
 	public static WebElement gender;
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form > div.inforBox.inforBoxIdentify > input")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.inforBox.inforBoxIdentify > input")
 	public static WebElement identity;
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form > div:nth-child(4) > input")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div:nth-child(4) > input")
 	public static WebElement loanMoney;
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form > div:nth-child(2) > input")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div:nth-child(2) > input")
 	public static WebElement userMobile;
 
-	@FindBy(how=How.CSS, using="body > section.wrapper-freeTaste > form > div.freeBtn")
+	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.freeBtn")
 	public static WebElement free;
 
 
