@@ -2,6 +2,7 @@ package com.rongzi.ms.modules;
 
 import com.rongzi.ms.domain.UserLoanInfo;
 import com.rongzi.ms.helpers.Log;
+import com.rongzi.ms.pageobjects.BottomIntelligentLoanPage;
 import com.rongzi.ms.pageobjects.CenterIntelligentLoanPage;
 import com.rongzi.ms.pageobjects.RightIntelligentLoanPage;
 import org.openqa.selenium.JavascriptExecutor;
@@ -76,6 +77,38 @@ public class IntelligentLoanProceed {
             Log.info("选择3");
 
             CenterIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
+    }
+    public static void executeBottomLoan(WebDriver driver, UserLoanInfo userLoanInfo) {
+
+            ((JavascriptExecutor)driver).executeScript("window.scrollBy(0,8000)");
+
+            Actions action = new Actions(driver);
+
+            BottomIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
+
+            List<WebElement> selects = BottomIntelligentLoanPage.selects;
+
+            action.moveToElement(BottomIntelligentLoanPage.gender).perform();
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+
+            WebElement female = selects.get(1);
+            wait.until(ExpectedConditions.visibilityOf(female));
+            female.click();
+            Log.info("选择女士");
+
+            action.moveToElement(BottomIntelligentLoanPage.identity).perform();
+            WebElement enterprise = selects.get(3);
+            wait.until(ExpectedConditions.visibilityOf(enterprise));
+            enterprise.click();
+            Log.info("选择企业主");
+
+            action.moveToElement(BottomIntelligentLoanPage.loanMoney).perform();
+            WebElement three = selects.get(7);
+            wait.until(ExpectedConditions.visibilityOf(three));
+            three.click();
+            Log.info("选择3");
+
+            BottomIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
     }
 
 }

@@ -2,6 +2,7 @@ package com.rongzi.ms.step_definitions;
 
 import com.rongzi.ms.domain.UserLoanInfo;
 import com.rongzi.ms.modules.IntelligentLoanProceed;
+import com.rongzi.ms.pageobjects.BottomIntelligentLoanPage;
 import com.rongzi.ms.pageobjects.CenterIntelligentLoanPage;
 import com.rongzi.ms.pageobjects.RightIntelligentLoanPage;
 import cucumber.api.PendingException;
@@ -52,15 +53,17 @@ public class IntelligentLoanSteps extends StepDefs {
     }
 
     @当("^填写底部智能贷款个人信息$")
-    public void 填写底部智能贷款个人信息() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void 填写底部智能贷款个人信息(List<UserLoanInfo> userLoanInfos) throws Throwable {
+        PageFactory.initElements(driver, BottomIntelligentLoanPage.class);
+
+        for (UserLoanInfo userLoanInfo : userLoanInfos) {
+            IntelligentLoanProceed.executeBottomLoan(driver, userLoanInfo);
+        }
     }
 
     @并且("^点击底部免费智能贷款$")
     public void 点击底部免费智能贷款() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        BottomIntelligentLoanPage.free.click();
     }
 
     @那么("^成功进入测评页面$")
