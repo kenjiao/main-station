@@ -18,97 +18,100 @@ public class IntelligentLoanProceed {
 
     public static void executeRightLoan(WebDriver driver, UserLoanInfo userLoanInfo) {
 
-            Actions action = new Actions(driver);
+        Actions action = new Actions(driver);
 
-            RightIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
+        RightIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
 
-            List<WebElement> selects = RightIntelligentLoanPage.selects;
+        List<WebElement> selects = RightIntelligentLoanPage.selects;
 
-            action.moveToElement(RightIntelligentLoanPage.gender).perform();
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+        action.moveToElement(RightIntelligentLoanPage.gender).perform();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
-            WebElement female = selects.get(1);
-            wait.until(ExpectedConditions.visibilityOf(female));
-            female.click();
-            Log.info("选择女士");
+        WebElement female = selects.get(1);
+        wait.until(ExpectedConditions.visibilityOf(female));
+        female.click();
+        Log.info("选择女士");
 
-            action.moveToElement(RightIntelligentLoanPage.identity).perform();
-            WebElement enterprise = selects.get(3);
-            wait.until(ExpectedConditions.visibilityOf(enterprise));
-            enterprise.click();
-            Log.info("选择企业主");
+        action.moveToElement(RightIntelligentLoanPage.identity).perform();
+        WebElement enterprise = selects.get(3);
+        wait.until(ExpectedConditions.visibilityOf(enterprise));
+        enterprise.click();
+        Log.info("选择企业主");
 
-            action.moveToElement(RightIntelligentLoanPage.loanMoney).perform();
-            WebElement three = selects.get(7);
-            wait.until(ExpectedConditions.visibilityOf(three));
-            three.click();
-            Log.info("选择3");
+        action.moveToElement(RightIntelligentLoanPage.loanMoney).perform();
+        WebElement three = selects.get(7);
+        wait.until(ExpectedConditions.visibilityOf(three));
+        three.click();
+        Log.info("选择3");
 
-            RightIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
+        RightIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
     }
+
     public static void executeCenterLoan(WebDriver driver, UserLoanInfo userLoanInfo) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Actions action = new Actions(driver);
 
-            ((JavascriptExecutor)driver).executeScript("window.scrollBy(0,2200)");
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,2200)");
 
-            Actions action = new Actions(driver);
+        wait.until(ExpectedConditions.visibilityOf(CenterIntelligentLoanPage.username));
+        CenterIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
 
-            CenterIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
+        List<WebElement> selects = CenterIntelligentLoanPage.selects;
 
-            List<WebElement> selects = CenterIntelligentLoanPage.selects;
+        action.moveToElement(CenterIntelligentLoanPage.gender).perform();
 
-            action.moveToElement(CenterIntelligentLoanPage.gender).perform();
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement female = selects.get(1);
+        wait.until(ExpectedConditions.visibilityOf(female));
+        female.click();
+        Log.info("选择女士");
 
-            WebElement female = selects.get(1);
-            wait.until(ExpectedConditions.visibilityOf(female));
-            female.click();
-            Log.info("选择女士");
+        action.moveToElement(CenterIntelligentLoanPage.identity).perform();
+        WebElement enterprise = selects.get(3);
+        wait.until(ExpectedConditions.visibilityOf(enterprise));
+        enterprise.click();
+        Log.info("选择企业主");
 
-            action.moveToElement(CenterIntelligentLoanPage.identity).perform();
-            WebElement enterprise = selects.get(3);
-            wait.until(ExpectedConditions.visibilityOf(enterprise));
-            enterprise.click();
-            Log.info("选择企业主");
+        action.moveToElement(CenterIntelligentLoanPage.loanMoney).perform();
+        WebElement three = selects.get(7);
+        wait.until(ExpectedConditions.visibilityOf(three));
+        three.click();
+        Log.info("选择3");
 
-            action.moveToElement(CenterIntelligentLoanPage.loanMoney).perform();
-            WebElement three = selects.get(7);
-            wait.until(ExpectedConditions.visibilityOf(three));
-            three.click();
-            Log.info("选择3");
-
-            CenterIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
+        CenterIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
     }
+
     public static void executeBottomLoan(WebDriver driver, UserLoanInfo userLoanInfo) {
 
-            ((JavascriptExecutor)driver).executeScript("window.scrollBy(0,8000)");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Actions action = new Actions(driver);
 
-            Actions action = new Actions(driver);
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,8000)");
 
-            BottomIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
+        wait.until(ExpectedConditions.visibilityOf(BottomIntelligentLoanPage.username));
+        BottomIntelligentLoanPage.username.sendKeys(userLoanInfo.getUsername());
 
-            List<WebElement> selects = BottomIntelligentLoanPage.selects;
+        List<WebElement> selects = BottomIntelligentLoanPage.selects;
 
-            action.moveToElement(BottomIntelligentLoanPage.gender).perform();
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+        action.moveToElement(BottomIntelligentLoanPage.gender).perform();
 
-            WebElement female = selects.get(1);
-            wait.until(ExpectedConditions.visibilityOf(female));
-            female.click();
-            Log.info("选择女士");
+        WebElement female = selects.get(1);
+        wait.until(ExpectedConditions.visibilityOf(female));
+        female.click();
+        Log.info("选择女士");
 
-            action.moveToElement(BottomIntelligentLoanPage.identity).perform();
-            WebElement enterprise = selects.get(3);
-            wait.until(ExpectedConditions.visibilityOf(enterprise));
-            enterprise.click();
-            Log.info("选择企业主");
+        action.moveToElement(BottomIntelligentLoanPage.identity).perform();
+        WebElement enterprise = selects.get(3);
+        wait.until(ExpectedConditions.visibilityOf(enterprise));
+        enterprise.click();
+        Log.info("选择企业主");
 
-            action.moveToElement(BottomIntelligentLoanPage.loanMoney).perform();
-            WebElement three = selects.get(7);
-            wait.until(ExpectedConditions.visibilityOf(three));
-            three.click();
-            Log.info("选择3");
+        action.moveToElement(BottomIntelligentLoanPage.loanMoney).perform();
+        WebElement three = selects.get(7);
+        wait.until(ExpectedConditions.visibilityOf(three));
+        three.click();
+        Log.info("选择3");
 
-            BottomIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
+        BottomIntelligentLoanPage.userMobile.sendKeys(userLoanInfo.getTelephone());
     }
 
 }
