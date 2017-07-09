@@ -2,6 +2,7 @@ package com.rongzi.ms.step_definitions;
 
 import com.rongzi.ms.domain.UserLoanInfo;
 import com.rongzi.ms.modules.IntelligentLoanProceed;
+import com.rongzi.ms.pageobjects.CenterIntelligentLoanPage;
 import com.rongzi.ms.pageobjects.RightIntelligentLoanPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.并且;
@@ -20,6 +21,16 @@ import java.util.List;
 public class IntelligentLoanSteps extends StepDefs {
 
 
+    @当("^填写右部智能贷款个人信息$")
+    public void 填写右部智能贷款个人信息(List<UserLoanInfo> userLoanInfos) throws Throwable {
+        PageFactory.initElements(driver, RightIntelligentLoanPage.class);
+
+        for (UserLoanInfo userLoanInfo : userLoanInfos) {
+            IntelligentLoanProceed.executeRightLoan(driver, userLoanInfo);
+        }
+
+    }
+
     @并且("^点击右部免费智能贷款$")
     public void 点击右部免费智能贷款() throws Throwable {
         RightIntelligentLoanPage.search_money.click();
@@ -27,15 +38,17 @@ public class IntelligentLoanSteps extends StepDefs {
 
 
     @当("^填写中部智能贷款个人信息$")
-    public void 填写中部智能贷款个人信息() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void 填写中部智能贷款个人信息(List<UserLoanInfo> userLoanInfos) throws Throwable {
+        PageFactory.initElements(driver, CenterIntelligentLoanPage.class);
+        for (UserLoanInfo userLoanInfo : userLoanInfos) {
+            IntelligentLoanProceed.executeCenterLoan(driver, userLoanInfo);
+        }
+
     }
 
     @并且("^点击中部免费智能贷款$")
     public void 点击中部免费智能贷款() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        CenterIntelligentLoanPage.free.click();
     }
 
     @当("^填写底部智能贷款个人信息$")
@@ -56,14 +69,5 @@ public class IntelligentLoanSteps extends StepDefs {
         Assert.assertTrue(element.isDisplayed());
     }
 
-    @当("^填写右部智能贷款个人信息$")
-    public void 填写右部智能贷款个人信息(List<UserLoanInfo> userLoanInfos) throws Throwable {
-        PageFactory.initElements(driver, RightIntelligentLoanPage.class);
-
-        for (UserLoanInfo userLoanInfo : userLoanInfos) {
-            IntelligentLoanProceed.executeRightLoan(driver, userLoanInfo);
-        }
-
-    }
 
 }
