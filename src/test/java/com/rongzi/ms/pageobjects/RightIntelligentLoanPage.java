@@ -14,26 +14,26 @@ public class RightIntelligentLoanPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@name=\"userName\"]")
-	public static WebElement username;
-
-	@FindBy(how=How.CSS, using=".banner-content-right-infor .dropdown li")
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form li")
 	public static List<WebElement> selects;
 
-	@FindBy(how=How.CSS, using=".genderBox")
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form > div.inforBox.nameBox > input")
+	public static WebElement username;
+
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form > div.inforBox.nameBox > div")
 	public static WebElement gender;
 
-	@FindBy(how=How.XPATH, using="//*[@name=\"userIdentity\"]")
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form > div:nth-child(2) > input")
 	public static WebElement identity;
 
-	@FindBy(how=How.XPATH, using="//*[@name=\"loanMoney\"]")
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form > div:nth-child(3) > input")
 	public static WebElement loanMoney;
 
-	@FindBy(how=How.XPATH, using="//*[@name=\"userMobile\"]")
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form > div:nth-child(4) > input")
 	public static WebElement userMobile;
 
-	@FindBy(how=How.CSS, using=".searchBtn")
-	public static WebElement search_money;
+	@FindBy(how=How.CSS, using=".banner-content-right-infor > form > input")
+	public static WebElement free;
 
 
 }

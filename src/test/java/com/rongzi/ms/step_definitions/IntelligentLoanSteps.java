@@ -34,7 +34,7 @@ public class IntelligentLoanSteps extends StepDefs {
 
     @并且("^点击右部免费智能贷款$")
     public void 点击右部免费智能贷款() throws Throwable {
-        RightIntelligentLoanPage.search_money.click();
+        RightIntelligentLoanPage.free.click();
     }
 
 
