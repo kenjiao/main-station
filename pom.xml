@@ -19,9 +19,24 @@
         <binary.directory>selenium_standalone</binary.directory>
         <webdriver>chrome</webdriver>
         <proxy>false</proxy>
-        <proxyHost></proxyHost>
-        <proxyPort></proxyPort>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <proxy>true</proxy>
+                <proxyHost>http://example.com</proxyHost>
+                <proxyPort>8888</proxyPort>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <proxy>false</proxy>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
