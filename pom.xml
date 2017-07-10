@@ -18,6 +18,9 @@
         <selenium.version>3.4.0</selenium.version>
         <binary.directory>selenium_standalone</binary.directory>
         <webdriver>chrome</webdriver>
+        <proxy>false</proxy>
+        <proxyHost></proxyHost>
+        <proxyPort></proxyPort>
     </properties>
 
     <dependencies>
