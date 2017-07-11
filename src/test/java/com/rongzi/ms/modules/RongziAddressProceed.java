@@ -1,14 +1,32 @@
 package com.rongzi.ms.modules;
 
+import com.rongzi.ms.pageobjects.CityPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 
-import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class RongziAddressProceed {
+
+
+    public static void open(WebDriver driver, String city) {
+        driver.get("http://www.rongzi.com/CityList");
+
+        PageFactory.initElements(driver, CityPage.class);
+
+        for (WebElement element : CityPage.cities) {
+
+            if(element.getText().equals(city)) {
+                element.click();
+                return;
+            }
+
+        }
+
+
+    }
 
     public static void execute(WebDriver driver, String title) {
 
