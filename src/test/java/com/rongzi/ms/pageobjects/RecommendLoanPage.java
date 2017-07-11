@@ -114,11 +114,15 @@ public class RecommendLoanPage extends BaseClass {
 
     }
 
-    public static class LoanRecommendPage extends BaseClass {
+    public static class EvaluatePage extends BaseClass {
 
-        public LoanRecommendPage(WebDriver driver) {
+        public EvaluatePage(WebDriver driver) {
             super(driver);
         }
+
+        @FindBy(how= How.XPATH, using="//*[@id=\"rediaChart\"]")
+        public static WebElement chart;
+
     }
 
 }
