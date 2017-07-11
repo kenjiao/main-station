@@ -63,8 +63,19 @@ public class RecommendLoanPage extends BaseClass {
         @FindBy(how= How.XPATH, using="//*[@id=\"txt_UseLoanCity\"]")
         public static WebElement loanCity;
 
+
         @FindBy(how= How.XPATH, using="//*[@id=\"rd_identity_4\"]")
         public static WebElement identity;
+
+        @FindBy(how= How.XPATH, using="//*[@id=\"txt_IncomeDistributionType\"]")
+        public static WebElement incomeDistributionType;
+
+        @FindBy(how= How.XPATH, using="//*[@id=\"txt_WorkingAge\"]")
+        public static WebElement workingAge;
+
+        @FindBy(how= How.XPATH, using="//*[@id=\"txt_SocialSecurityFund\"]")
+        public static WebElement socialSecurityFund;
+
 
         @FindBy(how= How.XPATH, using="//*[@id=\"Age\"]")
         public static WebElement age;
@@ -81,11 +92,21 @@ public class RecommendLoanPage extends BaseClass {
         @FindBy(how= How.XPATH, using="//*[@id=\"txt_InsuranceInfo\"]")
         public static WebElement insuranceInfo;
 
+
         @FindBy(how= How.XPATH, using="//*[@id=\"h4_More\"]/i")
         public static WebElement more;
 
         @FindBy(how= How.XPATH, using="//*[@id=\"txt_CensusRegisterSeatProvince\"]")
-        public static WebElement censusRegister;
+        public static WebElement censusRegisterProvince;
+        @FindBy(how= How.XPATH, using="//*[@id=\"txt_WorkingProvince\"]")
+
+        public static WebElement workingProvince;
+
+        @FindBy(how= How.XPATH, using="//*[@id=\"txt_CompanyType\"]")
+        public static WebElement cmpanyType;
+
+        @FindBy(how= How.XPATH, using="//*[@id=\"txt_IsFormalEstablishment\"]")
+        public static WebElement isFormalEstablishment;
 
         @FindBy(how= How.XPATH, using="//*[@id=\"txt_CreditCardAmount\"]")
         public static WebElement creditCardAmount;
