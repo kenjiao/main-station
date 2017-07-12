@@ -14,25 +14,25 @@ public class CenterIntelligentLoanPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form li")
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]//li")
 	public static List<WebElement> selects;
 
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.inforBox.nameBox > input")
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]/form/div[1]/input")
 	public static WebElement username;
 
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.inforBox.nameBox > div")
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]/form/div[1]/div")
 	public static WebElement gender;
 
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.inforBox.inforBoxIdentify > input")
-	public static WebElement identity;
-
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div:nth-child(4) > input")
-	public static WebElement loanMoney;
-
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div:nth-child(2) > input")
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]/form/div[2]/input")
 	public static WebElement userMobile;
 
-	@FindBy(how=How.CSS, using="body > section:nth-child(16) > form > div.freeBtn")
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]/form/div[3]/input")
+	public static WebElement identity;
+
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]/form/div[4]/input")
+	public static WebElement loanMoney;
+
+	@FindBy(how=How.XPATH, using="//section[@class=\"wrapper-freeTaste\"][1]/form/div[5]")
 	public static WebElement free;
 
 
