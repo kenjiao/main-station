@@ -20,5 +20,9 @@ public class RongziPage extends BaseClass {
 	public static WebElement apply;
 
 
+	@FindBy(how=How.XPATH, using="//a[@href=\"/quicktest/step1\"][1]")
+	public static WebElement easyLoan;
+
+
 
 }
