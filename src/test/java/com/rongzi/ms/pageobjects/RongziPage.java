@@ -16,4 +16,9 @@ public class RongziPage extends BaseClass {
 	public static WebElement login_please;
 
 
+	@FindBy(how=How.XPATH, using="//*[@id=\"caseShowBanner\"]/ul/li[1]/a")
+	public static WebElement apply;
+
+
+
 }
