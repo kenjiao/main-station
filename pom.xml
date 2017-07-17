@@ -122,7 +122,6 @@
                 <groupId>com.lazerycode.selenium</groupId>
                 <artifactId>driver-binary-downloader-maven-plugin</artifactId>
                 <configuration>
-                    <customRepositoryMap>${project.basedir}/src/test/resources/repo.xml</customRepositoryMap>
                     <rootStandaloneServerDirectory>${binary.directory}</rootStandaloneServerDirectory>
                 </configuration>
                 <executions>

@@ -22,13 +22,17 @@ node {
     }
 
     stage('automation tests') {
-        try {
-            sh "mvn verify -Pprod"
-        } catch(err) {
-            throw err
-        } finally {
-            junit '**/target/**/TEST-*.xml'
+
+        //run your build
+        sh 'mvn clean verify'
+
+        post {
+            always {
+                //generate cucumber reports
+                cucumber '**/*.json'
+            }
         }
+
     }
 
 
