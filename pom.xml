@@ -17,7 +17,7 @@
         <cucumber.picocontainer.version>1.2.5</cucumber.picocontainer.version>
         <selenium.version>3.4.0</selenium.version>
         <binary.directory>selenium_standalone</binary.directory>
-        <webdriver>phantomjs</webdriver>
+        <webdriver>chrome</webdriver>
         <proxy>false</proxy>
         <rongzi.city>上海市</rongzi.city>
     </properties>

@@ -17,21 +17,12 @@ node {
         sh "mvn -v"
     }
 
-    stage('clean') {
-        sh "mvn clean"
-    }
-
     stage('automation tests') {
 
         //run your build
-        sh 'mvn clean verify'
-
-        post {
-            always {
-                //generate cucumber reports
-                cucumber '**/*.json'
-            }
-        }
+        sh 'mvn clean verify -Pprod -Dwebdriver=phantomjs'
+        //generate cucumber reports
+        cucumber '**/*.json'
 
     }
 

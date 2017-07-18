@@ -3,7 +3,6 @@ package com.rongzi.ms.step_definitions;
 import com.rongzi.ms.pageobjects.ConsignationPage;
 import com.rongzi.ms.pageobjects.FinancingStrategyPage;
 import com.rongzi.ms.pageobjects.RongziPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
