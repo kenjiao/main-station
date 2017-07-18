@@ -27,6 +27,9 @@ public class RongziPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="/html/body/section[1]/div/ul/li[7]/a")
 	public static WebElement strategy;
 
+	@FindBy(how=How.XPATH, using="/html/body/section[1]/div/ul/li[3]/a")
+	public static WebElement loan_product;
+
 
 
 }
