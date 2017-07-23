@@ -2,6 +2,7 @@ package com.rongzi.ms.step_definitions;
 
 import com.rongzi.ms.pageobjects.LoanProductPage;
 import com.rongzi.ms.pageobjects.RongziPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
@@ -37,4 +38,12 @@ public class LoanProductSteps extends StepDefs {
     public void 点击免费体验() throws Throwable {
         LoanProductPage.free_experience.click();
     }
+
+
+    @同时("^点击产品详情$")
+    public void 点击产品详情() throws Throwable {
+        PageFactory.initElements(driver, LoanProductPage.class);
+        LoanProductPage.product_details.click();
+    }
+
 }

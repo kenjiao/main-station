@@ -21,5 +21,11 @@ public class LoanProductPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="/html/body/section[4]/form/div[5]")
 	public static WebElement free_experience;
 
+	@FindBy(how=How.XPATH, using="//html/body/section[3]/div[2]/div[1]/div[2]/div[2]/p[1]/a")
+	public static WebElement product_details;
+
+
+
+
 
 }
