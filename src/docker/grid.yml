@@ -1,16 +1,17 @@
-hub:
-  image: selenium/hub:3.3.1
-  environment:
-    - GRID_TIMEOUT=40
-  ports:
-    - 4444:4444
+version: '2'
+  hub:
+    image: selenium/hub:3.3.1
+    environment:
+      - GRID_TIMEOUT=40
+    ports:
+      - 4444:4444
 
-firefox:
-  image: selenium/node-firefox:3.3.1
-  links:
-    - hub
+  firefox:
+    image: selenium/node-firefox:3.3.1
+    links:
+      - hub
 
-chrome:
-  image: selenium/node-chrome:3.3.1
-  links:
-    - hub
+  chrome:
+    image: selenium/node-chrome:3.3.1
+    links:
+      - hub
