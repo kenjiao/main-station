@@ -40,7 +40,7 @@
         <profile>
             <id>prod</id>
             <properties>
-                <proxy>false</proxy>
+                <proxy.enable>false</proxy.enable>
             </properties>
         </profile>
     </profiles>
