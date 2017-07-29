@@ -18,7 +18,10 @@
         <selenium.version>3.4.0</selenium.version>
         <binary.directory>selenium_standalone</binary.directory>
         <webdriver>chrome</webdriver>
-        <proxy>false</proxy>
+        <proxy.enable>false</proxy.enable>
+        <proxy.host/>
+        <proxy.port/>
+        <remote.hub/>
         <rongzi.city>上海市</rongzi.city>
     </properties>
 
@@ -29,9 +32,9 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <proxy>true</proxy>
-                <proxyHost>10.40.3.20</proxyHost>
-                <proxyPort>3128</proxyPort>
+                <proxy.enable>true</proxy.enable>
+                <proxy.host>10.40.3.20</proxy.host>
+                <proxy.port>3128</proxy.port>
             </properties>
         </profile>
         <profile>
