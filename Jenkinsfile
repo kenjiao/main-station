@@ -1,5 +1,5 @@
 def profile = "prod"
-def hub = "http://hub/wd/hub"
+def hub = "http://ms-zalenium:4444/wd/hub"
 def browsers = ["chrome", "firefox"]
 
 def stepsForParallel = [:]
