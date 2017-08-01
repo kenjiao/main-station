@@ -1,32 +1,25 @@
-#!/usr/bin/env groovy
+def profile = "prod"
+def hub = "http://hub/wd/hub"
+def browsers = ["chrome", "firefox"]
 
-node {
+def stepsForParallel = [:]
 
-    // add maven to path
-    env.PATH = "${tool 'maven-3.5'}/bin:${env.PATH}"
+for (int i = 0; i < browsers.size(); i++) {
+    def browser = browsers.get(i)
 
-    stage('checkout') {
-        checkout scm
+    def cmd = "mvn clean verify -P${profile} -Dwebdriver=${browser} -Dremote.hub=${hub}"
+    def stepName = "Test ${browser}"
+
+    stepsForParallel[stepName] = mvn(cmd)
+}
+
+parallel stepsForParallel
+
+def mvn(cmd) {
+    return {
+        node {
+            echo cmd
+            sh cmd
+        }
     }
-
-    stage('check java') {
-        sh "java -version"
-    }
-
-    stage('check maven') {
-        sh "mvn -v"
-    }
-
-    stage('automation tests') {
-
-        //run your build
-        sh 'mvn clean verify -Pprod -Dwebdriver=phantomjs'
-        //generate cucumber reports
-        cucumber '**/*.json'
-
-    }
-
-
-
-
 }
