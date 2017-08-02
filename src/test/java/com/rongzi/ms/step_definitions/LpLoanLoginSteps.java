@@ -27,4 +27,10 @@ public class LpLoanLoginSteps extends StepDefs {
     public void 点击贷款着陆页立即咨询() throws Throwable {
         LpLoanLoginPage.consult.click();
     }
+
+    @假如("^我点击马上借款$")
+    public void 我点击马上借款() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
 }
