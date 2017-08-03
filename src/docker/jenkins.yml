@@ -3,8 +3,8 @@ services:
   ms-jenkins:
     image: jenkins:latest
     ports:
-      - 49001:8080
-      - 50000:50000
+      - 38080:8080
+      - 30000:50000
     # uncomment for docker in docker
     #privileged: true
     volumes:
