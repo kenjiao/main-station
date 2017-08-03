@@ -21,6 +21,21 @@ public class LpCompletelyLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="/html/body/section[2]/div[1]/div/div[2]/form/input")
 	public static WebElement consult;
 
+	@FindBy(how=How.XPATH, using="/html/body/section[6]/form/div[1]/input")
+	public static WebElement username3;
+
+	@FindBy(how=How.XPATH, using="/html/body/section[6]/form/div[3]/input")
+	public static WebElement mobile3;
+
+	@FindBy(how=How.XPATH, using="/html/body/section[6]/form/div[5]")
+	public static WebElement free_experience;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"caseShowBanner\"]/ul/li[1]/a")
+	public static WebElement free_experience1;
+
+
+
+
 
 
 }

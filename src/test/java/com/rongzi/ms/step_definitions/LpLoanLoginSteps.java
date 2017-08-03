@@ -28,8 +28,21 @@ public class LpLoanLoginSteps extends StepDefs {
         LpLoanLoginPage.consult.click();
     }
 
-    @假如("^我点击马上借款$")
+
+    @并且("^我点击马上借款$")
     public void 我点击马上借款() throws Throwable {
+        PageFactory.initElements(driver,LpLoanLoginPage.class);
+        LpLoanLoginPage.immediately_loan.click();
+    }
+
+    @cucumber.api.java.zh_cn.当("^输入贷款的用户信息$")
+    public void 输入贷款的用户信息() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @cucumber.api.java.zh_cn.同时("^点击立即咨询$")
+    public void 点击立即咨询() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }

@@ -21,6 +21,8 @@ public class LpSimpleLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"btn_submit\"]")
 	public static WebElement consult;
 
+	@FindBy(how=How.XPATH, using="//*[@id=\"caseShowBanner\"]/ul/li[1]/a")
+	public static WebElement application;
 
 
 }

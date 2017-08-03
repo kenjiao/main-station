@@ -13,7 +13,6 @@ public class RecommendLoanPage extends BaseClass {
     public RecommendLoanPage(WebDriver driver) {
         super(driver);
     }
-
     @FindBy(how= How.XPATH, using="//*[@id=\"step_head\"]/div")
     public static WebElement head_bar;
 

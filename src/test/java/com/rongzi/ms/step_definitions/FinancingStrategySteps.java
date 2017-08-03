@@ -41,20 +41,6 @@ public class FinancingStrategySteps extends StepDefs{
 
     }
 
-
-    @那么("^要输入验证码$")
-    public void 要输入验证码() throws Throwable {
-        PageFactory.initElements(driver, ConsignationPage.class);
-        ConsignationPage.captcha.sendKeys("1111");
-        ConsignationPage.smscode.sendKeys("111111");
-
-    }
-
-    @同时("^点击提交验证码$")
-    public void 点击提交验证码() throws Throwable {
-        ConsignationPage.submit.click();
-    }
-
     @那么("^一键委托成功$")
     public void 一键委托成功() throws Throwable {
         PageFactory.initElements(driver, ConsignationPage.class);

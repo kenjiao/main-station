@@ -5,6 +5,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
+import cucumber.api.java.zh_cn.当;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -28,4 +29,13 @@ public class LpSimpleLoginSteps extends StepDefs{
     public void 点击精简着陆页立即咨询() throws Throwable {
         LpSimpleLoginPage.consult.click();
     }
+
+
+    @当("^点击我要申请$")
+    public void 点击我要申请() throws Throwable {
+        PageFactory.initElements(driver,LpSimpleLoginPage.class);
+        LpSimpleLoginPage.application.click();
+    }
+
+
 }
