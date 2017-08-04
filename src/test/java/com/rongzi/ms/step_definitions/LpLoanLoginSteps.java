@@ -1,11 +1,18 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.helpers.Log;
 import com.rongzi.ms.pageobjects.LpLoanLoginPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.swing.*;
 
 /**
  * Created by lining on 2017/7/31.
@@ -37,8 +44,9 @@ public class LpLoanLoginSteps extends StepDefs {
 
     @cucumber.api.java.zh_cn.当("^输入贷款的用户信息$")
     public void 输入贷款的用户信息() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+
+
+
     }
 
     @cucumber.api.java.zh_cn.同时("^点击立即咨询$")
