@@ -1,4 +1,4 @@
-package com.rongzi.ms.step_definitions;
+package com.rongzi.ms;
 
 import org.junit.runner.RunWith;
 
