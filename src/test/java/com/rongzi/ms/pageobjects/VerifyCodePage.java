@@ -12,7 +12,7 @@ public class VerifyCodePage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"xubox_layer2\"]/div[1]/div/div/div/h2")
+	@FindBy(how=How.XPATH, using="//*[@class=\"member_pop\"]/h2")
 	public static WebElement verify_code_title;
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"input-captcha\"]")
