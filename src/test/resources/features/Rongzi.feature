@@ -14,6 +14,8 @@
       假如 我在贷款着陆页首页"http://shanghai.rongzi.com/lp/daikuan"
       并且 我点击马上借款
       那么 跳转到智能贷，为您精准推荐优质贷款页面
+      同时 填写联系方式
+      那么 成功进入测评页面
 
     场景: 贷款com着陆页贷款更快
       假如 我在贷款着陆页首页"http://shanghai.rongzi.com/lp/daikuan"
@@ -106,11 +108,8 @@
 
   场景: onepage的cn着陆页立即免费咨询
     假如 我在onepage着陆页首页"http://shanghai.rongzi.cn/static/onepage"
-    同时 点击立即免费咨询
-    那么 就要输入onepage的cn着陆页贷款信息
-    同时 点击获取验证码
-    并且 输入验证码信息
-    同时 点击提交验证吗信息
+    当 点击立即免费咨询
+    同时 就要输入onepage的cn着陆页贷款信息
     那么 贷款申请提交成功
 
 
