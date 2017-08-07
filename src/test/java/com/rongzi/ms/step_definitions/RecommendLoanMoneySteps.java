@@ -3,6 +3,8 @@ package com.rongzi.ms.step_definitions;
 import com.rongzi.ms.modules.RecommendLoanProceed;
 import com.rongzi.ms.pageobjects.RecommendLoanPage;
 import com.rongzi.ms.pageobjects.RongziPage;
+import cucumber.api.PendingException;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 
@@ -40,5 +42,19 @@ public class RecommendLoanMoneySteps extends StepDefs{
         PageFactory.initElements(driver, RongziPage.class);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
         RongziPage.easyLoan.click();
+    }
+
+    @cucumber.api.java.zh_cn.并且("^点击快速选款$")
+    public void 点击快速选款() throws Throwable {
+        PageFactory.initElements(driver,RecommendLoanPage.class);
+        RecommendLoanPage.next.click();
+    }
+
+    @cucumber.api.java.zh_cn.那么("^成功进入到测评结果页$")
+    public void 成功进入到测评结果页() throws Throwable {
+        PageFactory.initElements(driver,RecommendLoanPage.EvaluatePage.class);
+        Assert.assertTrue(RecommendLoanPage.EvaluatePage.chart.isDisplayed());
+
+
     }
 }
