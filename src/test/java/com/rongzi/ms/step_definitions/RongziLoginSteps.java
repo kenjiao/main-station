@@ -2,7 +2,9 @@ package com.rongzi.ms.step_definitions;
 
 import com.rongzi.ms.pageobjects.RongziLoginPage;
 import com.rongzi.ms.pageobjects.RongziPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
+import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
@@ -46,4 +48,5 @@ public class RongziLoginSteps extends StepDefs {
     public void 登陆成功() throws Throwable {
         // TODO: 2017/8/5 assert login success
     }
+
 }

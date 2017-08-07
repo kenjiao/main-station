@@ -24,7 +24,7 @@ public class RongziLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"loginSub1\"]")
 	public static WebElement login;
 
-	@FindBy(how=How.CLASS_NAME, using="input-validation-error verCode inputerror")
-	public static WebElement verCodeError;
+
+
 
 }
