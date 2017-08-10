@@ -119,7 +119,7 @@ public class RecommendLoanPage extends BaseClass {
             super(driver);
         }
 
-        @FindBy(how= How.XPATH, using="//*[@id=\"rediaChart\"]")
+        @FindBy(how= How.XPATH, using="//*[@id=\"rediaChart\"]/div/canvas")
         public static WebElement chart;
 
     }

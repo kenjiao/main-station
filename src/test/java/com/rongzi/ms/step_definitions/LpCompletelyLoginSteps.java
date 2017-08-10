@@ -7,6 +7,10 @@ import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static com.rongzi.ms.pageobjects.LpCompletelyLoginPage.username;
 
 /**
  * Created by lining on 2017/7/31.
@@ -20,6 +24,7 @@ public class LpCompletelyLoginSteps extends StepDefs{
 
     @并且("^输入完全着陆页用户信息$")
     public void 输入完全着陆页用户信息() throws Throwable {
+        PageFactory.initElements(driver, LpCompletelyLoginPage.class);
         LpCompletelyLoginPage.username.sendKeys("li");
         LpCompletelyLoginPage.telphone.sendKeys("18321950423");
     }
