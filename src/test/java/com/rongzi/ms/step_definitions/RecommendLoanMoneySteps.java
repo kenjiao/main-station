@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.rongzi.ms.pageobjects.RecommendLoanPage.EvaluatePage.chart;
+import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
 
 /**
  * Created by lining on 2017/7/10.
@@ -48,8 +48,9 @@ public class RecommendLoanMoneySteps extends StepDefs{
     public void 当我点击智能推荐处的免费体验() throws Throwable {
         PageFactory.initElements(driver, RongziPage.class);
         WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(easyLoan));
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
-        RongziPage.easyLoan.click();
+        easyLoan.click();
     }
 
     @并且("^点击快速选款$")
@@ -60,9 +61,8 @@ public class RecommendLoanMoneySteps extends StepDefs{
 
     @那么("^成功进入到测评结果页$")
     public void 成功进入到测评结果页() throws Throwable {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver,RecommendLoanPage.EvaluatePage.class);
-        WebDriverWait wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.visibilityOf(chart));
 
 
     }
