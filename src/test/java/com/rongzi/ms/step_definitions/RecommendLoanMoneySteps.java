@@ -47,7 +47,6 @@ public class RecommendLoanMoneySteps extends StepDefs{
     @当("^当我点击智能推荐处的免费体验$")
     public void 当我点击智能推荐处的免费体验() throws Throwable {
         PageFactory.initElements(driver, RongziPage.class);
-        WebDriverWait wait = new WebDriverWait(driver, 5);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
         RongziPage.easyLoan.click();
     }
@@ -60,10 +59,6 @@ public class RecommendLoanMoneySteps extends StepDefs{
 
     @那么("^成功进入到测评结果页$")
     public void 成功进入到测评结果页() throws Throwable {
-        PageFactory.initElements(driver,RecommendLoanPage.EvaluatePage.class);
-        WebDriverWait wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.visibilityOf(chart));
-
-
+        Assert.assertTrue(driver.getCurrentUrl().contains("quicktest/step3"));
     }
 }
