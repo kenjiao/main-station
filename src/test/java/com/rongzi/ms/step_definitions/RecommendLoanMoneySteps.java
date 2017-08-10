@@ -13,7 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.rongzi.ms.pageobjects.RecommendLoanPage.EvaluatePage.chart;
+import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
+
 
 /**
  * Created by lining on 2017/7/10.
@@ -48,7 +49,7 @@ public class RecommendLoanMoneySteps extends StepDefs{
     public void 当我点击智能推荐处的免费体验() throws Throwable {
         PageFactory.initElements(driver, RongziPage.class);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
-        RongziPage.easyLoan.click();
+        easyLoan.click();
     }
 
     @并且("^点击快速选款$")
