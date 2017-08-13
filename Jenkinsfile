@@ -2,9 +2,6 @@
 
 node {
 
-    // add maven to path
-    env.PATH = "${tool 'maven-3.5'}/bin:${env.PATH}"
-
     stage('checkout') {
         checkout scm
     }
