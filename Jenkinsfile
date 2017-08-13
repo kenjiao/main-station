@@ -14,13 +14,13 @@ node {
     }
 
     stage('check maven') {
-        sh "mvn -v"
+        sh "mvnw -v"
     }
 
     stage('automation tests') {
 
         //run your build
-        sh 'mvn clean verify -Pprod -Dwebdriver=phantomjs'
+        sh 'mvnw clean verify -Pprod -Dwebdriver=phantomjs'
         //generate cucumber reports
         cucumber '**/*.json'
 
