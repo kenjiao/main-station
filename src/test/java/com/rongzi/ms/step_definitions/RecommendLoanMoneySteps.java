@@ -60,6 +60,7 @@ public class RecommendLoanMoneySteps extends StepDefs{
 
     @那么("^成功进入到测评结果页$")
     public void 成功进入到测评结果页() throws Throwable {
+        PageFactory.initElements(driver,RecommendLoanPage.EvaluatePage.class);
         Assert.assertTrue(driver.getCurrentUrl().contains("quicktest/step3"));
     }
 }

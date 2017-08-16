@@ -21,6 +21,7 @@ public class LpYiXinLoginSteps extends StepDefs{
 
     @并且("^输入宜信着陆页用户信息$")
     public void 输入宜信着陆页用户信息() throws Throwable {
+        PageFactory.initElements(driver,LpYiXinLoginPage.class);
         LpYiXinLoginPage.username.sendKeys("li");
         LpYiXinLoginPage.telphone.sendKeys("18321950423");
     }
