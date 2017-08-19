@@ -1,5 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.RecommendLoanProceed;
 import com.rongzi.ms.pageobjects.RecommendLoanPage;
 import com.rongzi.ms.pageobjects.RongziPage;
@@ -19,7 +20,7 @@ import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
 /**
  * Created by lining on 2017/7/10.
  */
-public class RecommendLoanMoneySteps extends StepDefs{
+public class RecommendLoanMoneySteps extends StepDefs {
 
     @当("^我点击我要申请$")
     public void 我点击我要申请() throws Throwable {
@@ -54,13 +55,15 @@ public class RecommendLoanMoneySteps extends StepDefs{
 
     @并且("^点击快速选款$")
     public void 点击快速选款() throws Throwable {
-        PageFactory.initElements(driver,RecommendLoanPage.class);
+        PageFactory.initElements(driver, RecommendLoanPage.class);
         RecommendLoanPage.next.click();
     }
 
     @那么("^成功进入到测评结果页$")
     public void 成功进入到测评结果页() throws Throwable {
-        PageFactory.initElements(driver,RecommendLoanPage.EvaluatePage.class);
-        Assert.assertTrue(driver.getCurrentUrl().contains("quicktest/step3"));
+        PageFactory.initElements(driver, RecommendLoanPage.EvaluatePage.class);
+        if (Env.getProfile().equals("dev")) {
+            Assert.assertTrue(driver.getCurrentUrl().contains("quicktest/step3"));
+        }
     }
 }

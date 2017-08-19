@@ -36,4 +36,8 @@ public class Env {
         return properties.getProperty(key, defaultValue);
     }
 
+    public static String getProfile(){
+        return getProperty("profile", "default");
+    }
+
 }

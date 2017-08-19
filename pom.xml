@@ -18,6 +18,7 @@
         <selenium.version>3.4.0</selenium.version>
         <binary.directory>selenium_standalone</binary.directory>
         <webdriver>chrome</webdriver>
+        <profile>default</profile>
         <proxy.enable>false</proxy.enable>
         <proxy.host/>
         <proxy.port/>
@@ -32,6 +33,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+                <profile>dev</profile>
                 <proxy.enable>true</proxy.enable>
                 <proxy.host>10.40.3.20</proxy.host>
                 <proxy.port>3128</proxy.port>
@@ -40,6 +42,7 @@
         <profile>
             <id>prod</id>
             <properties>
+                <profile>prod</profile>
                 <proxy.enable>false</proxy.enable>
             </properties>
         </profile>
