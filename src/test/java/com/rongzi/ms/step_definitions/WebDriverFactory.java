@@ -54,7 +54,7 @@ final class WebDriverFactory {
 
     private static void initEnv() {
 
-        String directory = Env.getProperty("binary.directory", "selenium_standalone");
+        String directory = Env.getProperty("binary.root.directory", "selenium_standalone");
         try {
             Path dir = Paths.get(directory);
 

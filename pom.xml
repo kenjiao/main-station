@@ -16,7 +16,8 @@
         <picocontainer.version>2.15</picocontainer.version>
         <cucumber.picocontainer.version>1.2.5</cucumber.picocontainer.version>
         <selenium.version>3.4.0</selenium.version>
-        <binary.directory>selenium_standalone</binary.directory>
+        <binary.root.directory>selenium_standalone</binary.root.directory>
+        <binary.zips.directory>selenium_standalone_zips</binary.zips.directory>
         <webdriver>chrome</webdriver>
         <profile>default</profile>
         <proxy.enable>false</proxy.enable>
@@ -129,7 +130,8 @@
                 <artifactId>driver-binary-downloader-maven-plugin</artifactId>
                 <configuration>
                     <customRepositoryMap>${project.basedir}/src/test/resources/repo.xml</customRepositoryMap>
-                    <rootStandaloneServerDirectory>${binary.directory}</rootStandaloneServerDirectory>
+                    <rootStandaloneServerDirectory>${binary.root.directory}</rootStandaloneServerDirectory>
+                    <downloadedZipFileDirectory>${binary.zips.directory}</downloadedZipFileDirectory>
                 </configuration>
                 <executions>
                     <execution>
