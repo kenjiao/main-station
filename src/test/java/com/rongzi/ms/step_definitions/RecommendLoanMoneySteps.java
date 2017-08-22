@@ -3,16 +3,16 @@ package com.rongzi.ms.step_definitions;
 import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.RecommendLoanProceed;
 import com.rongzi.ms.pageobjects.RecommendLoanPage;
+import com.rongzi.ms.pageobjects.RecommendLoanPage.ContactInfoPage;
+import com.rongzi.ms.pageobjects.RecommendLoanPage.EvaluatePage;
+import com.rongzi.ms.pageobjects.RecommendLoanPage.LoanInfoPage;
 import com.rongzi.ms.pageobjects.RongziPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
 
@@ -40,9 +40,9 @@ public class RecommendLoanMoneySteps extends StepDefs {
     @cucumber.api.java.zh_cn.同时("^填写联系方式$")
     public void 填写联系方式() throws Throwable {
         PageFactory.initElements(driver, RecommendLoanPage.class);
-        PageFactory.initElements(driver, RecommendLoanPage.ContactInfoPage.class);
-        PageFactory.initElements(driver, RecommendLoanPage.LoanInfoPage.class);
-        PageFactory.initElements(driver, RecommendLoanPage.EvaluatePage.class);
+        PageFactory.initElements(driver, ContactInfoPage.class);
+        PageFactory.initElements(driver, LoanInfoPage.class);
+        PageFactory.initElements(driver, EvaluatePage.class);
         RecommendLoanProceed.execute(driver);
     }
 
@@ -55,13 +55,13 @@ public class RecommendLoanMoneySteps extends StepDefs {
 
     @并且("^点击快速选款$")
     public void 点击快速选款() throws Throwable {
-        PageFactory.initElements(driver, RecommendLoanPage.class);
-        RecommendLoanPage.next.click();
+        PageFactory.initElements(driver, LoanInfoPage.class);
+        LoanInfoPage.quickLoan.click();
     }
 
     @那么("^成功进入到测评结果页$")
     public void 成功进入到测评结果页() throws Throwable {
-        PageFactory.initElements(driver, RecommendLoanPage.EvaluatePage.class);
+        PageFactory.initElements(driver, EvaluatePage.class);
         if (Env.getProfile().equals("dev")) {
             Assert.assertTrue(driver.getCurrentUrl().contains("quicktest/step3"));
         }

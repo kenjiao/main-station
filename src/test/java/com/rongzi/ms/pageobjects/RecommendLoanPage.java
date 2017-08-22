@@ -110,6 +110,8 @@ public class RecommendLoanPage extends BaseClass {
         @FindBy(how= How.XPATH, using="//*[@id=\"txt_CreditCardAmount\"]")
         public static WebElement creditCardAmount;
 
+        @FindBy(how= How.XPATH, using="//*[@id=\"d16-Step3\"]/div/div[3]/a")
+        public static WebElement quickLoan;
 
     }
 
