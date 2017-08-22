@@ -23,7 +23,7 @@ public class RecommendLoanProceed {
 
         ContactInfoPage.verCode.sendKeys("111111");
 
-        RecommendLoanPage.next.click();
+        ContactInfoPage.next.click();
 
     }
 
