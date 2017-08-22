@@ -13,6 +13,7 @@ import cucumber.api.java.zh_cn.那么;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
 
@@ -55,14 +56,18 @@ public class RecommendLoanMoneySteps extends StepDefs {
 
     @并且("^点击快速选款$")
     public void 点击快速选款() throws Throwable {
-        PageFactory.initElements(driver, LoanInfoPage.class);
-        LoanInfoPage.quickLoan.click();
+        if (Env.getProfile().equals("dev")) {
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+            wait.until(driver -> driver.getCurrentUrl().contains("quicktest/step2"));
+            PageFactory.initElements(driver, LoanInfoPage.class);
+            LoanInfoPage.quickLoan.click();
+        }
     }
 
     @那么("^成功进入到测评结果页$")
     public void 成功进入到测评结果页() throws Throwable {
-        PageFactory.initElements(driver, EvaluatePage.class);
         if (Env.getProfile().equals("dev")) {
+            PageFactory.initElements(driver, EvaluatePage.class);
             Assert.assertTrue(driver.getCurrentUrl().contains("quicktest/step3"));
         }
     }

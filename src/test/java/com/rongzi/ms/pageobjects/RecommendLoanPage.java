@@ -39,7 +39,7 @@ public class RecommendLoanPage extends BaseClass {
         @FindBy(how = How.XPATH, using = "//*[@id=\"VeriCode\"]")
         public static WebElement verCode;
 
-        @FindBy(how = How.XPATH, using = "//footer/a")
+        @FindBy(how = How.CSS, using = "div.d-evalute-step1.d-evalute > div > footer > a")
         public static WebElement next;
 
     }
