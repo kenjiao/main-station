@@ -60,6 +60,9 @@ public class LpOnePageLoginPage extends BaseClass {
 		@FindBy(how=How.XPATH, using="//*[@id=\"xubox_layer5\"]/div[1]/div[1]/div/div/ul/li[12]/input")
 		public static WebElement submit;
 
+		@FindBy(how=How.XPATH, using="//*[@id=\"xubox_layer3\"]/div/div/div[1]/div")
+		public static WebElement apply_sucess;
+
 
 
 

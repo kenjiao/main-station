@@ -34,6 +34,7 @@ public class LpOnePageLoginSteps extends StepDefs {
 
     @那么("^贷款申请提交成功$")
     public void 贷款申请提交成功() throws Throwable {
+        PageFactory.initElements(driver, LpOnePageLoginPage.class);
 
         // TODO: 2017/8/5 assert loan money submit success
 
