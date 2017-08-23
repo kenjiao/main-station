@@ -54,12 +54,21 @@ public class RecommendLoanMoneySteps extends StepDefs {
         easyLoan.click();
     }
 
-    @并且("^点击快速选款$")
-    public void 点击快速选款() throws Throwable {
+    @那么("^成功进入测评页面$")
+    public void 成功进入测评页面() throws Throwable {
         if (Env.getProfile().equals("dev")) {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(driver -> driver.getCurrentUrl().contains("quicktest/step2"));
-            PageFactory.initElements(driver, LoanInfoPage.class);
+        }
+    }
+
+    @并且("^点击快速选款$")
+    public void 点击快速选款() throws Throwable {
+        if (Env.getProfile().equals("dev")) {
+            LoanInfoPage.loanAmount.sendKeys("2");
+            LoanInfoPage.loanPeriod.sendKeys("2");
+            LoanInfoPage.identity.click();
+            LoanInfoPage.salary.sendKeys("20000");
             LoanInfoPage.quickLoan.click();
         }
     }

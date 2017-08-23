@@ -66,6 +66,9 @@ public class RecommendLoanPage extends BaseClass {
         @FindBy(how = How.XPATH, using = "//*[@id=\"rd_identity_4\"]")
         public static WebElement identity;
 
+        @FindBy(how = How.XPATH, using = "//*[@id=\"Salary\"]")
+        public static WebElement salary;
+
         @FindBy(how = How.XPATH, using = "//*[@id=\"txt_IncomeDistributionType\"]")
         public static WebElement incomeDistributionType;
 

@@ -66,11 +66,6 @@ public class IntelligentLoanSteps extends StepDefs {
         BottomIntelligentLoanPage.free.click();
     }
 
-    @那么("^成功进入测评页面$")
-    public void 成功进入测评页面() throws Throwable {
-
-    }
-
 
 }
 
