@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import java.util.List;
+
 /**
  * Created by Yuan on 2017/7/11.
  */
@@ -72,11 +74,17 @@ public class RecommendLoanPage extends BaseClass {
         @FindBy(how = How.XPATH, using = "//*[@id=\"txt_IncomeDistributionType\"]")
         public static WebElement incomeDistributionType;
 
+        @FindBy(how = How.XPATH, using = "//*[@id=\"ul_IncomeDistributionType\"]/li")
+        public static List<WebElement> incomeDistributionTypes;
+
         @FindBy(how = How.XPATH, using = "//*[@id=\"txt_WorkingAge\"]")
         public static WebElement workingAge;
 
         @FindBy(how = How.XPATH, using = "//*[@id=\"txt_SocialSecurityFund\"]")
         public static WebElement socialSecurityFund;
+
+        @FindBy(how = How.XPATH, using = "//*[@id=\"ul_SocialSecurityFund\"]/li")
+        public static List<WebElement> socialSecurityFunds;
 
 
         @FindBy(how = How.XPATH, using = "//*[@id=\"Age\"]")

@@ -12,6 +12,7 @@ import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -65,10 +66,16 @@ public class RecommendLoanMoneySteps extends StepDefs {
     @并且("^点击快速选款$")
     public void 点击快速选款() throws Throwable {
         if (Env.getProfile().equals("dev")) {
+            Actions action = new Actions(driver);
+
             LoanInfoPage.loanAmount.sendKeys("2");
             LoanInfoPage.loanPeriod.sendKeys("2");
             LoanInfoPage.identity.click();
-            LoanInfoPage.salary.sendKeys("20000");
+            action.moveToElement(LoanInfoPage.incomeDistributionType).perform();
+            LoanInfoPage.incomeDistributionTypes.get(0).click();
+            action.moveToElement(LoanInfoPage.socialSecurityFund).perform();
+            LoanInfoPage.socialSecurityFunds.get(0).click();
+            LoanInfoPage.age.sendKeys("27");
             LoanInfoPage.quickLoan.click();
         }
     }
