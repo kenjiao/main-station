@@ -1,5 +1,6 @@
 package com.rongzi.ms.modules;
 
+import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.pageobjects.CityPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +13,13 @@ public class RongziAddressProceed {
 
 
     public static void open(WebDriver driver, String city) {
-        driver.get("http://www.rongzi.com/CityList");
+        driver.get(Env.getProperty("rongzi.index") + "/CityList");
 
         PageFactory.initElements(driver, CityPage.class);
 
         for (WebElement element : CityPage.cities) {
 
-            if(element.getText().equals(city)) {
+            if (element.getText().equals(city)) {
                 element.click();
                 return;
             }
