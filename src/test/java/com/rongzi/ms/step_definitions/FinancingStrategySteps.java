@@ -1,5 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.pageobjects.ConsignationPage;
 import com.rongzi.ms.pageobjects.FinancingStrategyPage;
 import com.rongzi.ms.pageobjects.RongziPage;
@@ -12,7 +13,7 @@ import org.testng.Assert;
 /**
  * Created by lining on 2017/7/17.
  */
-public class FinancingStrategySteps extends StepDefs{
+public class FinancingStrategySteps extends StepDefs {
 
 
     @当("^我点击融资攻略$")
@@ -43,9 +44,10 @@ public class FinancingStrategySteps extends StepDefs{
 
     @那么("^一键委托成功$")
     public void 一键委托成功() throws Throwable {
-       PageFactory.initElements(driver, ConsignationPage.class);
-       Assert.assertTrue(ConsignationPage.consignation_sucess.isDisplayed());
+        PageFactory.initElements(driver, ConsignationPage.class);
+        if (Env.getProfile().equals("dev")) {
+            Assert.assertTrue(ConsignationPage.consignation_sucess.isDisplayed());
+        }
 
-        // TODO: 2017/8/5 assert success
     }
 }
