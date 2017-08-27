@@ -24,7 +24,7 @@
         <proxy.host/>
         <proxy.port/>
         <remote.hub/>
-        <rongzi.index>http://www.rongzi.com</rongzi.index>
+        <rongzi.index>http://www.rongzi.cn</rongzi.index>
         <rongzi.city>上海市</rongzi.city>
     </properties>
 

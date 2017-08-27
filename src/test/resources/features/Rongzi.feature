@@ -115,7 +115,7 @@
 
 
   场景: 精简cn着陆页登陆
-    假如 我在精简cn着陆页首页"http://shanghai.rongzi.cn/lp/jingjian"
+    假如 我在精简cn着陆页首页"http://shanghai.rongzi.com/lp/jingjian"
     并且 输入精简cn着陆页用户信息
     同时 点击精简cn着陆页立即咨询
     那么 就要输入验证码
@@ -123,7 +123,7 @@
     那么 成功进入测评页面
 
   场景: 精简cn着陆页我要申请
-    假如 我在精简cn着陆页首页"http://shanghai.rongzi.cn/lp/jingjian"
+    假如 我在精简cn着陆页首页"http://shanghai.rongzi.com/lp/jingjian"
     当 我点击我要申请
     那么 就要输入免费申请的个人信息
     同时 点击提交
@@ -131,7 +131,7 @@
 
 
   场景: 完全cn着陆页登陆
-     假如 我在完全cn着陆页首页"http://shanghai.rongzi.cn/lp/wanquan"
+     假如 我在完全cn着陆页首页"http://shanghai.rongzi.com/lp/wanquan"
      并且 输入完全cn着陆页用户信息
      同时 点击完全cn着陆页立即免费咨询
      那么 就要输入验证码
@@ -139,7 +139,7 @@
      那么 成功进入测评页面
 
   场景:  完全cn着陆页页面中部蓝色智能贷
-    假如 我在完全着陆页首页"http://shanghai.rongzi.cn/lp/wanquan"
+    假如 我在完全着陆页首页"http://shanghai.rongzi.com/lp/wanquan"
     当  填写智能贷款个人信息
     并且 点击免费智能贷款
     那么 就要输入验证码
@@ -147,14 +147,14 @@
     那么 成功进入测评页面
 
   场景: 完全cn着陆页页面我也要免费申请
-    假如 我在完全着陆页首页"http://shanghai.rongzi.cn/lp/wanquan"
+    假如 我在完全着陆页首页"http://shanghai.rongzi.com/lp/wanquan"
     当 我点击我也要免费申请
     那么 就要输入免费申请的个人信息
     同时 点击提交
     那么 成功进入测评页面
 
   场景: 企业cn着陆页登陆
-    假如 我在企业cn着陆页首页"http://shanghai.rongzi.cn/lp/qiye"
+    假如 我在企业cn着陆页首页"http://shanghai.rongzi.com/lp/qiye"
     并且 输入企业cn着陆页用户信息
     同时 点击企业cn着陆页立即免费申请
     那么 就要输入验证码
@@ -162,7 +162,7 @@
     那么 成功进入测评页面
 
   场景: 企业cn着陆页立即免费申请
-    假如 我在企业cn着陆页首页"http://shanghai.rongzi.cn/lp/qiye"
+    假如 我在企业cn着陆页首页"http://shanghai.rongzi.com/lp/qiye"
     当 我点击免费申请
     那么 就要输入免费申请的个人信息
     同时 点击提交

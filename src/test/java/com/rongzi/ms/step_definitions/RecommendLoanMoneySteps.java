@@ -1,5 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
+import com.google.common.net.InternetDomainName;
 import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.RecommendLoanProceed;
 import com.rongzi.ms.pageobjects.RecommendLoanPage;
@@ -10,11 +11,16 @@ import com.rongzi.ms.pageobjects.RongziPage;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.net.URL;
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
 
@@ -23,6 +29,9 @@ import static com.rongzi.ms.pageobjects.RongziPage.easyLoan;
  * Created by lining on 2017/7/10.
  */
 public class RecommendLoanMoneySteps extends StepDefs {
+
+    public static final String COOKIE_VALUE = "tjM35WAxOR50VOYblRzh6gUy06X1EcetquYMa14YSxUhtKqBRjxZ8Gy0uL30ORHafKgHrT8TNraZFoxdB7mIvlRWL6zxfxMFw4%2b8nqB3xzo%2bGpGr7MGPVtwOIXIFMH7irvJAQAZ28RaNvNYOOfyQ6pjzG5xocA9tX0QF0uW634opb6qJKHSw9KlZAglQWwFU%2f5oOazBZ0FL6m98KruqjwO%2fAaSe%2fju%2bSCz70jR56NqYsvFUCBdelrDB4MtYNEfdhPEr1sm%2fTrHWlxY7X3gGBAIoBJiUoy40rvEpbLceQc5qzD%2bbojUkahFGXwrNeU2G2Nfacndf0utJFS6pRHS05qeYLuBnGJN%2fQTzJfNFOpjoGJJmP097B5I1qKsJMiezSjb74v6B2x64veLSzKqCOhOGDBO2vIjQMHe1TSnMbXtOJNKRLtw5RAveCaIRPzXru0zQ0jg8HLQB7coL6B3sU9p5ietU2e7Oc%2bNwUwGh3qHIWMTt%2boJjp7I3ID%2bNI%2btIVPbUCqT4iYGG3ebSwWpA3FdTkW9M62BenK2d%2bw8Uc%2bLyzQQHtzyJmfsER32lJudJcrDrCsegpYcwN9u%2fbYn55D8cE3RjImttPTl6gYlRUerW21mBWxx6Rf7CL9%2bICFArHCGpjBDjim5V4Ql793rTPAGkggpDPjXsy71EdukFZ9gtO3jfeH6JmfoEBZb3akHLQNHw%2fTqMgwn0qjmf%2bO9VLXqnsHLLOEwqulfj9NUqPD4Ly40P6%2bIgAQr24qTbsZQYuZORVou6PQv6Xgm0Ip5Eyy0%2fspa2dDP%2fbmjZSpM9lnOCzX29EbzIvma%2f5cxnQqd3eqQakxDCw3DCAU%2fVRdTaA0qfZf43BqWzPP0z2iwXDRd4Zku07Z0jFz1yGNFcgBJimM91vb4Wc%2bRCrY%2fCvDjFTfJQkF0MMrqo%2fL3MxhnZ0Dfvf5p0viL2gYRsJ7I7XSq%2b7xHSlW56uo95wHTHgmW7krOdw0WsXCOsIqqGXOtA94JKU%3d";
+    public static final String COOKIE_KEY = "main_user";
 
     @当("^我点击我要申请$")
     public void 我点击我要申请() throws Throwable {
@@ -58,8 +67,22 @@ public class RecommendLoanMoneySteps extends StepDefs {
     @那么("^成功进入测评页面$")
     public void 成功进入测评页面() throws Throwable {
         if (!Env.getProfile().equals("dev")) {
-            driver.manage().addCookie(new Cookie("main_user", "tjM35WAxOR50VOYblRzh6gUy06X1EcetquYMa14YSxUhtKqBRjxZ8Gy0uL30ORHafKgHrT8TNraZFoxdB7mIvlRWL6zxfxMFw4%2b8nqB3xzo%2bGpGr7MGPVtwOIXIFMH7irvJAQAZ28RaNvNYOOfyQ6pjzG5xocA9tX0QF0uW634opb6qJKHSw9KlZAglQWwFU%2f5oOazBZ0FL6m98KruqjwO%2fAaSe%2fju%2bSCz70jR56NqYsvFUCBdelrDB4MtYNEfdhPEr1sm%2fTrHWlxY7X3gGBAIoBJiUoy40rvEpbLceQc5qzD%2bbojUkahFGXwrNeU2G2Nfacndf0utJFS6pRHS05qeYLuBnGJN%2fQTzJfNFOpjoGJJmP097B5I1qKsJMiezSjb74v6B2x64veLSzKqCOhOGDBO2vIjQMHe1TSnMbXtOJNKRLtw5RAveCaIRPzXru0zQ0jg8HLQB7coL6B3sU9p5ietU2e7Oc%2bNwUwGh3qHIWMTt%2boJjp7I3ID%2bNI%2btIVPbUCqT4iYGG3ebSwWpA3FdTkW9M62BenK2d%2bw8Uc%2bLyzQQHtzyJmfsER32lJudJcrDrCsegpYcwN9u%2fbYn55D8cE3RjImttPTl6gYlRUerW21mBWxx6Rf7CL9%2bICFArHCGpjBDjim5V4Ql793rTPAGkggpDPjXsy71EdukFZ9gtO3jfeH6JmfoEBZb3akHLQNHw%2fTqMgwn0qjmf%2bO9VLXqnsHLLOEwqulfj9NUqPD4Ly40P6%2bIgAQr24qTbsZQYuZORVou6PQv6Xgm0Ip5Eyy0%2fspa2dDP%2fbmjZSpM9lnOCzX29EbzIvma%2f5cxnQqd3eqQakxDCw3DCAU%2fVRdTaA0qfZf43BqWzPP0z2iwXDRd4Zku07Z0jFz1yGNFcgBJimM91vb4Wc%2bRCrY%2fCvDjFTfJQkF0MMrqo%2fL3MxhnZ0Dfvf5p0viL2gYRsJ7I7XSq%2b7xHSlW56uo95wHTHgmW7krOdw0WsXCOsIqqGXOtA94JKU%3d", "/"));
-            driver.get(Env.getProperty("rongzi.index") + "/quicktest/step2");
+            Date expiry = Date.from(ZonedDateTime.now().plusDays(1).toInstant());
+            String currentUrl = driver.getCurrentUrl();
+            URL url = new URL(currentUrl);
+
+            String domain = InternetDomainName.from(url.getHost()).topPrivateDomain().toString();
+
+            Cookie cookie = new Cookie.Builder(COOKIE_KEY, COOKIE_VALUE)
+                    .path("/")
+                    .expiresOn(expiry)
+                    .domain(domain)
+                    .build();
+            driver.manage().addCookie(cookie);
+
+            URL evluateURL = new URL(url.getProtocol(), url.getHost(), url.getPort(), "/quicktest/step2");
+
+            driver.get(evluateURL.toString());
         }
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(driver -> driver.getCurrentUrl().contains("quicktest/step2"));
