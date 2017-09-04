@@ -1,5 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.modules.LpLoginPageProceed;
 import com.rongzi.ms.pageobjects.LpCompletelyLoginPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
@@ -17,8 +18,8 @@ import static com.rongzi.ms.pageobjects.LpCompletelyLoginPage.username;
  */
 public class LpCompletelyLoginSteps extends StepDefs{
     @假如("^我在完全着陆页首页\"([^\"]*)\"$")
-    public void 我在完全着陆页首页(String LpCompletelyIndex) throws Throwable {
-        driver.get(LpCompletelyIndex);
+    public void 我在完全着陆页首页(String lpCompletelyIndex) throws Throwable {
+        LpLoginPageProceed.open(driver, lpCompletelyIndex);
         PageFactory.initElements(driver, LpCompletelyLoginPage.class);
     }
 

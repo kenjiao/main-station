@@ -1,21 +1,14 @@
 package com.rongzi.ms.step_definitions;
 
-import com.rongzi.ms.helpers.Log;
+import com.rongzi.ms.modules.LpLoginPageProceed;
 import com.rongzi.ms.pageobjects.LpLoanLoginPage;
 import com.rongzi.ms.pageobjects.LpLoanLoginPage.ConsultPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.swing.*;
 
 /**
  * Created by lining on 2017/7/31.
@@ -23,7 +16,7 @@ import javax.swing.*;
 public class LpLoanLoginSteps extends StepDefs {
     @假如("^我在贷款着陆页首页\"([^\"]*)\"$")
     public void 我在贷款着陆页首页(String lpLoanIndex) throws Throwable {
-        driver.get(lpLoanIndex);
+        LpLoginPageProceed.open(driver, lpLoanIndex);
         PageFactory.initElements(driver, LpLoanLoginPage.class);
     }
 

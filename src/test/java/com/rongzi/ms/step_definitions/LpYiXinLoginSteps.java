@@ -1,6 +1,7 @@
 package com.rongzi.ms.step_definitions;
 
 import com.gargoylesoftware.htmlunit.Page;
+import com.rongzi.ms.modules.LpLoginPageProceed;
 import com.rongzi.ms.pageobjects.LpYiXinLoginPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
@@ -14,8 +15,8 @@ import org.openqa.selenium.support.PageFactory;
 public class LpYiXinLoginSteps extends StepDefs{
 
     @假如("^我在宜信着陆页首页\"([^\"]*)\"$")
-    public void 我在宜信着陆页首页(String LpYiXinIndex) throws Throwable {
-        driver.get(LpYiXinIndex);
+    public void 我在宜信着陆页首页(String lpYiXinIndex) throws Throwable {
+        LpLoginPageProceed.open(driver, lpYiXinIndex);
         PageFactory.initElements(driver, LpYiXinLoginPage.class);
     }
 
