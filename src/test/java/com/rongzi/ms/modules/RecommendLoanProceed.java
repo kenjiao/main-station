@@ -1,7 +1,7 @@
 package com.rongzi.ms.modules;
 
-import com.rongzi.ms.pageobjects.RecommendLoanPage;
-import com.rongzi.ms.pageobjects.RecommendLoanPage.ContactInfoPage;
+import com.rongzi.ms.pageobjects.web.RecommendLoanPage;
+import com.rongzi.ms.pageobjects.web.RecommendLoanPage.ContactInfoPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;

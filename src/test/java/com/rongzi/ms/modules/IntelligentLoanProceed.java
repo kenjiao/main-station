@@ -2,9 +2,9 @@ package com.rongzi.ms.modules;
 
 import com.rongzi.ms.domain.UserLoanInfo;
 import com.rongzi.ms.helpers.Log;
-import com.rongzi.ms.pageobjects.BottomIntelligentLoanPage;
-import com.rongzi.ms.pageobjects.CenterIntelligentLoanPage;
-import com.rongzi.ms.pageobjects.RightIntelligentLoanPage;
+import com.rongzi.ms.pageobjects.web.BottomIntelligentLoanPage;
+import com.rongzi.ms.pageobjects.web.CenterIntelligentLoanPage;
+import com.rongzi.ms.pageobjects.web.RightIntelligentLoanPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

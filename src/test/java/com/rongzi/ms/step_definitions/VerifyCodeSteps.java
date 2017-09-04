@@ -1,6 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
-import com.rongzi.ms.pageobjects.VerifyCodePage;
+import com.rongzi.ms.pageobjects.web.VerifyCodePage;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.那么;
 import org.openqa.selenium.support.PageFactory;

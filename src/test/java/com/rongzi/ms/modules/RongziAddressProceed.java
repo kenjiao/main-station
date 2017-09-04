@@ -1,6 +1,6 @@
 package com.rongzi.ms.modules;
 
-import com.rongzi.ms.pageobjects.CityPage;
+import com.rongzi.ms.pageobjects.web.CityPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
