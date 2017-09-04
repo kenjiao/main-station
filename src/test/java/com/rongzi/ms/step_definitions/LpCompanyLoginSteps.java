@@ -1,5 +1,6 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.LpLoginPageProceed;
 import com.rongzi.ms.pageobjects.LpCompanyLoginPage;
 import cucumber.api.java.zh_cn.假如;
@@ -13,8 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LpCompanyLoginSteps extends StepDefs {
     @假如("^我在企业着陆页首页\"([^\"]*)\"$")
     public void 我在企业着陆页首页(String lpCompanyIndex) throws Throwable {
-        LpLoginPageProceed.open(driver, lpCompanyIndex);
-        PageFactory.initElements(driver, LpCompanyLoginPage.class);
+        LpLoginPageProceed.open(driver, Env.getProperty("rongzi.index"), lpCompanyIndex);
     }
 
     @并且("^输入企业着陆页用户信息$")

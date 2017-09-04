@@ -1,6 +1,5 @@
 package com.rongzi.ms.modules;
 
-import com.rongzi.ms.helpers.Env;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -8,7 +7,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class LpLoginPageProceed {
 
-    public static void open(WebDriver driver, String index) {
-        driver.get(Env.getProperty("rongzi.index") + index);
+
+    public static void open(WebDriver driver, String index, String suffix) {
+        driver.get(index + suffix);
     }
 }

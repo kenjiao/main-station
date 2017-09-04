@@ -12,13 +12,13 @@ public class RongziSteps extends StepDefs {
 
     @假如("^我在主站首页$")
     public void 我在主站首页() throws Throwable {
-        RongziAddressProceed.open(driver, Env.getProperty("rongzi.city", "上海市"));
+        RongziAddressProceed.open(driver, Env.getProperty("rongzi.index"), Env.getProperty("rongzi.city", "上海市"));
     }
 
 
     @那么("^主站首页的主题是\"([^\"]*)\"$")
     public void 主站首页的主题是(String title) throws Throwable {
-        RongziAddressProceed.execute(driver,title);
+        RongziAddressProceed.execute(driver, title);
     }
 
 

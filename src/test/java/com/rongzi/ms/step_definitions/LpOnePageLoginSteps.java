@@ -17,12 +17,12 @@ public class LpOnePageLoginSteps extends StepDefs {
     @假如("^我在onepage着陆页首页\"([^\"]*)\"$")
     public void 我在onepage着陆页首页(String LpOnePageIndex) throws Throwable {
         driver.get(LpOnePageIndex);
-        PageFactory.initElements(driver, LpOnePageLoginPage.class);
     }
 
 
     @并且("^输入onepage着陆页用户信息$")
     public void 输入onepage着陆页用户信息() throws Throwable {
+        PageFactory.initElements(driver, LpOnePageLoginPage.class);
         LpOnePageLoginPage.username.sendKeys("li");
         LpOnePageLoginPage.telphone.sendKeys("18321954023");
     }

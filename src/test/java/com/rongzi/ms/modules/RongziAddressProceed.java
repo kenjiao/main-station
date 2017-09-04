@@ -1,6 +1,5 @@
 package com.rongzi.ms.modules;
 
-import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.pageobjects.CityPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +11,8 @@ import static org.testng.AssertJUnit.assertTrue;
 public class RongziAddressProceed {
 
 
-    public static void open(WebDriver driver, String city) {
-        driver.get(Env.getProperty("rongzi.index") + "/CityList");
+    public static void open(WebDriver driver, String index, String city) {
+        driver.get(index + "/CityList");
 
         PageFactory.initElements(driver, CityPage.class);
 
