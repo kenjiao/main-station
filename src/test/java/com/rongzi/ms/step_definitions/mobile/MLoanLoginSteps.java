@@ -3,12 +3,14 @@ package com.rongzi.ms.step_definitions.mobile;
 import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.LpLoginPageProceed;
 import com.rongzi.ms.modules.RongziAddressProceed;
+import com.rongzi.ms.pageobjects.mobile.MLoanLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.那么;
+import org.openqa.selenium.support.PageFactory;
 
 import java.net.URL;
 
@@ -28,14 +30,16 @@ public class MLoanLoginSteps extends StepDefs {
 
     @并且("^输入贷款信息$")
     public void 输入贷款信息() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        PageFactory.initElements(driver,MLoanLoginPage.class);
+        MLoanLoginPage.username.sendKeys("li");
+        MLoanLoginPage.mobile.sendKeys("18321950423");
+        MLoanLoginPage.imgCode.sendKeys("1234");
+        MLoanLoginPage.smsCode.sendKeys("123456");
     }
 
     @同时("^点击马上申请$")
     public void 点击马上申请() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        MLoanLoginPage.submit.click();
     }
 
     @那么("^成功进入M站测评页面$")

@@ -13,7 +13,7 @@ public class LoanProductPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="/html/body/section[4]/form/div[1]/input")
+	@FindBy(how=How.XPATH, using="/html/body/section[1]/div/div[2]/div[2]/form/div[1]/input")
 	public static WebElement username;
 
 	@FindBy(how=How.XPATH, using="/html/body/section[4]/form/div[2]/input")
