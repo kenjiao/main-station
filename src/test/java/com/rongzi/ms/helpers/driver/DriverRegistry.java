@@ -27,8 +27,9 @@ public class DriverRegistry {
         if (type == null) {
             throw new IllegalArgumentException("driver type is not specified");
         }
-        if (registry.containsKey(type.toLowerCase())) {
-            return registry.get(type);
+        String key = type.toUpperCase();
+        if (registry.containsKey(key)) {
+            return registry.get(key);
         } else {
             throw new IllegalArgumentException("Unknown driver type " + type);
         }

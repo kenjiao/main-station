@@ -35,7 +35,7 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
 
         String directory = Env.getProperty("binary.root.directory", "selenium_standalone");
 
-        BinaryType binaryType = BinaryType.valueOf(Env.getWebDriver());
+        BinaryType binaryType = BinaryType.valueOf(Env.getWebDriver().toUpperCase());
 
         String property = binaryType.getDriverSystemProperty();
 
