@@ -10,26 +10,21 @@ import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.那么;
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.support.PageFactory;
-
-import java.net.URL;
 
 public class MLoanLoginSteps extends StepDefs {
 
     @假如("^我在\"([^\"]*)\"着陆页$")
     public void 我在着陆页(String suffix) throws Throwable {
-        String index = Env.getProperty("rongzi.index");
-        URL url = new URL(index);
-        URL mobileUrl = new URL(url.getProtocol(), "m." + url.getHost(), url.getPort(), url.getFile());
-        RongziAddressProceed.open(driver, mobileUrl.toString(), Env.getProperty("rongzi.city", "上海市"));
-
-        LpLoginPageProceed.open(driver, mobileUrl.toString(), suffix);
-
+        String index = StringUtils.replace(Env.getProperty("rongzi.index"), "www", "m");
+        RongziAddressProceed.open(driver, index, Env.getProperty("rongzi.city", "上海市"));
+        LpLoginPageProceed.open(driver, index, suffix);
     }
 
     @并且("^输入贷款信息$")
     public void 输入贷款信息() throws Throwable {
-        PageFactory.initElements(driver,MLoanLoginPage.class);
+        PageFactory.initElements(driver, MLoanLoginPage.class);
         MLoanLoginPage.username.sendKeys("li");
         MLoanLoginPage.mobile.sendKeys("18321950423");
         MLoanLoginPage.imgCode.sendKeys("1234");

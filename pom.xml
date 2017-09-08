@@ -16,7 +16,7 @@
         <picocontainer.version>2.15</picocontainer.version>
         <cucumber.picocontainer.version>1.2.5</cucumber.picocontainer.version>
         <selenium.version>3.4.0</selenium.version>
-        <appium.version>5.0.2</appium.version>
+        <appium.version>5.0.0-BETA9</appium.version>
         <binary.root.directory>selenium_standalone</binary.root.directory>
         <binary.zips.directory>selenium_standalone_zips</binary.zips.directory>
         <webdriver>chrome</webdriver>
