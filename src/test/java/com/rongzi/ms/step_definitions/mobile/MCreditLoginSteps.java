@@ -1,6 +1,7 @@
 package com.rongzi.ms.step_definitions.mobile;
 
 import com.rongzi.ms.pageobjects.mobile.MCreditLoginPage;
+import com.rongzi.ms.step_definitions.StepDefs;
 import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static com.rongzi.ms.pageobjects.BaseClass.driver;
 
-public class MCreditLoginSteps {
+public class MCreditLoginSteps extends StepDefs{
     @并且("^输入信用信息$")
     public void 输入信用信息() throws Throwable {
         PageFactory.initElements(driver,MCreditLoginPage.class);

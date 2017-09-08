@@ -96,6 +96,15 @@
     同时 点击提交
     那么 成功进入测评页面
 
+  场景: 车抵的com着陆页登陆
+    假如 我在车抵着陆页首页"http://shanghai.rongzi.com/lp/chedi"
+    并且 输入车抵着陆页用户信息
+    同时 点击车抵着陆页立即咨询
+    那么 就要输入验证码
+    并且 我点击提交验证码
+    那么 成功进入测评页面
+
+
 
   场景: onepage的cn着陆页登陆
     假如 我在onepage着陆页首页"http://shanghai.rongzi.cn/static/onepage"
