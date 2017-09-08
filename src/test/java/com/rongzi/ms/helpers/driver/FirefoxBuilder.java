@@ -8,11 +8,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 /**
  * Created by lining on 2017/9/8.
  */
-public class ChromeBuilder extends WebDriverBuilder {
+public class FirefoxBuilder extends WebDriverBuilder {
 
 
-    public ChromeBuilder() {
-        super(DesiredCapabilities.chrome());
+    public FirefoxBuilder() {
+        super(DesiredCapabilities.firefox());
     }
 
 
@@ -21,16 +21,16 @@ public class ChromeBuilder extends WebDriverBuilder {
         return new ChromeDriver(getCapabilities());
     }
 
-    public static class ChromeMeta extends WebDriverMeta {
+    public static class FirefoxMeta extends WebDriverMeta {
 
         @Override
         public String getType() {
-            return BinaryType.CHROME.name();
+            return BinaryType.FIREFOX.name();
         }
 
         @Override
         public DriverBuilder getBuilder() {
-            return new ChromeBuilder();
+            return new FirefoxBuilder();
         }
     }
 }

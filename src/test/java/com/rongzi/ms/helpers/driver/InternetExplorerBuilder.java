@@ -3,34 +3,34 @@ package com.rongzi.ms.helpers.driver;
 import com.rongzi.ms.helpers.BinaryType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * Created by lining on 2017/9/8.
  */
-public class ChromeBuilder extends WebDriverBuilder {
+public class InternetExplorerBuilder extends WebDriverBuilder {
 
 
-    public ChromeBuilder() {
-        super(DesiredCapabilities.chrome());
+    public InternetExplorerBuilder() {
+        super(DesiredCapabilities.internetExplorer());
     }
-
 
     @Override
     public WebDriver getWebDriver() {
-        return new ChromeDriver(getCapabilities());
+        return new InternetExplorerDriver(getCapabilities());
     }
 
-    public static class ChromeMeta extends WebDriverMeta {
+    public static class InternetExplorereMeta extends WebDriverMeta {
 
         @Override
         public String getType() {
-            return BinaryType.CHROME.name();
+            return BinaryType.IE.name();
         }
 
         @Override
         public DriverBuilder getBuilder() {
-            return new ChromeBuilder();
+            return new InternetExplorerBuilder();
         }
     }
 }

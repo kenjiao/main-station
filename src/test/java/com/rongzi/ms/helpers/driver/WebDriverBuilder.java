@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -29,7 +30,7 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
     }
 
     @Override
-    public void init() throws IOException {
+    public void init() {
 
 
         String directory = Env.getProperty("binary.root.directory", "selenium_standalone");
@@ -42,43 +43,51 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
 
         Path dir = Paths.get(directory);
 
-        Files.walk(dir)
-                .filter(path -> Files.isRegularFile(path))
-                .forEach(path -> {
-                    String filename = path.getFileName().toString();
-                    if (binaries.contains(filename)) {
-                        String binaryPath = path.toAbsolutePath().toString();
-                        System.setProperty(property, binaryPath);
-                    }
+        try {
+            Files.walk(dir)
+                    .filter(path -> Files.isRegularFile(path))
+                    .forEach(path -> {
+                        String filename = path.getFileName().toString();
+                        if (binaries.contains(filename)) {
+                            String binaryPath = path.toAbsolutePath().toString();
+                            System.setProperty(property, binaryPath);
+                        }
 
-                });
+                    });
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
 
     @Override
-    public WebDriver build() throws IOException {
+    public WebDriver build() {
         String hub = Env.getProperty("remote.hub");
-        proxy();
+        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
+            proxy();
+        }
         if (StringUtils.isEmpty(hub)) {
             init();
             return getWebDriver();
         } else {
-            return new RemoteWebDriver(new URL(hub), capabilities);
+            try {
+                return new RemoteWebDriver(new URL(hub), capabilities);
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
 
     public void proxy() {
 
-        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
-            String proxyDetails = String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
-            org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
-            proxy.setProxyType(MANUAL);
-            proxy.setHttpProxy(proxyDetails);
-            proxy.setSslProxy(proxyDetails);
-            capabilities.setCapability(PROXY, proxy);
-        }
+        String proxyDetails = String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
+        org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+        proxy.setProxyType(MANUAL);
+        proxy.setHttpProxy(proxyDetails);
+        proxy.setSslProxy(proxyDetails);
+        capabilities.setCapability(PROXY, proxy);
 
     }
 
@@ -89,9 +98,6 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
     }
 
     public abstract static class WebDriverMeta extends DriverMeta {
-        @Override
-        public String getType() {
-            return "WEB";
-        }
+
     }
 }

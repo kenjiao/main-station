@@ -9,9 +9,9 @@ import java.io.IOException;
  */
 public interface DriverBuilder {
 
-    void init() throws IOException;
+    void init();
 
-    WebDriver build() throws IOException;
+    WebDriver build();
 
     public abstract static class DriverMeta {
 
