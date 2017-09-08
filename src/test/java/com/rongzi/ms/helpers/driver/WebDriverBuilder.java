@@ -29,7 +29,6 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
         this.capabilities = capabilities;
     }
 
-    @Override
     public void init() {
 
 
@@ -82,13 +81,17 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
 
     public void proxy() {
 
-        String proxyDetails = String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
+        String proxyDetails = getProxyDetails();
         org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
         proxy.setProxyType(MANUAL);
         proxy.setHttpProxy(proxyDetails);
         proxy.setSslProxy(proxyDetails);
         capabilities.setCapability(PROXY, proxy);
 
+    }
+
+    protected String getProxyDetails() {
+        return String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
     }
 
     public abstract WebDriver getWebDriver();

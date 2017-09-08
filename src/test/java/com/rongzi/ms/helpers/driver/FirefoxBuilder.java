@@ -3,6 +3,7 @@ package com.rongzi.ms.helpers.driver;
 import com.rongzi.ms.helpers.BinaryType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
@@ -18,7 +19,7 @@ public class FirefoxBuilder extends WebDriverBuilder {
 
     @Override
     public WebDriver getWebDriver() {
-        return new ChromeDriver(getCapabilities());
+        return new FirefoxDriver(getCapabilities());
     }
 
     public static class FirefoxMeta extends WebDriverMeta {

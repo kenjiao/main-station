@@ -3,6 +3,7 @@ package com.rongzi.ms.step_definitions;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -35,8 +36,10 @@ public class SharedDriver extends EventFiringWebDriver {
 
     @Before
     public void deleteAllCookies() {
-        manage().deleteAllCookies();
-        manage().window().maximize();
+        if (!(REAL_DRIVER instanceof AppiumDriver)) {
+            manage().deleteAllCookies();
+            manage().window().maximize();
+        }
     }
 
     @After

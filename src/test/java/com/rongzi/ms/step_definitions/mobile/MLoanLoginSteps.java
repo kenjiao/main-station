@@ -25,7 +25,6 @@ public class MLoanLoginSteps extends StepDefs {
 
         LpLoginPageProceed.open(driver, mobileUrl.toString(), suffix);
 
-        throw new PendingException();
     }
 
     @并且("^输入贷款信息$")

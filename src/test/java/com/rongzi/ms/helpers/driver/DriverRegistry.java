@@ -1,8 +1,10 @@
 package com.rongzi.ms.helpers.driver;
 
+import com.rongzi.ms.helpers.driver.AndroidBuilder.AndroidMeta;
 import com.rongzi.ms.helpers.driver.ChromeBuilder.ChromeMeta;
 import com.rongzi.ms.helpers.driver.DriverBuilder.DriverMeta;
 import com.rongzi.ms.helpers.driver.FirefoxBuilder.FirefoxMeta;
+import com.rongzi.ms.helpers.driver.IOSBuilder.IOSMeta;
 import com.rongzi.ms.helpers.driver.InternetExplorerBuilder.InternetExplorereMeta;
 import com.rongzi.ms.helpers.driver.PhantomjsBuilder.PhantomjsMeta;
 
@@ -21,6 +23,8 @@ public class DriverRegistry {
         register(new FirefoxMeta());
         register(new PhantomjsMeta());
         register(new InternetExplorereMeta());
+        register(new AndroidMeta());
+        register(new IOSMeta());
     }
 
     public static DriverMeta getMeta(String type) {

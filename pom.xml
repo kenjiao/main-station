@@ -16,6 +16,7 @@
         <picocontainer.version>2.15</picocontainer.version>
         <cucumber.picocontainer.version>1.2.5</cucumber.picocontainer.version>
         <selenium.version>3.4.0</selenium.version>
+        <appium.version>5.0.2</appium.version>
         <binary.root.directory>selenium_standalone</binary.root.directory>
         <binary.zips.directory>selenium_standalone_zips</binary.zips.directory>
         <webdriver>chrome</webdriver>
@@ -115,6 +116,14 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
+        <!-- appium begin-->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium.version}</version>
+        </dependency>
+        <!-- appium end-->
 
     </dependencies>
 
