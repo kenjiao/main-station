@@ -36,8 +36,12 @@ public class Env {
         return properties.getProperty(key, defaultValue);
     }
 
-    public static String getProfile(){
+    public static String getProfile() {
         return getProperty("profile", "default");
+    }
+
+    public static String getWebDriver() {
+        return getProperty("webdriver", "default");
     }
 
 }
