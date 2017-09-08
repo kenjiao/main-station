@@ -14,7 +14,7 @@ public class ProductDetailsPage extends BaseClass {
         super(driver);
     }
 
-    @FindBy(how = How.CSS, using = ".right-formLoan > form > div.inforBox.nameBox > input")
+    @FindBy(how = How.XPATH, using = "/html/body/section[1]/div/div[2]/div[2]/form/div[1]/input")
     public static WebElement username;
 
     @FindBy(how = How.CSS, using = ".right-formLoan > form > div:nth-child(4) > input")
