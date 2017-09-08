@@ -5,7 +5,11 @@ import com.rongzi.ms.modules.LpLoginPageProceed;
 import com.rongzi.ms.pageobjects.web.lp.LpVehicleMortgageLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
 import cucumber.api.PendingException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Administrator on 2017/9/8 0008.
@@ -28,5 +32,11 @@ public class LpVehicleMortgageLoginSteps extends StepDefs{
     public void 点击车抵着陆页立即咨询() throws Throwable {
         PageFactory.initElements(driver, LpVehicleMortgageLoginPage.class);
         LpVehicleMortgageLoginPage.submit.click();
+    }
+
+    @cucumber.api.java.zh_cn.并且("^点击查看详情$")
+    public void 点击查看详情() throws Throwable {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        LpVehicleMortgageLoginPage.view_details.click();
     }
 }
