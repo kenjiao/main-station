@@ -37,6 +37,10 @@ public class LpVehicleMortgageLoginSteps extends StepDefs{
     @cucumber.api.java.zh_cn.并且("^点击查看详情$")
     public void 点击查看详情() throws Throwable {
         WebDriverWait wait = new WebDriverWait(driver, 10);
+        Actions action = new Actions(driver);
+
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
+
         LpVehicleMortgageLoginPage.view_details.click();
     }
 }
