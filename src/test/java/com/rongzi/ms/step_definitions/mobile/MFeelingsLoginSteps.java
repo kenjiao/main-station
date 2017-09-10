@@ -22,7 +22,6 @@ public class MFeelingsLoginSteps extends StepDefs{
 
     @cucumber.api.java.zh_cn.同时("^点击立即免费申请$")
     public void 点击立即免费申请() throws Throwable {
-        PageFactory.initElements(driver, MFeelingsLoginPage.class);
         MFeelingsLoginPage.submit.click();
 
     }

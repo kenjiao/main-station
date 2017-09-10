@@ -6,17 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class MCreditLoginPage extends BaseClass {
+public class MLoanConsultLoginPage extends BaseClass {
 
-	public MCreditLoginPage(WebDriver driver)
+	public MLoanConsultLoginPage(WebDriver driver)
 	{
 		super(driver);
 	}
-	@FindBy(how=How.XPATH, using="//*[@id=\"xinyong_currentCity\"]")
-	public static WebElement city;
-
-	@FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
-	public static WebElement shanghai;
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"userName\"]")
 	public static WebElement username;

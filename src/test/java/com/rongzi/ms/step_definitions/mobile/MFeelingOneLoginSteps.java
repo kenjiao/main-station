@@ -22,7 +22,6 @@ public class MFeelingOneLoginSteps extends StepDefs{
 
     @cucumber.api.java.zh_cn.同时("^点击情怀one的申请$")
     public void 点击情怀one的申请() throws Throwable {
-        PageFactory.initElements(driver, MFeelingsOneLoginPage.class);
         MFeelingsOneLoginPage.submit.click();
     }
 }

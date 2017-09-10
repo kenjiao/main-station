@@ -22,7 +22,6 @@ public class MYinXinLoginSteps extends StepDefs{
 
     @cucumber.api.java.zh_cn.同时("^点击立即借款$")
     public void 点击立即借款() throws Throwable {
-        PageFactory.initElements(driver, MYiXinLoginPage.class);
         MYiXinLoginPage.submit.click();
 
     }
