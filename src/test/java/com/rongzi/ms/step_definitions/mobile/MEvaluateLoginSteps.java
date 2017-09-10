@@ -14,6 +14,8 @@ public class MEvaluateLoginSteps extends StepDefs{
     @cucumber.api.java.zh_cn.并且("^输入贷款的信息$")
     public void 输入贷款的信息() throws Throwable {
         PageFactory.initElements(driver,MEvaluateLoginPage.class);
+        MEvaluateLoginPage.loan_money.click();
+        MEvaluateLoginPage.money.click();
         MEvaluateLoginPage.username.sendKeys("li");
         MEvaluateLoginPage.cell_Phone.sendKeys("18321950423");
         MEvaluateLoginPage.imgCode.sendKeys("1234");
@@ -22,7 +24,6 @@ public class MEvaluateLoginSteps extends StepDefs{
 
     @cucumber.api.java.zh_cn.同时("^点击evaluate的极速贷款$")
     public void 点击evaluate的极速贷款() throws Throwable {
-        PageFactory.initElements(driver,MEvaluateLoginPage.class);
         MEvaluateLoginPage.submit.click();
     }
 }

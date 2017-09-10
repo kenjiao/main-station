@@ -13,6 +13,8 @@ public class MCreditLoginSteps extends StepDefs{
     @并且("^输入信用信息$")
     public void 输入信用信息() throws Throwable {
         PageFactory.initElements(driver,MCreditLoginPage.class);
+        MCreditLoginPage.city.click();
+        MCreditLoginPage.shanghai.click();
         MCreditLoginPage.username.sendKeys("li");
         MCreditLoginPage.mobile.sendKeys("18321950423");
         MCreditLoginPage.smsCode.sendKeys("123456");
@@ -22,7 +24,6 @@ public class MCreditLoginSteps extends StepDefs{
 
     @同时("^点击免费申请贷款$")
     public void 点击免费申请贷款() throws Throwable {
-        PageFactory.initElements(driver,MCreditLoginPage.class);
         MCreditLoginPage.submit.click();
     }
 }
