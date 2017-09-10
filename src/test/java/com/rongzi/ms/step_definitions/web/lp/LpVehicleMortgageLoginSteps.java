@@ -14,10 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by Administrator on 2017/9/8 0008.
  */
-public class LpVehicleMortgageLoginSteps extends StepDefs{
+public class LpVehicleMortgageLoginSteps extends StepDefs {
     @cucumber.api.java.zh_cn.假如("^我在车抵着陆页首页\"([^\"]*)\"$")
     public void 我在车抵着陆页首页(String LpVehicleMortgageIndex) throws Throwable {
-       driver.get(LpVehicleMortgageIndex);
+        driver.get(LpVehicleMortgageIndex);
     }
 
     @cucumber.api.java.zh_cn.并且("^输入车抵着陆页用户信息$")
@@ -39,7 +39,9 @@ public class LpVehicleMortgageLoginSteps extends StepDefs{
         WebDriverWait wait = new WebDriverWait(driver, 10);
         Actions action = new Actions(driver);
 
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
+        PageFactory.initElements(driver, LpVehicleMortgageLoginPage.class);
+
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
 
         LpVehicleMortgageLoginPage.view_details.click();
     }
