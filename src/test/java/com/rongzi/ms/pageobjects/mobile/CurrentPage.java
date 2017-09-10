@@ -18,7 +18,6 @@ public class CurrentPage extends BaseClass {
     }
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"currentCity\"]")
-    @WithTimeout(time = 5, unit = TimeUnit.SECONDS)
     public static WebElement currentCity;
 
 }

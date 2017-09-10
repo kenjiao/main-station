@@ -11,15 +11,14 @@ import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.那么;
 import org.apache.commons.lang3.StringUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 public class MLoanLoginSteps extends StepDefs {
+
+    WebDriverWait wait = new WebDriverWait(driver, 10);
 
     @假如("^我在\"([^\"]*)\"着陆页$")
     public void 我在着陆页(String suffix) throws Throwable {
@@ -27,11 +26,13 @@ public class MLoanLoginSteps extends StepDefs {
         String city = Env.getProperty("rongzi.city", "上海");
         LpLoginPageProceed.open(driver, index, suffix);
 
+
         PageFactory.initElements(driver, CurrentPage.class);
+        wait.until(ExpectedConditions.elementToBeClickable(CurrentPage.currentCity));
         CurrentPage.currentCity.click();
 
         PageFactory.initElements(driver, MCityPage.class);
-
+        Thread.sleep(3 * 1000);
         for (WebElement element : MCityPage.cities) {
             if (element.getText().equals(city)) {
                 element.click();
@@ -45,6 +46,8 @@ public class MLoanLoginSteps extends StepDefs {
     @并且("^输入贷款信息$")
     public void 输入贷款信息() throws Throwable {
         PageFactory.initElements(driver, MLoanLoginPage.class);
+        wait.until(ExpectedConditions.visibilityOf(MLoanLoginPage.username));
+
         MLoanLoginPage.username.sendKeys("li");
         MLoanLoginPage.mobile.sendKeys("18321950423");
         MLoanLoginPage.imgCode.sendKeys("1234");
