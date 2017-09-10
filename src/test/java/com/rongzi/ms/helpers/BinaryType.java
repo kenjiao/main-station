@@ -3,12 +3,12 @@ package com.rongzi.ms.helpers;
 import java.util.ArrayList;
 
 public enum BinaryType {
-    INTERNETEXPLORER(
+    IE(
             new ArrayList<String>() {{
                 add("IEDriverServer.exe");
             }},
             "webdriver.ie.driver"),
-    GOOGLECHROME(
+    CHROME(
             new ArrayList<String>() {{
                 add("chromedriver.exe");
                 add("chromedriver");
@@ -20,13 +20,13 @@ public enum BinaryType {
                 add("phantomjs");
             }},
             "phantomjs.binary.path"),
-    OPERACHROMIUM(
+    OPERA(
             new ArrayList<String>() {{
                 add("operadriver.exe");
                 add("operadriver");
             }},
             "webdriver.opera.driver"),
-    MARIONETTE(
+    FIREFOX(
             new ArrayList<String>() {{
                 add("wires");
                 add("wires.exe");

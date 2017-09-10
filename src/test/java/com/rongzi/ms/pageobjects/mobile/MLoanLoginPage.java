@@ -8,27 +8,24 @@ import org.openqa.selenium.support.How;
 
 public class MLoanLoginPage extends BaseClass {
 
-	public MLoanLoginPage(WebDriver driver)
-	{
-		super(driver);
-	}
+    public MLoanLoginPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"userName\"]")
-	public static WebElement username;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"userName\"]")
+    public static WebElement username;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"cellPhoneNumber\"]")
-	public static WebElement mobile;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"cellPhoneNumber\"]")
+    public static WebElement mobile;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"oneKeyBtnSubmit\"]")
-	public static WebElement submit;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"oneKeyBtnSubmit\"]")
+    public static WebElement submit;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"inputImgCode\"]")
-	public static WebElement imgCode;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"inputImgCode\"]")
+    public static WebElement imgCode;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"inputSmsCode\"]")
-	public static WebElement smsCode;
-
-
+    @FindBy(how = How.XPATH, using = "//*[@id=\"inputSmsCode\"]")
+    public static WebElement smsCode;
 
 
 }

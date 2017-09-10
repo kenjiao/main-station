@@ -1,5 +1,6 @@
 package com.rongzi.ms.helpers;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -29,15 +30,21 @@ public class Env {
     }
 
     public static String getProperty(String key) {
-        return properties.getProperty(key);
+        String property = System.getProperty(key);
+        return StringUtils.isEmpty(property) ? properties.getProperty(key) : property;
     }
 
     public static String getProperty(String key, String defaultValue) {
-        return properties.getProperty(key, defaultValue);
+        String property = getProperty(key);
+        return StringUtils.isEmpty(property) ? defaultValue : property;
     }
 
-    public static String getProfile(){
+    public static String getProfile() {
         return getProperty("profile", "default");
+    }
+
+    public static String getWebDriver() {
+        return getProperty("webdriver", "default");
     }
 
 }
