@@ -7,22 +7,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by lining on 2017/9/10.
  */
-public class MCityPage extends BaseClass {
-
-    public MCityPage(WebDriver driver) {
+public class CurrentPage extends BaseClass {
+    public CurrentPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(how = How.XPATH, using = "//header/div")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"currentCity\"]")
     @WithTimeout(time = 5, unit = TimeUnit.SECONDS)
-    public static WebElement header;
+    public static WebElement currentCity;
 
-    @FindBy(how = How.XPATH, using = "//*[@class=\"hot-city-section\"]/div/div/a")
-    public static List<WebElement> cities;
 }

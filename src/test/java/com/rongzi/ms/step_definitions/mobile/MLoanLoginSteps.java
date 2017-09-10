@@ -2,6 +2,8 @@ package com.rongzi.ms.step_definitions.mobile;
 
 import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.LpLoginPageProceed;
+import com.rongzi.ms.pageobjects.mobile.CurrentPage;
+import com.rongzi.ms.pageobjects.mobile.MCityPage;
 import com.rongzi.ms.pageobjects.mobile.MLoanLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
 import cucumber.api.java.zh_cn.假如;
@@ -25,13 +27,12 @@ public class MLoanLoginSteps extends StepDefs {
         String city = Env.getProperty("rongzi.city", "上海");
         LpLoginPageProceed.open(driver, index, suffix);
 
-        WebElement selectCity = driver.findElement(By.id("currentCity"));
+        PageFactory.initElements(driver, CurrentPage.class);
+        CurrentPage.currentCity.click();
 
-        selectCity.click();
+        PageFactory.initElements(driver, MCityPage.class);
 
-        List<WebElement> cities = driver.findElements(By.xpath("//*[@class=\"hot-city-section\"]/div/div/a"));
-
-        for (WebElement element : cities) {
+        for (WebElement element : MCityPage.cities) {
             if (element.getText().equals(city)) {
                 element.click();
                 return;
@@ -44,8 +45,6 @@ public class MLoanLoginSteps extends StepDefs {
     @并且("^输入贷款信息$")
     public void 输入贷款信息() throws Throwable {
         PageFactory.initElements(driver, MLoanLoginPage.class);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(MLoanLoginPage.username));
         MLoanLoginPage.username.sendKeys("li");
         MLoanLoginPage.mobile.sendKeys("18321950423");
         MLoanLoginPage.imgCode.sendKeys("1234");
