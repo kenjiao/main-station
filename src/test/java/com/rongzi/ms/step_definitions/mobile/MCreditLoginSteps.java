@@ -22,7 +22,6 @@ public class MCreditLoginSteps extends StepDefs{
 
     @同时("^点击免费申请贷款$")
     public void 点击免费申请贷款() throws Throwable {
-        PageFactory.initElements(driver,MCreditLoginPage.class);
         MCreditLoginPage.submit.click();
     }
 }
