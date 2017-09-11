@@ -172,7 +172,31 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
 
 通过设置环境变量来选择测试的浏览器 `mvn clean verify -Dwebdriver=chrome`
 
-根据tags来过滤场景 `mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @user_login"`
+根据tags来过滤场景
+
+*   测试PC登录页
+    
+```
+    mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @web_login"
+```
+
+*   测试PC着陆页
+    
+```
+    mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @web_lp"
+```
+
+*   测试M站着陆页
+    
+```
+    mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @mobile"
+```
+
+*   测试PC登录页和着陆页
+    
+```
+    mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @web_login,@web_lp"
+```
 
 
 ## 和 [jenkins](https://jenkins.io/)集成

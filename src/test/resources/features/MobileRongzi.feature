@@ -1,5 +1,5 @@
 # language: zh-CN
-
+@mobile
 功能: 登陆东方融资网着陆页
 
     场景: M站贷款着陆页
