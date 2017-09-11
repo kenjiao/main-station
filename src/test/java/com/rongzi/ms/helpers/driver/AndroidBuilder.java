@@ -26,7 +26,7 @@ public class AndroidBuilder extends MobileDriverBuilder {
     public DesiredCapabilities getCapabilities() {
         DesiredCapabilities capabilities = super.getCapabilities();
         capabilities.setCapability(MobileCapabilityType.NO_RESET, false); //不初始化浏览器
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "A69P0216511000240");  //设备名称
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");  //设备名称
 //        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
 //        capabilities.setCapability("appPackage", "com.android.browser");
 //        capabilities.setCapability("appActivity", ".BrowserActivity");
