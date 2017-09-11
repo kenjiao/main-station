@@ -32,7 +32,8 @@ public class MLoanLoginSteps extends StepDefs {
         CurrentPage.currentCity.click();
 
         PageFactory.initElements(driver, MCityPage.class);
-        Thread.sleep(5 * 1000);
+        Thread.sleep(3 * 1000);
+        wait.until(ExpectedConditions.visibilityOfAllElements(MCityPage.cities));
         for (WebElement element : MCityPage.cities) {
             if (element.getText().equals(city)) {
                 element.click();
