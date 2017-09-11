@@ -25,6 +25,7 @@ public class MCreditLoginSteps extends StepDefs{
         MCreditLoginPage.shanghai.click();
         MCreditLoginPage.username.sendKeys("li");
         MCreditLoginPage.mobile.sendKeys("18321950423");
+        MCreditLoginPage.imgCode.sendKeys("1234");
         MCreditLoginPage.smsCode.sendKeys("123456");
 
 
