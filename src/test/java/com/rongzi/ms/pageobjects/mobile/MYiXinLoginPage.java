@@ -13,6 +13,18 @@ public class MYiXinLoginPage extends BaseClass {
 		super(driver);
 	}
 
+	@FindBy(how=How.XPATH, using="//*[@id=\"showMoneyBox\"]")
+	public static WebElement limit;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"modelli3\"]")
+	public static WebElement money;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"currentCity\"]")
+	public static WebElement current_city;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
+	public static WebElement city;
+
 	@FindBy(how=How.XPATH, using="//*[@id=\"userName\"]")
 	public static WebElement username;
 

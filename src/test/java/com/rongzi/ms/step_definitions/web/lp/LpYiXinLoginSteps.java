@@ -2,6 +2,7 @@ package com.rongzi.ms.step_definitions.web.lp;
 
 import com.rongzi.ms.pageobjects.web.lp.LpYiXinLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import org.openqa.selenium.support.PageFactory;
@@ -18,8 +19,5 @@ public class LpYiXinLoginSteps extends StepDefs {
         LpYiXinLoginPage.telphone.sendKeys("18321950423");
     }
 
-    @同时("^点击宜信着陆页立即申请$")
-    public void 点击宜信着陆页立即申请() throws Throwable {
-        LpYiXinLoginPage.consult.click();
-    }
+
 }

@@ -9,6 +9,7 @@ import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MCreditLoginSteps extends StepDefs{
 
@@ -33,6 +34,8 @@ public class MCreditLoginSteps extends StepDefs{
 
     @同时("^点击免费申请贷款$")
     public void 点击免费申请贷款() throws Throwable {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+
         MCreditLoginPage.submit.click();
     }
 
