@@ -38,8 +38,8 @@ public class SharedDriver extends EventFiringWebDriver {
 
     @Before
     public void deleteAllCookies() {
+        manage().deleteAllCookies();
         if (!(REAL_DRIVER instanceof AppiumDriver)) {
-            manage().deleteAllCookies();
             manage().window().maximize();
         }
     }
