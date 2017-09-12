@@ -20,6 +20,6 @@ public class MCityPage extends BaseClass {
     @FindBy(how = How.XPATH, using = "//header/div")
     public static WebElement header;
 
-    @FindBy(how = How.XPATH, using = "//*[@class=\"hot-city-section\"]/div/div/a")
+    @FindBy(how = How.XPATH, using = "//*[@class=\"hot-city-section\"]/div/div/a[@id]")
     public static List<WebElement> cities;
 }

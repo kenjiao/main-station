@@ -27,9 +27,17 @@ public class AndroidBuilder extends MobileDriverBuilder {
         DesiredCapabilities capabilities = super.getCapabilities();
         capabilities.setCapability(MobileCapabilityType.NO_RESET, false); //不初始化浏览器
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");  //设备名称
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
-        capabilities.setCapability("appPackage", "com.android.browser");
-        capabilities.setCapability("appActivity", ".BrowserActivity");
+//        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
+//        capabilities.setCapability("appPackage", "com.android.browser");
+//        capabilities.setCapability("appActivity", ".BrowserActivity");
+
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
+        capabilities.setCapability("noReset", true); //不初始化浏览器
+        capabilities.setCapability("unicodeKeyboard", "True"); //设置中文输入
+        capabilities.setCapability("resetKeyboard", "True");
+        capabilities.setCapability("noReset", true); //不初始化浏览器
+        capabilities.setCapability("appPackage", "com.android.chrome");   //测试apk包的名称
+        capabilities.setCapability("appActivity", "org.chromium.chrome.browser.ChromeTabbedActivity");  //activity的名称
         return capabilities;
     }
 

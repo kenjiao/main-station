@@ -29,6 +29,7 @@ public class IOSBuilder extends MobileDriverBuilder {
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone Simulator");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
+//        capabilities.setCapability(MobileCapabilityType.UDID, "auto");
         return capabilities;
     }
 

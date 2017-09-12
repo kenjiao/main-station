@@ -1,6 +1,6 @@
 # language: zh-CN
 
-@login
+@web_login
 功能: 登陆东方融资网
 
     @index
