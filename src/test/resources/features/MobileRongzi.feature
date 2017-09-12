@@ -57,7 +57,7 @@
     那么 成功进入M站测评页面
 
   场景: M站chaoshi着陆页
-    假如 我在"/lp/chaoshi"着陆页
+    假如 我在chaoshi着陆页
     并且 输入chaoshi的信息
     同时 点击chaoshi的申请
     那么 成功进入M站测评页面
