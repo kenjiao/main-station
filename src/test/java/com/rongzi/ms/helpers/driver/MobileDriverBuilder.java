@@ -32,6 +32,7 @@ public abstract class MobileDriverBuilder implements DriverBuilder, Proxy {
     @Override
     public WebDriver build() {
         init();
+        proxy();
         return getWebDriver();
     }
 
