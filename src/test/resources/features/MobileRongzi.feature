@@ -45,13 +45,13 @@
     那么 成功进入M站测评页面
 
   场景: M站qinghuai着陆页
-    假如 我在"/lp/qinghuai"着陆页
+    假如 我在qinghuai着陆页
     并且 输入立即免费申请的信息
     同时 点击立即免费申请
     那么 成功进入M站测评页面
 
   场景: M站qinghuai1着陆页
-    假如 我在"/lp/qinghuai1"着陆页
+    假如 我在qinghuai one着陆页
     并且 输入情怀one的信息
     同时 点击情怀one的申请
     那么 成功进入M站测评页面
