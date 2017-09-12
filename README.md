@@ -190,7 +190,7 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
     
 ```
     mvn clean verify -Dwebdriver=android -Drongzi.city=上海 -Dremote.hub=http://localhost:4723/wd/hub -Dcucumber.options="--tags @mobile"
-    mvn clean verify -Dwebdriver=android -Drongzi.city=上海 -Dcucumber.options="--tags @mobile"
+    
 ```
 
 *   测试PC登录页和着陆页
