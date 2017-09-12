@@ -6,6 +6,7 @@ import com.rongzi.ms.pageobjects.mobile.CurrentPage;
 import com.rongzi.ms.pageobjects.mobile.MCityPage;
 import com.rongzi.ms.pageobjects.mobile.MLoanLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
@@ -60,8 +61,8 @@ public class MLoanLoginSteps extends StepDefs {
         MLoanLoginPage.submit.click();
     }
 
-    @那么("^成功进入M站测评页面$")
-    public void 成功进入m站测评页面() throws Throwable {
-        // TODO: 2017/9/10 assert
-    }
+
+
+
+
 }
