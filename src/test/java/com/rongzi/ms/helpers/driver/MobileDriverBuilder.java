@@ -1,11 +1,10 @@
 package com.rongzi.ms.helpers.driver;
 
 import com.rongzi.ms.helpers.Env;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 /**
  * Created by lining on 2017/9/8.
@@ -14,26 +13,25 @@ public abstract class MobileDriverBuilder implements DriverBuilder, Proxy {
 
     private DesiredCapabilities capabilities;
 
+    private AppiumServiceBuilder builder;
+
+
     public MobileDriverBuilder(DesiredCapabilities capabilities) {
         this.capabilities = capabilities;
     }
 
-    public void init() {
-
-        // TODO: 2017/9/8 init appium service
+    private void init() {
+        builder = new AppiumServiceBuilder().
+                withArgument(GeneralServerFlag.LOG_LEVEL, Env.getProperty("appium.log.level", "info")).
+                usingAnyFreePort() /*and so on*/;
     }
 
     @Override
     public WebDriver build() {
         init();
-        String hub = Env.getProperty("remote.hub", "http://localhost:4444/wd/hub");
-        try {
-            return getWebDriver(new URL(hub));
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-
+        return getWebDriver();
     }
+
 
     public void proxy() {
 
@@ -41,10 +39,14 @@ public abstract class MobileDriverBuilder implements DriverBuilder, Proxy {
 
     }
 
-    public abstract WebDriver getWebDriver(URL remote);
+    public abstract WebDriver getWebDriver();
 
     public DesiredCapabilities getCapabilities() {
         return capabilities;
+    }
+
+    public AppiumServiceBuilder getBuilder() {
+        return builder;
     }
 
     public abstract static class MobileDriverMeta extends DriverMeta {
