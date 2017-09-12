@@ -29,7 +29,7 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
         this.capabilities = capabilities;
     }
 
-    public void init() {
+    private void init() {
 
 
         String directory = Env.getProperty("binary.root.directory", "selenium_standalone");

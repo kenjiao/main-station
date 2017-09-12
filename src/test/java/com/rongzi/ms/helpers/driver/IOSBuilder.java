@@ -18,8 +18,8 @@ public class IOSBuilder extends MobileDriverBuilder {
     }
 
     @Override
-    public WebDriver getWebDriver(URL remote) {
-        return new IOSDriver<>(remote, getCapabilities());
+    public WebDriver getWebDriver() {
+        return new IOSDriver<>(getBuilder(), getCapabilities());
     }
 
     @Override

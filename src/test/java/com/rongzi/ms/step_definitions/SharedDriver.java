@@ -26,6 +26,8 @@ public class SharedDriver extends EventFiringWebDriver {
         super(REAL_DRIVER);
     }
 
+
+
     @Override
     public void quit() {
         if (Thread.currentThread() != CLOSE_THREAD) {

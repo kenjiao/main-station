@@ -18,8 +18,8 @@ public class AndroidBuilder extends MobileDriverBuilder {
     }
 
     @Override
-    public WebDriver getWebDriver(URL remote) {
-        return new AndroidDriver<>(remote, getCapabilities());
+    public WebDriver getWebDriver() {
+        return new AndroidDriver<>(getBuilder(), getCapabilities());
     }
 
     @Override
