@@ -30,7 +30,6 @@ public class LpVehicleMortgageLoginSteps extends StepDefs {
 
     @cucumber.api.java.zh_cn.同时("^点击车抵着陆页立即咨询$")
     public void 点击车抵着陆页立即咨询() throws Throwable {
-        PageFactory.initElements(driver, LpVehicleMortgageLoginPage.class);
         LpVehicleMortgageLoginPage.submit.click();
     }
 
