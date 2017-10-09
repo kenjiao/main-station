@@ -20,4 +20,8 @@ public class LpYiXinLoginSteps extends StepDefs {
     }
 
 
+    @cucumber.api.java.zh_cn.同时("^点击宜信着陆页立即申请$")
+    public void 点击宜信着陆页立即申请() throws Throwable {
+        LpYiXinLoginPage.consult.click();
+    }
 }
