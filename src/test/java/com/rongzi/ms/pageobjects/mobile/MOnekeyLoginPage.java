@@ -25,7 +25,7 @@ public class MOnekeyLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"inputImgCode\"]")
 	public static WebElement imgCode;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"msgCode\"]")
+	@FindBy(how=How.XPATH, using="//*[@id=\"inputSmsCode\"]")
 	public static WebElement smsCode;
 
 
