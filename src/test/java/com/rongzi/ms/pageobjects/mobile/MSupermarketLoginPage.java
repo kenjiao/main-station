@@ -13,11 +13,16 @@ public class MSupermarketLoginPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
-	public static WebElement city;
+
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"userName\"]")
 	public static WebElement username;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"currentCity\"]")
+	public static WebElement city;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
+	public static WebElement shanghai;
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"cellPhoneNumber\"]")
 	public static WebElement mobile;

@@ -22,4 +22,7 @@ public class MCityPage extends BaseClass {
 
     @FindBy(how = How.XPATH, using = "//*[@class=\"hot-city-section\"]/div/div/a[@id]")
     public static List<WebElement> cities;
+
+    @FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
+    public static WebElement city;
 }

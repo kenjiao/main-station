@@ -11,8 +11,8 @@ import static org.testng.AssertJUnit.assertTrue;
 public class RongziAddressProceed {
 
 
-    public static void open(WebDriver driver, String index, String city) {
-        driver.get(index + "/CityList");
+    public static void open(WebDriver driver, String index, String city, String suffix) {
+        driver.get(index + "/CityList?returnurl=" + suffix);
 
         PageFactory.initElements(driver, CityPage.class);
 

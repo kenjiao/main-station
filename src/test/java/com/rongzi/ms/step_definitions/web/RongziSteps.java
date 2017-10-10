@@ -13,7 +13,7 @@ public class RongziSteps extends StepDefs {
 
     @假如("^我在主站首页$")
     public void 我在主站首页() throws Throwable {
-        RongziAddressProceed.open(driver, Env.getProperty("rongzi.index"), Env.getProperty("rongzi.city", "上海市"));
+        RongziAddressProceed.open(driver, Env.getProperty("rongzi.index"), Env.getProperty("rongzi.city", "上海市"), "");
     }
 
 

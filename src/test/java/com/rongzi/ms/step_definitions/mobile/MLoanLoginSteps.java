@@ -1,16 +1,14 @@
 package com.rongzi.ms.step_definitions.mobile;
 
 import com.rongzi.ms.helpers.Env;
-import com.rongzi.ms.modules.LpLoginPageProceed;
+import com.rongzi.ms.modules.MLoginPageProceed;
 import com.rongzi.ms.pageobjects.mobile.CurrentPage;
 import com.rongzi.ms.pageobjects.mobile.MCityPage;
 import com.rongzi.ms.pageobjects.mobile.MLoanLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
-import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
-import cucumber.api.java.zh_cn.那么;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -23,9 +21,8 @@ public class MLoanLoginSteps extends StepDefs {
 
     @假如("^我在\"([^\"]*)\"着陆页$")
     public void 我在着陆页(String suffix) throws Throwable {
-        String index = StringUtils.replace(Env.getProperty("rongzi.index"), "www", "m");
         String city = Env.getProperty("rongzi.city", "上海");
-        LpLoginPageProceed.open(driver, index, suffix);
+        MLoginPageProceed.open(driver, Env.getProperty("rongzi.index"), suffix);
 
 
         PageFactory.initElements(driver, CurrentPage.class);
