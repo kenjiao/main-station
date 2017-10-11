@@ -39,14 +39,15 @@ public abstract class MobileDriverBuilder implements DriverBuilder, Proxy {
 
     public void proxy() {
 
-        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
-            String proxyDetails = String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
-            org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
-            proxy.setProxyType(MANUAL);
-            proxy.setHttpProxy(proxyDetails);
-            proxy.setSslProxy(proxyDetails);
-            capabilities.setCapability(PROXY, proxy);
-        }
+        // TODO: 2017/10/11 proxy
+//        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
+//            String proxyDetails = String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
+//            org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+//            proxy.setProxyType(MANUAL);
+//            proxy.setHttpProxy(proxyDetails);
+//            proxy.setSslProxy(proxyDetails);
+//            capabilities.setCapability(PROXY, proxy);
+//        }
 
     }
 
