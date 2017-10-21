@@ -200,8 +200,101 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
 ```
 
 
-## 和 [jenkins](https://jenkins.io/)集成
+
+## [Selenium Grid](http://www.seleniumhq.org/projects/grid/)
+
+### Selenium Grid 是什么？
+
+Selenium 是针对Web应用的自动化测试框架和工具集合，支持多种浏览器和编程语言。Selenium的测试用例直接运行在浏览器中，并模拟用户的操作。
+
+Selenium Grid是一个分布式Web测试工具，可以将测试透明地分发到多个主机上，并行地执行。Selenium Grid架构中包含两个主要角色：Hub是中心点控制节点，而Node是Selenium的工作节点，它们注册到Hub上，并会操作浏览器执行由Hub下发的自动测试用例。
+
+### Selenium Grid 基本结构
+
+![selenium_grid.jpeg](quick-start/selenium_grid.jpeg)
+
+![grid-appium.png](quick-start/grid-appium.png)
+
+
+## [zalenium](https://github.com/zalando/zalenium)
+
+### 介绍
+
+zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的扩展。它使用docker-selenium在本地运行基于Firefox和Chrome的测试。
+
+### 环境
+
+* 安装[Docker](https://www.docker.com/)
+
+    版本要大于1.11
+    
+* 安装[Docker compose](https://docs.docker.com/compose/)
+
+### 运行
+
+zalenium 用docker来动态按需扩展浏览器容器实例，所以我们需要将主机的docker.sock挂载到zalenium容器中，这就是"Docker alongside Docker"。
+
+[zalenium.yml](src/docker/grid/zalenium.yml)
+
+```
+# Usage:
+#   docker-compose up --force-recreate
+version: '2.1'
+
+services:
+  #--------------#
+  zalenium:
+    image: dosel/zalenium
+    container_name: zalenium
+    hostname: zalenium
+    tty: true
+    volumes:
+      - /tmp/videos:/home/seluser/videos
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    ports:
+      - 4444:4444
+      - 5555:5555
+    command: >
+      start --chromeContainers 1
+            --firefoxContainers 1
+            --maxDockerSeleniumContainers 8
+            --screenWidth 1024 --screenHeight 768
+            --timeZone "Europe/Berlin"
+            --videoRecordingEnabled true
+            --sauceLabsEnabled false
+            --browserStackEnabled false
+            --testingBotEnabled false
+            --startTunnel false
+    environment:
+      - HOST_UID
+      - HOST_GID
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
+      - BROWSER_STACK_USER
+      - BROWSER_STACK_KEY
+      - TESTINGBOT_KEY
+      - TESTINGBOT_SECRET
+
+```
+
+### 额外的特性
+
+*   Dashboard控制面板，在测试完成后，可以查看所有的测试录制视频和收集的测试日志。
+
+![dashboard.gif](quick-start/dashboard.gif)
+
+*   Live preview实时预览运行的测试
+
+![live_preview.gif](quick-start/live_preview.gif)
+
+*   支持一些第三方的云测试平台
+
+![how_it_works.gif](quick-start/how_it_works.gif)
+
+## [jenkins](https://jenkins.io/)
 
 1.  创建jenkins job
 2.  设置启动测试脚本的条件，比如开发部署完新版本的应用后开始启动自动化测试的jenkins任务
 3.  jenkins 可以设置多台服务器同时跑自动化测试任务，比如总共有 100个测试案例，设置server1跑 1～50 的测试场景，设置server2 跑 51～100 的 测试场景，这样的话本来如果一台服务器跑1小时跑完所有场景的话，那么现在就是两台一起跑，那跑完所有测试只需要半小时了。
+4.  [Selenium Plugin](https://wiki.jenkins.io/display/JENKINS/Selenium+Plugin)
