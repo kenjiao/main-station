@@ -21,15 +21,15 @@ import static org.openqa.selenium.remote.CapabilityType.PROXY;
 /**
  * Created by lining on 2017/9/8.
  */
-public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
+public abstract class WebDriverBuilder extends RemoteDriverBuilder {
 
-    private DesiredCapabilities capabilities;
 
     public WebDriverBuilder(DesiredCapabilities capabilities) {
-        this.capabilities = capabilities;
+        super(capabilities);
     }
 
-    private void init() {
+    @Override
+    protected void init() {
 
 
         String directory = Env.getProperty("binary.root.directory", "selenium_standalone");
@@ -61,43 +61,9 @@ public abstract class WebDriverBuilder implements DriverBuilder, Proxy {
     }
 
     @Override
-    public WebDriver build() {
-        String hub = Env.getProperty("remote.hub");
-        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
-            proxy();
-        }
-        if (StringUtils.isEmpty(hub)) {
-            init();
-            return getWebDriver();
-        } else {
-            try {
-                return new RemoteWebDriver(new URL(hub), capabilities);
-            } catch (MalformedURLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
-
-    public void proxy() {
-
-        String proxyDetails = getProxyDetails();
-        org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
-        proxy.setProxyType(MANUAL);
-        proxy.setHttpProxy(proxyDetails);
-        proxy.setSslProxy(proxyDetails);
-        capabilities.setCapability(PROXY, proxy);
-
-    }
-
-    protected String getProxyDetails() {
-        return String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
-    }
-
-    public abstract WebDriver getWebDriver();
-
-    public DesiredCapabilities getCapabilities() {
-        return capabilities;
+    public WebDriver getWebDriver() {
+        init();
+        return null;
     }
 
     public abstract static class WebDriverMeta extends DriverMeta {
