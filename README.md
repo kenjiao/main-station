@@ -280,11 +280,11 @@ services:
 
 ### 额外的特性
 
-*   Dashboard控制面板，在测试完成后，可以查看所有的测试录制视频和收集的测试日志。
+*   [Dashboard](http://localhost:4444/dashboard)控制面板，在测试完成后，可以查看所有的测试录制视频和收集的测试日志。
 
 ![dashboard.gif](quick-start/dashboard.gif)
 
-*   Live preview实时预览运行的测试
+*   [Live preview](http://localhost:4444/grid/admin/live)实时预览运行的测试
 
 ![live_preview.gif](quick-start/live_preview.gif)
 
