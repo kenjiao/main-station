@@ -170,6 +170,8 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
 ![mvn-test.png](quick-start/report_failed.png)
 
 
+下载driver ` mvn com.lazerycode.selenium:driver-binary-downloader-maven-plugin:selenium`
+
 通过设置环境变量来选择测试的浏览器 `mvn clean verify -Dwebdriver=chrome`
 
 根据tags来过滤场景
