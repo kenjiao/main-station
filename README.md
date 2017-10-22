@@ -466,8 +466,6 @@ services:
 
     * 选择[Jenkinsfile](Jenkinsfile)
     
-      ![jenkins-plugin.png](quick-start/jenkins-plugin.png) 
-    
     ```
     #!/usr/bin/env groovy
     
