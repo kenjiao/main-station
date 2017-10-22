@@ -293,27 +293,28 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
   
   ```
   {
-    "capabilities": [
-      {
-        "browserName": "Safari",
-        "version": "10.3",
-        "maxInstances": 1,
-        "platform": "MAC",
-        "deviceName": "iPhone Simulator"
-      }
-    ],
-    "configuration": {
-      "cleanUpCycle": 2000,
-      "timeout": 30000,
+    "capabilities":
+        [
+          {
+            "browserName": "<e.g._iPhone5_or_iPad4>",
+            "version":"<version_of_iOS_e.g._7.1>",
+            "maxInstances": 1,
+            "platform":"<platform_e.g._MAC_or_ANDROID>"
+          }
+        ],
+    "configuration":
+    {
+      "cleanUpCycle":2000,
+      "timeout":30000,
       "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-      "url": "http://192.168.199.136:4723/wd/hub",
-      "host": "192.168.199.136",
-      "port": 4723,
+      "url":"http://<host_name_appium_server_or_ip-address_appium_server>:<appium_port>/wd/hub",
+      "host": <host_name_appium_server_or_ip-address_appium_server>,
+      "port": <appium_port>,
       "maxSession": 1,
       "register": true,
       "registerCycle": 5000,
-      "hubPort": 4444,
-      "hubHost": "192.168.199.106"
+      "hubPort": <grid_port>,
+      "hubHost": "<Grid_host_name_or_grid_ip-address>"
     }
   }
   ```
