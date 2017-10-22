@@ -1,20 +1,18 @@
 {
-  "capabilities":
-  [
+  "capabilities": [
     {
       "browserName": "Safari",
-      "version":"10.3",
+      "version": "10.3",
       "maxInstances": 1,
-      "platform":"MAC",
-      "deviceName":"iPhone Simulator"
+      "platform": "MAC",
+      "deviceName": "iPhone Simulator"
     }
   ],
-  "configuration":
-  {
-    "cleanUpCycle":2000,
-    "timeout":30000,
+  "configuration": {
+    "cleanUpCycle": 2000,
+    "timeout": 30000,
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-    "url":"http://192.168.199.136:4723/wd/hub",
+    "url": "http://192.168.199.136:4723/wd/hub",
     "host": "192.168.199.136",
     "port": 4723,
     "maxSession": 1,

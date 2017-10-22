@@ -288,10 +288,41 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
   [debug] [Appium] Starting auto register thread for grid. Will try to register every 5000 ms.
   [Appium] Appium REST http interface listener started on 0.0.0.0:4723
   ```
+  
+  [node.json](config/node.json)
+  
+  ```
+  {
+    "capabilities": [
+      {
+        "browserName": "Safari",
+        "version": "10.3",
+        "maxInstances": 1,
+        "platform": "MAC",
+        "deviceName": "iPhone Simulator"
+      }
+    ],
+    "configuration": {
+      "cleanUpCycle": 2000,
+      "timeout": 30000,
+      "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+      "url": "http://192.168.199.136:4723/wd/hub",
+      "host": "192.168.199.136",
+      "port": 4723,
+      "maxSession": 1,
+      "register": true,
+      "registerCycle": 5000,
+      "hubPort": 4444,
+      "hubHost": "192.168.199.106"
+    }
+  }
+  ```
 
 ### [appium client](https://github.com/appium/appium/blob/master/docs/cn/about-appium/appium-clients.md)
 
 * [Java](https://github.com/appium/java-client)
+
+* [sample code](https://github.com/appium/sample-code)
 
 ## [Selenium Grid](http://www.seleniumhq.org/projects/grid/)
 
@@ -465,6 +496,8 @@ services:
       ![jenkins-create-info.png](quick-start/jenkins-create-info.png) 
 
     * 选择[Jenkinsfile](Jenkinsfile)
+    
+      ![jenkins-create-jenkinsfile.png](quick-start/jenkins-create-jenkinsfile.png) 
     
     ```
     #!/usr/bin/env groovy
