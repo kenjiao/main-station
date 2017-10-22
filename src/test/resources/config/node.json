@@ -3,9 +3,10 @@
   [
     {
       "browserName": "Safari",
-      "version":"10.3>",
+      "version":"10.3",
       "maxInstances": 1,
-      "platform":"iPhone Simulator"
+      "platform":"MAC",
+      "deviceName":"iPhone Simulator"
     }
   ],
   "configuration":

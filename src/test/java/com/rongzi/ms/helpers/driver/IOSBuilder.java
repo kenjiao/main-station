@@ -23,6 +23,11 @@ public class IOSBuilder extends MobileDriverBuilder {
     }
 
     @Override
+    public WebDriver getWebDriver(URL url) {
+        return new IOSDriver<>(url, getCapabilities());
+    }
+
+    @Override
     public DesiredCapabilities getCapabilities() {
         DesiredCapabilities capabilities = super.getCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3");

@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
+import java.lang.management.GarbageCollectorMXBean;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -21,7 +22,7 @@ import static org.openqa.selenium.remote.CapabilityType.PROXY;
 /**
  * Created by lining on 2017/9/8.
  */
-public abstract class WebDriverBuilder extends RemoteDriverBuilder {
+public abstract class WebDriverBuilder extends RemoteDriverBuilder implements Proxy {
 
 
     public WebDriverBuilder(DesiredCapabilities capabilities) {
@@ -61,10 +62,44 @@ public abstract class WebDriverBuilder extends RemoteDriverBuilder {
     }
 
     @Override
-    public WebDriver getWebDriver() {
-        init();
-        return null;
+    public WebDriver build() {
+        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
+            proxy();
+        }
+        String hub = Env.getProperty("remote.hub");
+
+        if (!StringUtils.isEmpty(hub)) {
+
+            try {
+                return new RemoteWebDriver(new URL(hub), getCapabilities());
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            init();
+            return getWebDriver();
+        }
+
     }
+
+    public void proxy() {
+
+        String proxyDetails = getProxyDetails();
+        org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+        proxy.setProxyType(MANUAL);
+        proxy.setHttpProxy(proxyDetails);
+        proxy.setSslProxy(proxyDetails);
+        getCapabilities().setCapability(PROXY, proxy);
+
+    }
+
+    protected String getProxyDetails() {
+        return String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
+    }
+
+    public abstract WebDriver getWebDriver();
+
+
 
     public abstract static class WebDriverMeta extends DriverMeta {
 

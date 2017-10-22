@@ -3,10 +3,17 @@ package com.rongzi.ms.helpers.driver;
 import com.rongzi.ms.helpers.Env;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 
 import static org.openqa.selenium.Proxy.ProxyType.MANUAL;
+import static org.openqa.selenium.remote.CapabilityType.HAS_NATIVE_EVENTS;
 import static org.openqa.selenium.remote.CapabilityType.PROXY;
 
 /**
@@ -28,21 +35,26 @@ public abstract class MobileDriverBuilder extends RemoteDriverBuilder {
                 usingAnyFreePort() /*and so on*/;
     }
 
-    public void proxy() {
+    @Override
+    public WebDriver build() {
+        String hub = Env.getProperty("remote.hub");
 
-        // TODO: 2017/10/11 proxy
-//        if (Boolean.valueOf(Env.getProperty("proxy.enable", "false"))) {
-//            String proxyDetails = String.format("%s:%d", Env.getProperty("proxy.host"), Integer.valueOf(Env.getProperty("proxy.port")));
-//            org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
-//            proxy.setProxyType(MANUAL);
-//            proxy.setHttpProxy(proxyDetails);
-//            proxy.setSslProxy(proxyDetails);
-//            capabilities.setCapability(PROXY, proxy);
-//        }
+        if (!StringUtils.isEmpty(hub)) {
 
+            try {
+                return getWebDriver(new URL(hub));
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            init();
+            return getWebDriver();
+        }
     }
 
     public abstract WebDriver getWebDriver();
+
+    public abstract WebDriver getWebDriver(URL url);
 
     public AppiumServiceBuilder getBuilder() {
         return builder;

@@ -23,6 +23,11 @@ public class AndroidBuilder extends MobileDriverBuilder {
     }
 
     @Override
+    public WebDriver getWebDriver(URL url) {
+        return new AndroidDriver<>(url, getCapabilities());
+    }
+
+    @Override
     public DesiredCapabilities getCapabilities() {
         DesiredCapabilities capabilities = super.getCapabilities();
         capabilities.setCapability(MobileCapabilityType.NO_RESET, false); //不初始化浏览器
