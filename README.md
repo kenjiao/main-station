@@ -223,32 +223,37 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
     通过NPM安装的话只需要西面几个步骤
     
     1.安装[node.js](http://nodejs.cn/) `brew install node`
+    
     2.安装appium `npm install -g appium`
+    
     3.安装appium doctor `npm install -g appium-doctor`
+    
     4.检查环境 `appium-doctor`
-        ```
-        ➜  ~ appium-doctor
-        info AppiumDoctor Appium Doctor v.1.4.3
-        info AppiumDoctor ### Diagnostic starting ###
-        info AppiumDoctor  ✔ The Node.js binary was found at: /usr/local/bin/node
-        info AppiumDoctor  ✔ Node version is 8.7.0
-        info AppiumDoctor  ✔ Xcode is installed at: /Applications/Xcode.app/Contents/Developer
-        info AppiumDoctor  ✔ Xcode Command Line Tools are installed.
-        info AppiumDoctor  ✔ DevToolsSecurity is enabled.
-        info AppiumDoctor  ✔ The Authorization DB is set up properly.
-        info AppiumDoctor  ✔ Carthage was found at: /usr/local/bin/carthage
-        info AppiumDoctor  ✔ HOME is set to: /Users/lining
-        info AppiumDoctor  ✔ ANDROID_HOME is set to: /Users/lining/Library/Android/sdk
-        info AppiumDoctor  ✔ JAVA_HOME is set to: /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
-        info AppiumDoctor  ✔ adb exists at: /Users/lining/Library/Android/sdk/platform-tools/adb
-        info AppiumDoctor  ✔ android exists at: /Users/lining/Library/Android/sdk/tools/android
-        info AppiumDoctor  ✔ emulator exists at: /Users/lining/Library/Android/sdk/tools/emulator
-        info AppiumDoctor  ✔ Bin directory of $JAVA_HOME is set
-        info AppiumDoctor ### Diagnostic completed, no fix needed. ###
-        info AppiumDoctor
-        info AppiumDoctor Everything looks good, bye!
-        info AppiumDoctor
-        ```
+    
+    ```
+    ➜  ~ appium-doctor
+    info AppiumDoctor Appium Doctor v.1.4.3
+    info AppiumDoctor ### Diagnostic starting ###
+    info AppiumDoctor  ✔ The Node.js binary was found at: /usr/local/bin/node
+    info AppiumDoctor  ✔ Node version is 8.7.0
+    info AppiumDoctor  ✔ Xcode is installed at: /Applications/Xcode.app/Contents/Developer
+    info AppiumDoctor  ✔ Xcode Command Line Tools are installed.
+    info AppiumDoctor  ✔ DevToolsSecurity is enabled.
+    info AppiumDoctor  ✔ The Authorization DB is set up properly.
+    info AppiumDoctor  ✔ Carthage was found at: /usr/local/bin/carthage
+    info AppiumDoctor  ✔ HOME is set to: /Users/lining
+    info AppiumDoctor  ✔ ANDROID_HOME is set to: /Users/lining/Library/Android/sdk
+    info AppiumDoctor  ✔ JAVA_HOME is set to: /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
+    info AppiumDoctor  ✔ adb exists at: /Users/lining/Library/Android/sdk/platform-tools/adb
+    info AppiumDoctor  ✔ android exists at: /Users/lining/Library/Android/sdk/tools/android
+    info AppiumDoctor  ✔ emulator exists at: /Users/lining/Library/Android/sdk/tools/emulator
+    info AppiumDoctor  ✔ Bin directory of $JAVA_HOME is set
+    info AppiumDoctor ### Diagnostic completed, no fix needed. ###
+    info AppiumDoctor
+    info AppiumDoctor Everything looks good, bye!
+    info AppiumDoctor
+    ```
+    
 * 运行
   
   1.本地运行 `appium`
@@ -258,6 +263,7 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
   [Appium] Welcome to Appium v1.6.5
   [Appium] Appium REST http interface listener started on 0.0.0.0:4723
   ```
+  
   2.[代码方式启动](https://github.com/appium/java-client/blob/master/docs/The-starting-of-an-app-using-Appium-node-server-started-programmatically.md)
   
   ```
@@ -271,6 +277,7 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
                                          usingAnyFreePort() /*and so on*/;
   AndroidDriver<MobileElement> driver = new AndroidDriver<>(builder, capabilities);
   ```
+  
   3.本地运行并且注册到 Selenium Grid `appium --nodeconfig /path/to/nodeconfig.json`
   
   ```
@@ -281,7 +288,11 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
   [debug] [Appium] Starting auto register thread for grid. Will try to register every 5000 ms.
   [Appium] Appium REST http interface listener started on 0.0.0.0:4723
   ```
-        
+
+### [appium client](https://github.com/appium/appium/blob/master/docs/cn/about-appium/appium-clients.md)
+
+* [Java](https://github.com/appium/java-client)
+
 ## [Selenium Grid](http://www.seleniumhq.org/projects/grid/)
 
 ### Selenium Grid 是什么？
@@ -313,7 +324,19 @@ zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的�
     ➜  ~ docker -v
     Docker version 17.03.1-ce, build c6d412e
     ```
+    常用命令
+        
+    ```
+    # 拉取镜像
+    docker pull jenkins
+    # 查看本地镜像列表
+    docker images
+    # 查看容器列表
+    docker ps -a
+    # 查看容器日志
+    ocker logs -f jenkins_ms-jenkins_1
     
+    ```
 * 安装[Docker compose](https://docs.docker.com/compose/)
 
     检查 `docker-compose -v`
@@ -321,6 +344,22 @@ zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的�
     ```
     ➜  ~ docker-compose -v
     docker-compose version 1.11.2, build dfed245
+    ```
+    
+    常用命令
+    
+    ```
+    # 创建容器
+    docker-compose up -d
+    # 停止容器
+    docker-compose stop
+    # 启动容器
+    docker-compose start
+    # 删除容器
+    docker-compose down
+    # 查看容器日志
+    docker-compose logs -f
+    
     ```
 
 ### 运行
@@ -391,8 +430,90 @@ services:
 
 ## [jenkins](https://jenkins.io/)
 
-1.  创建jenkins job
-2.  设置启动测试脚本的条件，比如开发部署完新版本的应用后开始启动自动化测试的jenkins任务
-3.  jenkins 可以设置多台服务器同时跑自动化测试任务，比如总共有 100个测试案例，设置server1跑 1～50 的测试场景，设置server2 跑 51～100 的 测试场景，这样的话本来如果一台服务器跑1小时跑完所有场景的话，那么现在就是两台一起跑，那跑完所有测试只需要半小时了。
+1.  docker化安装jenkins `docker-compose -f src/docker/jenkins/jenkins.yml up -d`
+
+    [jenkins.yml](src/docker/jenkins/jenkins.yml)
+    
+    ```
+    version: '2.1'
+    services:
+      ms-jenkins:
+        image: jenkins:latest
+        extra_hosts:
+            - "zalenium:192.168.199.106"
+        ports:
+          - 38080:8080
+          - 30000:50000
+        # uncomment for docker in docker
+        #privileged: true
+        volumes:
+            # enable persistent volume (warning: make sure that the local jenkins_home folder is created)
+            - ~/volumes/jenkins_home:/var/jenkins_home
+            # mount docker sock and binary for docker in docker (only works on linux)
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /usr/bin/docker:/usr/bin/docker
+    ```
+    
+2.  创建jenkins pipeline 任务，[Pipeline Syntax](https://jenkins.io/doc/book/pipeline/)
+
+    * 安装[Cucumber Reports Plugin](https://wiki.jenkins.io/display/JENKINS/Cucumber+Reports+Plugin)
+    
+      ![quick-start/jenkins-plugin.png](quick-start/jenkins-plugin.png) 
+
+    * 点击新建，选择 pipeline，填写job名称
+    
+      ![jenkins-create-info.png](quick-start/jenkins-create-info.png) 
+
+    * 选择[Jenkinsfile](Jenkinsfile)
+    
+      ![jenkins-plugin.png](quick-start/jenkins-plugin.png) 
+    
+    ```
+    #!/usr/bin/env groovy
+    
+    node {
+    
+        stage('checkout') {
+            checkout scm
+        }
+    
+        stage('check java') {
+            sh "java -version"
+        }
+    
+        stage('check maven') {
+            sh "./mvnw -v"
+        }
+    
+        stage('automation tests') {
+    
+            //run your build
+            sh './mvnw clean verify -Pprod -Dcucumber.options="--tags @web_login,@web_lp" -Dwebdriver=chrome -Dremote.hub=http://zalenium:4444/wd/hub'
+            //generate cucumber reports
+            cucumber '**/*.json'
+    
+        }
+    
+    
+    
+    
+    }
+    ```
+    * 构建任务
+    
+      ![jenkins-build.png](quick-start/jenkins-build.png) 
+    
+    * 日志
+    
+      ![jenkins-console.png](quick-start/jenkins-console.png) 
+      
+    * 查看 cucumber report
+    
+      ![jenkins-cucumber-report.gif](quick-start/jenkins-cucumber-report.gif) 
+
+
+3.  设置启动测试脚本的条件，比如开发部署完新版本的应用后开始启动自动化测试的jenkins任务
+
+    ![jenkins-build-triggers.png](quick-start/jenkins-build-triggers.png) 
+
 4.  [Selenium Plugin](https://wiki.jenkins.io/display/JENKINS/Selenium+Plugin)
-5.  [Cucumber Reports Plugin](https://wiki.jenkins.io/display/JENKINS/Cucumber+Reports+Plugin)
