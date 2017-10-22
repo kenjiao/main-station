@@ -549,3 +549,25 @@ services:
     ![jenkins-build-triggers.png](quick-start/jenkins-build-triggers.png) 
 
 4.  [Selenium Plugin](https://wiki.jenkins.io/display/JENKINS/Selenium+Plugin)
+
+## 项目部署
+
+1.  进入[docker](src/docker) 目录, `cd src/docker`
+
+2.  部署测试环境, `make up`
+
+```
+➜ make up
+docker-compose up -d
+Creating network "docker_default" with the default driver
+Creating zalenium ... 
+Creating docker_ms-jenkins_1 ... 
+Creating docker_ms-jenkins_1
+Creating docker_ms-jenkins_1 ... done
+docker-compose ps
+       Name                      Command               State                         Ports                      
+----------------------------------------------------------------------------------------------------------------
+docker_ms-jenkins_1   /bin/tini -- /usr/local/bi ...   Up      0.0.0.0:30000->50000/tcp, 0.0.0.0:38080->8080/tcp
+zalenium              entry.sh start --chromeCon ...   Up      0.0.0.0:4444->4444/tcp, 4445/tcp        
+
+```

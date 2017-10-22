@@ -1,6 +1,5 @@
 up:
-	docker-compose -f jenkins/jenkins.yml up -d
-	docker-compose -f grid/zalenium.yml up -d
+	docker-compose up -d
+	docker-compose ps
 down:
-	docker-compose -f jenkins/jenkins.yml down
-	docker-compose -f grid/zalenium.yml down
+	docker-compose down

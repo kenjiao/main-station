@@ -17,9 +17,9 @@ node {
     stage('automation tests') {
 
         //run your build
-        sh './mvnw clean verify -Pprod -Dcucumber.options="--tags @web_login,@web_lp" -Dwebdriver=chrome -Dremote.hub=http://zalenium:4444/wd/hub'
+        sh './mvnw clean verify -Pprod -Dcucumber.options="--tags @web_login" -Dwebdriver=chrome -Dremote.hub=http://zalenium:4444/wd/hub'
         //generate cucumber reports
-        cucumber '**/*.json'
+        cucumber '**/cucumber.json'
 
     }
 

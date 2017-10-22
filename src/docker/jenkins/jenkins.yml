@@ -2,8 +2,6 @@ version: '2.1'
 services:
   ms-jenkins:
     image: jenkins:latest
-    extra_hosts:
-        - "zalenium:192.168.199.106"
     ports:
       - 38080:8080
       - 30000:50000
