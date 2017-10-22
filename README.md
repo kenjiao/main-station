@@ -172,7 +172,13 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
 
 下载driver ` mvn com.lazerycode.selenium:driver-binary-downloader-maven-plugin:selenium`
 
-通过设置环境变量来选择测试的浏览器 `mvn clean verify -Dwebdriver=chrome`
+设置测试的浏览器 `mvn clean verify -Dwebdriver=chrome`
+
+设置测试环境 `mvn clean verify -Dwebdriver=chrome -Pprod`
+
+设置测试的城市 `mvn clean verify -Dwebdriver=chrome -Pprod -Drongzi.city=上海市`
+
+设置测试Selenium Grid的地址 `mvn clean verify -Dwebdriver=chrome -Pprod -Drongzi.city=上海 -Dremote.hub=http://192.168.199.106:4444/wd/hub`
 
 根据tags来过滤场景
 
@@ -201,8 +207,81 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
     mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @web_login,@web_lp"
 ```
 
+## [Appium](http://appium.io/)
 
+### Appium 是什么？
 
+Appium是一个移动端的自动化框架，可用于测试原生应用，移动网页应用和混合型应用，且是跨平台的。可用于IOS和Android以及firefox的操作系统。原生的应用是指用android或ios的sdk编写的应用，移动网页应用是指网页应用，类似于ios中safari应用或者Chrome应用或者类浏览器的应用。混合应用是指一种包裹webview的应用,原生应用于网页内容交互性的应用。
+重要的是Appium是跨平台的，何为跨平台，意思就是可以针对不同的平台用一套api来编写测试用例
+
+### Appium环境搭建
+
+* 安装Appium
+    
+    有两种方式安装，[NPM](https://npmjs.com/)安装或者下载[桌面版](https://github.com/appium/appium-desktop)
+
+    通过NPM安装的话只需要西面几个步骤
+    
+    1.安装[node.js](http://nodejs.cn/) `brew install node`
+    2.安装appium `npm install -g appium`
+    3.安装appium doctor `npm install -g appium-doctor`
+    4.检查环境 `appium-doctor`
+        ```
+        ➜  ~ appium-doctor
+        info AppiumDoctor Appium Doctor v.1.4.3
+        info AppiumDoctor ### Diagnostic starting ###
+        info AppiumDoctor  ✔ The Node.js binary was found at: /usr/local/bin/node
+        info AppiumDoctor  ✔ Node version is 8.7.0
+        info AppiumDoctor  ✔ Xcode is installed at: /Applications/Xcode.app/Contents/Developer
+        info AppiumDoctor  ✔ Xcode Command Line Tools are installed.
+        info AppiumDoctor  ✔ DevToolsSecurity is enabled.
+        info AppiumDoctor  ✔ The Authorization DB is set up properly.
+        info AppiumDoctor  ✔ Carthage was found at: /usr/local/bin/carthage
+        info AppiumDoctor  ✔ HOME is set to: /Users/lining
+        info AppiumDoctor  ✔ ANDROID_HOME is set to: /Users/lining/Library/Android/sdk
+        info AppiumDoctor  ✔ JAVA_HOME is set to: /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
+        info AppiumDoctor  ✔ adb exists at: /Users/lining/Library/Android/sdk/platform-tools/adb
+        info AppiumDoctor  ✔ android exists at: /Users/lining/Library/Android/sdk/tools/android
+        info AppiumDoctor  ✔ emulator exists at: /Users/lining/Library/Android/sdk/tools/emulator
+        info AppiumDoctor  ✔ Bin directory of $JAVA_HOME is set
+        info AppiumDoctor ### Diagnostic completed, no fix needed. ###
+        info AppiumDoctor
+        info AppiumDoctor Everything looks good, bye!
+        info AppiumDoctor
+        ```
+* 运行
+  
+  1.本地运行 `appium`
+  
+  ```
+  ➜  ~ appium
+  [Appium] Welcome to Appium v1.6.5
+  [Appium] Appium REST http interface listener started on 0.0.0.0:4723
+  ```
+  2.[代码方式启动](https://github.com/appium/java-client/blob/master/docs/The-starting-of-an-app-using-Appium-node-server-started-programmatically.md)
+  
+  ```
+  DesiredCapabilities capabilities = new DesiredCapabilities();
+  capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3");
+  capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
+  capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone Simulator");
+  capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
+  AppiumServiceBuilder builder = new AppiumServiceBuilder().
+                                         withArgument(GeneralServerFlag.LOG_LEVEL, Env.getProperty("appium.log.level", "info")).
+                                         usingAnyFreePort() /*and so on*/;
+  AndroidDriver<MobileElement> driver = new AndroidDriver<>(builder, capabilities);
+  ```
+  3.本地运行并且注册到 Selenium Grid `appium --nodeconfig /path/to/nodeconfig.json`
+  
+  ```
+  ➜  ~ appium --nodeconfig /Users/lining/dev/workspace/main-station/src/test/resources/config/node.json
+  [Appium] Welcome to Appium v1.6.5
+  [Appium] Non-default server args:
+  [Appium]   nodeconfig: /Users/lining/dev/workspace/main-station/src/test/resources/config/node.json
+  [debug] [Appium] Starting auto register thread for grid. Will try to register every 5000 ms.
+  [Appium] Appium REST http interface listener started on 0.0.0.0:4723
+  ```
+        
 ## [Selenium Grid](http://www.seleniumhq.org/projects/grid/)
 
 ### Selenium Grid 是什么？
@@ -222,19 +301,35 @@ Selenium Grid是一个分布式Web测试工具，可以将测试透明地分发�
 
 ### 介绍
 
-zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的扩展。它使用docker-selenium在本地运行基于Firefox和Chrome的测试。
+zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的扩展。它使用[docker-selenium](https://github.com/elgalu/docker-selenium)在本地运行基于Firefox和Chrome的测试。
 
 ### 环境
 
-* 安装[Docker](https://www.docker.com/)
+* 安装[Docker](https://www.docker.com/)版本要大于1.11
 
-    版本要大于1.11
+    检查 `docker -v`
+
+    ```
+    ➜  ~ docker -v
+    Docker version 17.03.1-ce, build c6d412e
+    ```
     
 * 安装[Docker compose](https://docs.docker.com/compose/)
+
+    检查 `docker-compose -v`
+
+    ```
+    ➜  ~ docker-compose -v
+    docker-compose version 1.11.2, build dfed245
+    ```
 
 ### 运行
 
 zalenium 用docker来动态按需扩展浏览器容器实例，所以我们需要将主机的docker.sock挂载到zalenium容器中，这就是"Docker alongside Docker"。
+
+* `docker pull dosel/zalenium`
+* `docker pull elgalu/selenium`
+* `docker-compose -f src/docker/grid/zalenium.yml up -d`
 
 [zalenium.yml](src/docker/grid/zalenium.yml)
 
@@ -300,4 +395,4 @@ services:
 2.  设置启动测试脚本的条件，比如开发部署完新版本的应用后开始启动自动化测试的jenkins任务
 3.  jenkins 可以设置多台服务器同时跑自动化测试任务，比如总共有 100个测试案例，设置server1跑 1～50 的测试场景，设置server2 跑 51～100 的 测试场景，这样的话本来如果一台服务器跑1小时跑完所有场景的话，那么现在就是两台一起跑，那跑完所有测试只需要半小时了。
 4.  [Selenium Plugin](https://wiki.jenkins.io/display/JENKINS/Selenium+Plugin)
-4.  [Cucumber Reports Plugin](https://wiki.jenkins.io/display/JENKINS/Cucumber+Reports+Plugin)
+5.  [Cucumber Reports Plugin](https://wiki.jenkins.io/display/JENKINS/Cucumber+Reports+Plugin)
