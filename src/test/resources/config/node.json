@@ -6,19 +6,28 @@
       "maxInstances": 1,
       "platform": "MAC",
       "deviceName": "iPhone Simulator"
+    },
+    {
+      "appPackage": "com.android.chrome",
+      "appActivity": "org.chromium.chrome.browser.ChromeTabbedActivity",
+      "browserName": "chrome",
+      "platformName": "Android",
+      "version": "",
+      "deviceName": "Android Emulator",
+      "platform": "ANDROID"
     }
   ],
   "configuration": {
     "cleanUpCycle": 2000,
     "timeout": 30000,
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-    "url": "http://192.168.199.106:4723/wd/hub",
-    "host": "192.168.199.106",
+    "url": "http://192.168.1.133:4723/wd/hub",
+    "host": "192.168.1.133",
     "port": 4723,
     "maxSession": 1,
     "register": true,
     "registerCycle": 5000,
     "hubPort": 4444,
-    "hubHost": "192.168.199.106"
+    "hubHost": "192.168.1.133"
   }
 }
