@@ -15,7 +15,7 @@ public class CityPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"hotcitys\"]/li/a")
+	@FindBy(how=How.XPATH, using="//*[@id=\"hotcitys\"]/li[1]/a")
 	public static List<WebElement> cities;
 
 
