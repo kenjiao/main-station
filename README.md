@@ -318,6 +318,19 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
     }
   }
   ```
+* 停止
+
+有时候我们不是正常退出appium的时候，我们可以通过 `ps -ef | grep appium` 来查找 appium进程号，然后再通过 `kill -9 进程号` 来杀掉进程
+
+```
+➜  ~ ps -ef | grep appium
+  501 14922  8088   0  7:49AM ttys000    0:00.00 grep appium
+  501 14183 10561   0  7:41PM ttys001    0:12.50 node /usr/local/bin/appium --nodeconfig /Users/wangxiaoyu/main-station/src/test/resources/config/node.json
+
+➜  ~ kill -9 14183
+
+```
+
 
 ### [appium client](https://github.com/appium/appium/blob/master/docs/cn/about-appium/appium-clients.md)
 
