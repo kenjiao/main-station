@@ -74,3 +74,10 @@
     同时 点击jijian的申请
     那么 成功进入M站测评页面
 
+  场景: M站ceping着陆页
+    假如 我在http://mlp.rongzi.com/lp/ceping
+    并且 输入ceping的信息
+    同时 点击ceping的申请
+    那么 成功进入测评结果页
+
+
