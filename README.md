@@ -275,7 +275,7 @@ Appium是一个移动端的自动化框架，可用于测试原生应用，移�
   AppiumServiceBuilder builder = new AppiumServiceBuilder().
                                          withArgument(GeneralServerFlag.LOG_LEVEL, Env.getProperty("appium.log.level", "info")).
                                          usingAnyFreePort() /*and so on*/;
-  AndroidDriver<MobileElement> driver = new AndroidDriver<>(builder, capabilities);
+  IOSDriver<MobileElement> driver = new IOSDriver<>(builder, capabilities);
   ```
   
   3.本地运行并且注册到 Selenium Grid `appium --nodeconfig /path/to/nodeconfig.json`
