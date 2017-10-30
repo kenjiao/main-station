@@ -69,7 +69,7 @@
     那么 成功进入M站测评页面
 
   场景: M站jijian着陆页
-    假如 我在http://mlp.rongzi.com/lp/jijian
+    假如 我在极简着陆页首页"http://mlp.rongzi.com/lp/jijian"
     并且 输入jijian的信息
     同时 点击jijian的申请
     那么 成功进入M站测评页面
