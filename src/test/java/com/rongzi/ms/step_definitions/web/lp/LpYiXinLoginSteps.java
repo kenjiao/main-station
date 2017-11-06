@@ -24,4 +24,6 @@ public class LpYiXinLoginSteps extends StepDefs {
     public void 点击宜信着陆页立即申请() throws Throwable {
         LpYiXinLoginPage.consult.click();
     }
+
+
 }

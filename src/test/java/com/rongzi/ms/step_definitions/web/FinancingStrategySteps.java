@@ -5,6 +5,7 @@ import com.rongzi.ms.pageobjects.web.ConsignationPage;
 import com.rongzi.ms.pageobjects.web.FinancingStrategyPage;
 import com.rongzi.ms.pageobjects.web.RongziPage;
 import com.rongzi.ms.step_definitions.StepDefs;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
@@ -51,4 +52,6 @@ public class FinancingStrategySteps extends StepDefs {
         }
 
     }
+
+
 }

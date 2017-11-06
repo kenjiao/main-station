@@ -363,6 +363,39 @@ zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的�
 
 * 安装[Docker](https://www.docker.com/)版本要大于1.11
 
+    1.安装依赖
+    ```
+    $ sudo yum install -y yum-utils \
+      device-mapper-persistent-data \
+      lvm2
+    ```
+    2.设置 repo 地址
+    ```
+    $ sudo yum-config-manager \
+        --add-repo \
+        https://download.docker.com/linux/centos/docker-ce.repo
+    ```
+    3.安装 docker-ce
+    ```
+    $ sudo yum install docker-ce
+    ```
+    4.添加指定用户到docker用户组
+    ```
+    $ sudo usermod -aG docker your_username
+    ```
+    5.启动 docker
+    ```
+    $ sudo systemctl start docker
+    ```
+    6.停止 docker
+    ```
+    $ sudo systemctl stop docker
+    ```
+    7.设置开机启动
+    ```
+    $ sudo systemctl enable docker
+    ```
+
     检查 `docker -v`
 
     ```
@@ -383,6 +416,15 @@ zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的�
     
     ```
 * 安装[Docker compose](https://docs.docker.com/compose/)
+
+    1.下载docker-compose
+    ```
+    sudo curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    ```
+    2.设置权限
+    ```
+    sudo chmod +x /usr/local/bin/docker-compose
+    ```
 
     检查 `docker-compose -v`
 
