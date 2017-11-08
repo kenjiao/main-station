@@ -35,7 +35,7 @@ public class LpLoanLoginPage extends BaseClass {
 			super(driver);
 		}
 
-		@FindBy(how=How.XPATH, using="//*[@id=\"userName2\"]")
+		@FindBy(how=How.XPATH, using="//*[@id=\"userName\"]")
 		public static WebElement username;
 
 		@FindBy(how=How.XPATH, using="//*[@id=\"userMobile2\"]")
