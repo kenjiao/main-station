@@ -412,7 +412,7 @@ zalenium是一种以容器方式来动态创建和管理本地Selenium Grid的�
     # 查看容器列表
     docker ps -a
     # 查看容器日志
-    ocker logs -f jenkins_ms-jenkins_1
+    docker logs -f jenkins_ms-jenkins_1
     
     ```
 * 安装[Docker compose](https://docs.docker.com/compose/)
@@ -551,7 +551,7 @@ services:
     
       ![jenkins-create-info.png](quick-start/jenkins-create-info.png) 
 
-    * 选择[Jenkinsfile](Jenkinsfile)
+    * 选择[Jenkinsfile](Jenkinsfile.lp)
     
       ![jenkins-create-jenkinsfile.png](quick-start/jenkins-create-jenkinsfile.png) 
     
