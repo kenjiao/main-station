@@ -1,0 +1,50 @@
+#!/usr/bin/env groovy
+
+def profile = "prod"
+def hub = "http://zalenium:4444/wd/hub"
+def browsers = ["chrome", "firefox"]
+def thread = 5
+
+def stepsForParallel = [:]
+
+for (int i = 0; i < browsers.size(); i++) {
+    def browser = browsers.get(i)
+
+    def cmd = "./mvnw clean verify -P${profile} -Dwebdriver=${browser} -Dremote.hub=${hub}"
+    def stepName = "Test ${browser}"
+    for (int j = 0; j < thread; j++) {
+        def threadName = "${stepName} in thread ${j}"
+        stepsForParallel[threadName] = mvn(cmd)
+    }
+}
+
+parallel stepsForParallel
+
+def mvn(cmd) {
+    return {
+        node {
+            stage('checkout') {
+                checkout scm
+            }
+
+            stage('check java') {
+                sh "java -version"
+            }
+
+            stage('check maven') {
+                sh "./mvnw -v"
+            }
+
+            stage('automation tests') {
+
+                echo cmd
+                //run your build
+                sh cmd
+                //generate cucumber reports
+                cucumber '**/cucumber.json'
+
+            }
+
+        }
+    }
+}
