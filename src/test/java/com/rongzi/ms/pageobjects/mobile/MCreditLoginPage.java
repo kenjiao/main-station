@@ -12,7 +12,7 @@ public class MCreditLoginPage extends BaseClass {
 	{
 		super(driver);
 	}
-	@FindBy(how=How.XPATH, using="//*[@id=\"xinyong_currentCity\"]")
+	@FindBy(how=How.XPATH, using="//*[@id=\"currentCity\"]")
 	public static WebElement city;
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
