@@ -29,6 +29,6 @@ public class LpCompanyLoginSteps extends StepDefs {
     @cucumber.api.java.zh_cn.当("^我点击免费申请$")
     public void 我点击免费申请() throws Throwable {
         PageFactory.initElements(driver, LpCompanyLoginPage.class);
-        LpCompanyLoginPage.free_application1.click();
+        LpCompanyLoginPage.free_application_middle.click();
     }
 }

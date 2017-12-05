@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class LpCompanyLoginPage extends BaseClass {
+public class LpCompanyOneLoginPage extends BaseClass {
 
-	public LpCompanyLoginPage(WebDriver driver)
+	public LpCompanyOneLoginPage(WebDriver driver)
 	{
 		super(driver);
 	}
@@ -22,8 +22,11 @@ public class LpCompanyLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"onekeyform\"]/input")
 	public static WebElement free_application;
 
-	@FindBy(how=How.XPATH, using="/html/body/section[3]/div/input")
+	@FindBy(how=How.XPATH, using="//*[@id=\"qiye1\"]/section[3]/div/input")
 	public static WebElement free_application_middle;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"qiye1\"]/section[4]/div/input")
+	public static WebElement free_application_bottom ;
 
 
 
