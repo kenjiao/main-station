@@ -1,6 +1,8 @@
 package com.rongzi.ms.modules;
 
+import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.pageobjects.web.CityPage;
+import com.rongzi.ms.pageobjects.web.DialogCityPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -15,13 +17,19 @@ public class RongziAddressProceed {
         driver.get(index + "/CityList?returnurl=" + suffix);
 
         PageFactory.initElements(driver, CityPage.class);
+        if (index.endsWith(".cn")) {
+            PageFactory.initElements(driver, DialogCityPage.class);
+            DialogCityPage.shanghai.click();
+        } else {
+            for (WebElement element : CityPage.cities) {
 
-        for (WebElement element : CityPage.cities) {
+                if (element.getText().equals(city)) {
+                    element.click();
+                    return;
+                }
 
-            if (element.getText().equals(city)) {
-                element.click();
-                return;
             }
+
 
         }
 
