@@ -8,13 +8,13 @@ import org.openqa.selenium.support.How;
 
 import java.util.List;
 
-public class CityPage extends BaseClass {
+public class DialogCityPage extends BaseClass {
 
-	public CityPage(WebDriver driver)
+	public DialogCityPage(WebDriver driver)
 	{
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"hotcitys\"]/li[1]/a")
-	public static List<WebElement> cities;
+	@FindBy(how=How.XPATH, using="/html/body/section/div/ul[2]/li[2]/dl/dd/a[1]")
+	public static WebElement shanghai;
 }
