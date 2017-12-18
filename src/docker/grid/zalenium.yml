@@ -19,7 +19,7 @@ services:
       start --chromeContainers 1
             --firefoxContainers 1
             --maxDockerSeleniumContainers 8
-            --screenWidth 1024 --screenHeight 768
+            --screenWidth 1280 --screenHeight 1024
             --timeZone "Europe/Berlin"
             --videoRecordingEnabled true
             --sauceLabsEnabled false
