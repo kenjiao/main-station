@@ -38,7 +38,7 @@
             <properties>
                 <profile>dev</profile>
                 <proxy.enable>true</proxy.enable>
-                <proxy.host>10.40.3.20</proxy.host>
+                <proxy.host>10.40.3.23</proxy.host>
                 <proxy.port>3128</proxy.port>
             </properties>
         </profile>
