@@ -5,6 +5,7 @@ import com.rongzi.ms.modules.RongziAddressProceed;
 import com.rongzi.ms.pageobjects.web.lp.LpLoanLoginPage;
 import com.rongzi.ms.pageobjects.web.lp.LpLoanLoginPage.ConsultPage;
 import com.rongzi.ms.step_definitions.StepDefs;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.同时;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
@@ -16,9 +17,9 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class LpLoanLoginSteps extends StepDefs {
 
-    @cucumber.api.java.zh_cn.假如("^我在\"([^\"]*)\"着陆页首页$")
-    public void 我在着陆页首页(String suffix) throws Throwable {
-        RongziAddressProceed.open(driver, Env.getProperty("rongzi.index"), Env.getProperty("rongzi.city", "上海市"), suffix);
+    @cucumber.api.java.zh_cn.假如("^我在贷款着陆页首页\"([^\"]*)\"$")
+    public void 我在贷款着陆页首页(String LpLoanIndex) throws Throwable {
+        driver.get(LpLoanIndex);
     }
 
     @并且("^输入贷款着陆页用户信息$")
@@ -67,6 +68,7 @@ public class LpLoanLoginSteps extends StepDefs {
         ConsultPage.consult.click();
 
     }
+
 
 
 }
