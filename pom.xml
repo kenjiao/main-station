@@ -27,6 +27,8 @@
         <remote.hub/>
         <rongzi.index>http://www.rongzi.com</rongzi.index>
         <rongzi.city>上海市</rongzi.city>
+        <window.height/>
+        <window.width/>
     </properties>
 
     <profiles>

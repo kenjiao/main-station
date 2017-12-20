@@ -1,9 +1,12 @@
 package com.rongzi.ms.step_definitions;
 
+import com.rongzi.ms.helpers.Env;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.appium.java_client.AppiumDriver;
+import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -38,9 +41,20 @@ public class SharedDriver extends EventFiringWebDriver {
     @Before
     public void deleteAllCookies() {
         manage().deleteAllCookies();
-        if (!(REAL_DRIVER instanceof AppiumDriver)){
-            manage().window().maximize();
+        String height = Env.getProperty("window.height");
+        String width = Env.getProperty("window.width");
+
+        if (!StringUtils.isEmpty(height) && !StringUtils.isEmpty(width)) {
+            manage().window().setSize(new Dimension(Integer.valueOf(height), Integer.valueOf(width)));
+
+
+        } else {
+            if (!(REAL_DRIVER instanceof AppiumDriver)) {
+                manage().window().maximize();
+            }
         }
+
+
     }
 
     @After
