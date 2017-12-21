@@ -17,11 +17,6 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class LpLoanLoginSteps extends StepDefs {
 
-    @cucumber.api.java.zh_cn.假如("^我在\"([^\"]*)\"着陆页首页$")
-    public void 我在着陆页首页(String suffix) throws Throwable {
-        RongziAddressProceed.open(driver, Env.getProperty("rongzi.index"), Env.getProperty("rongzi.city", "上海市"), suffix);
-    }
-
     @cucumber.api.java.zh_cn.假如("^我在贷款着陆页首页\"([^\"]*)\"$")
     public void 我在贷款着陆页首页(String LpLoanIndex) throws Throwable {
         driver.get(LpLoanIndex);
