@@ -21,4 +21,18 @@ public class LpCompanyOneLoginSteps extends StepDefs{
     public void 点击企业one着陆页立即免费申请() throws Throwable {
         LpCompanyOneLoginPage.free_application.click();
     }
+
+    @cucumber.api.java.zh_cn.同时("^在中部和底部免费申请进行登录$")
+    public void 在中部和底部免费申请进行登录() throws Throwable {
+        PageFactory.initElements(driver, LpCompanyOneLoginPage.NextPage.class);
+        LpCompanyOneLoginPage.NextPage.free_application.click();
+        LpCompanyOneLoginPage.NextPage.username.sendKeys("li");
+        LpCompanyOneLoginPage.NextPage.mobile.sendKeys("18321950423");
+        LpCompanyOneLoginPage.NextPage.verification_code.sendKeys("1234");
+        LpCompanyOneLoginPage.NextPage.sms_code.sendKeys("123456");
+        LpCompanyOneLoginPage.NextPage.next.click();
+    }
+
+
 }
+
