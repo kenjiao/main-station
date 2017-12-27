@@ -24,12 +24,15 @@ public class LpCompanyOneLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"onekeyform\"]/input")
 	public static WebElement free_application;
 
+	@FindBy(how=How.XPATH, using="//*[@id=\"qiye1\"]/section[3]/div/input")
+	public static WebElement free_middle_application;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"qiye1\"]/section[4]/div/input")
+	public static WebElement free_bottom_application ;
 
 	public static class NextPage {
 
 
-		@FindBy(how=How.XPATH, using="//*[@id=\"qiye1\"]/section[3]/div/input")
-		public static WebElement free_application;
 
 		@FindBy(how=How.XPATH, using="//*[@id=\"userName2\"]")
 		public static WebElement username;
@@ -46,15 +49,7 @@ public class LpCompanyOneLoginPage extends BaseClass {
 		@FindBy(how=How.XPATH, using="//*[@id=\"submit-smscode2\"]")
 		public static WebElement next;
 
-		public static class FreeApplicationPage{
 
-
-			@FindBy(how=How.XPATH, using="//*[@id=\"qiye1\"]/section[4]/div/input")
-			public static WebElement free_application ;
-
-
-
-		}
 
 
 

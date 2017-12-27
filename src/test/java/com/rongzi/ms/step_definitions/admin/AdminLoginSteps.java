@@ -1,4 +1,4 @@
-package com.rongzi.ms.step_definitions.web;
+package com.rongzi.ms.step_definitions.admin;
 
 import cucumber.api.PendingException;
 
