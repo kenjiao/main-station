@@ -1,6 +1,6 @@
 # language: zh-CN
 @admin
-功能: 登陆admin系统
+功能: 登陆admin系统测试
 
 
   场景: 登录admin
