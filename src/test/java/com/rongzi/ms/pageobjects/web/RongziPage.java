@@ -41,5 +41,9 @@ public class RongziPage extends BaseClass {
 	public static WebElement about_us;
 
 
+	@FindBy(how=How.XPATH, using="/html/body/section[13]/div[1]/div[1]/div[1]/ul/li[2]/a")
+	public static WebElement contact_us;
+
+
 
 }
