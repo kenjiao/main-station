@@ -31,6 +31,9 @@ public class RongziPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//a[@href=\"http://shanghai.rongzi.com/product/\"]")
 	public static WebElement loan_product;
 
+	@FindBy(how=How.XPATH, using="/html/body/section[13]/div[1]/div[1]/div[1]/ul/li[1]/a")
+	public static WebElement about_us;
+
 
 
 }
