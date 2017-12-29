@@ -1,6 +1,5 @@
 package com.rongzi.ms.step_definitions.web;
 
-import com.google.common.net.InternetDomainName;
 import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.RecommendLoanProceed;
 import com.rongzi.ms.pageobjects.web.RecommendLoanPage;
@@ -13,14 +12,9 @@ import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
 import org.junit.Assert;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.net.URL;
-import java.time.ZonedDateTime;
-import java.util.Date;
 
 import static com.rongzi.ms.pageobjects.web.RongziPage.easyLoan;
 
