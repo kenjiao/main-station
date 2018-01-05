@@ -51,4 +51,10 @@ public class CnLoginSteps extends StepDefs{
        PageFactory.initElements(driver, ImmediateLoanPage.class);
        ImmediateLoanPage.immediate_loan.click();
     }
+
+    @cucumber.api.java.zh_cn.当("^点击下一步$")
+    public void 点击下一步() throws Throwable {
+        PageFactory.initElements(driver,CnLoginPage.class);
+        CnLoginPage.next_button.click();
+    }
 }
