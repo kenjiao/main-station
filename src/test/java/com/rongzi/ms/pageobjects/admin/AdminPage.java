@@ -27,7 +27,6 @@ public class AdminPage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@href=\"/statistic/registersource\"]")
     public static WebElement registersource;
 
-    //@FindBy(how=How.XPATH, using="//form[@id=\"form_search_condition\"]/ul/li[2]/span/span[1]/span/span[2]")
     @FindBy(how=How.XPATH, using="//*[@class=\"select2-selection__arrow\"]")
     public static WebElement registerplotbtn;
 
