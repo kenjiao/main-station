@@ -207,6 +207,12 @@ Cucumber 是以 feature 文件来组织测试的,所以采用 feature 这个后�
     mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @web_login,@web_lp"
 ```
 
+*   测试admin后台
+    
+```
+    mvn clean verify -Dwebdriver=chrome -Dcucumber.options="--tags @admin"
+```
+
 ## [Appium](http://appium.io/)
 
 ### Appium 是什么？
