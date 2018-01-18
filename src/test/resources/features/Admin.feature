@@ -1,6 +1,6 @@
 # language: zh-CN
 @admin
-功能: 登陆admin系统测试
+功能: 登陆admin系统
 
   @please_login
   场景: 登录admin
@@ -35,7 +35,6 @@
     并且 点击用户管理
     那么 进入用户信息页面
     同时 输入手机号
-
     并且 单击查询
 
 
