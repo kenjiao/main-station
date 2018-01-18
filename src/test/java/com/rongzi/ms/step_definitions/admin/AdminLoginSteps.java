@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class AdminLoginSteps extends StepDefs {
     @cucumber.api.java.zh_cn.假如("^我admin登陆页\"([^\"]*)\"$")
-    public void 我admin登陆页(String AdminLoginIndex) throws Throwable {
-        driver.get(AdminLoginIndex);
+    public void 我admin登陆页(String adminLoginIndex) throws Throwable {
+        driver.get(adminLoginIndex);
     }
 
     @cucumber.api.java.zh_cn.并且("^输入登录信息$")

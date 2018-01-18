@@ -20,5 +20,11 @@ public class AdminUserInfoPage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@id=\"Cell_phone\"]")
     public static WebElement cellphone;
 
+    @FindBy(how=How.XPATH, using="//*[@id=\"applyTime\"]")
+    public static WebElement regist_starttime;
+
+    @FindBy(how=How.XPATH, using="//*[@id=\"applyTime2\"]")
+    public static WebElement regist_endtime;
+
 
 }

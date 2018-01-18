@@ -1,6 +1,7 @@
 package com.rongzi.ms.step_definitions.admin;
 
 import com.rongzi.ms.pageobjects.admin.AdminPage;
+import com.rongzi.ms.pageobjects.admin.AdminUserInfoPage;
 import com.rongzi.ms.step_definitions.StepDefs;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +14,7 @@ import static org.testng.AssertJUnit.assertTrue;
  * Created by Administrator on 2018/1/17.
  */
 public class AdminSteps extends StepDefs {
-    private WebDriverWait wait = new WebDriverWait(driver, 10);
+    private WebDriverWait wait = new WebDriverWait(driver, 5);
 
     @cucumber.api.java.zh_cn.那么("^进入admin页面\"([^\"]*)\"$")
     public void 进入admin页面(String title) throws Throwable {
@@ -24,9 +25,9 @@ public class AdminSteps extends StepDefs {
 
     @cucumber.api.java.zh_cn.并且("^点击搜索按钮$")
     public void 点击搜索按钮() throws Throwable {
-        AdminPage.registerplotbtn.click();
-        AdminPage.registerplot.get(1).click();
+        AdminPage.register_platform_btn.click();
+        AdminPage.register_platform.get(1).click();
         wait.until(ExpectedConditions.elementToBeClickable(AdminPage.search)).click();
-        Thread.sleep(1000 * 3);
+        Thread.sleep(1000 * 5);
     }
 }

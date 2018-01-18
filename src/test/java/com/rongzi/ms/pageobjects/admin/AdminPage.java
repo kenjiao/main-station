@@ -16,26 +16,30 @@ public class AdminPage extends BaseClass {
     }
 
     @FindBy(how=How.XPATH, using="//a[@href=\"/User/LogOut\"]")
-    public static WebElement logOut;
+    public static WebElement log_out;
 
     @FindBy(how=How.XPATH, using="//ul[@class=\"ul-menu\"]/li[1]/a/i[2]")
-    public static WebElement usermanager;
+    public static WebElement user_manager;
 
     @FindBy(how=How.XPATH, using="//*[@href=\"/usermanage/index\"]")
-    public static WebElement userinfo;
+    public static WebElement user_info;
 
     @FindBy(how=How.XPATH, using="//*[@href=\"/statistic/registersource\"]")
-    public static WebElement registersource;
+    public static WebElement register_source;
 
     @FindBy(how=How.XPATH, using="//*[@class=\"select2-selection__arrow\"]")
-    public static WebElement registerplotbtn;
+    public static WebElement register_platform_btn;
 
     @FindBy(how=How.XPATH, using="//*[@class=\"select2-results__options\"]/li")
-    public static List<WebElement> registerplot;
+    public static List<WebElement> register_platform;
 
     @FindBy(how=How.XPATH, using="//*[@id=\"form_search_condition\"]/ul/li[4]/button")
     public static WebElement search;
 
+    @FindBy(how=How.XPATH, using="//ul[@class=\"ul-menu\"]/li[4]/a/i[2]")
+    public static WebElement operation_manager;
 
+    @FindBy(how=How.XPATH, using="//*[@href=\"/BusinessInMotion/CustomServiceRequirement\"]")
+    public static WebElement custom_requirement;
 
 }
