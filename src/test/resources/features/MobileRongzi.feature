@@ -73,7 +73,8 @@
 
   场景: M站chaoshi着陆页
     假如 我在chaoshi着陆页
-    并且 输入chaoshi的信息
+    并且 选择城市苏州
+    当 输入chaoshi的信息
     同时 点击chaoshi的申请
     并且 成功进入M站测评页面
     那么 成功进入到M站测评结果页
