@@ -28,7 +28,6 @@ public class MFeelingsLoginSteps extends StepDefs {
 
     @cucumber.api.java.zh_cn.并且("^选择城市上海$")
     public void 选择城市上海() throws Throwable {
-//        wait.until(ExpectedConditions.elementToBeClickable(MFeelingsLoginPage.city)).click();
         PageFactory.initElements(driver,MFeelingsLoginPage.CityPage.class);
         wait.until(ExpectedConditions.elementToBeClickable(MFeelingsLoginPage.CityPage.city)).click();
 
