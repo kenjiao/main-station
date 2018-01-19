@@ -4,6 +4,7 @@ import com.rongzi.ms.pageobjects.mobile.MMinimalistLoginPage;
 import com.rongzi.ms.pageobjects.web.lp.LpVehicleMortgageLoginPage;
 import com.rongzi.ms.step_definitions.StepDefs;
 import cucumber.api.PendingException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 
 import static com.rongzi.ms.pageobjects.BaseClass.driver;
@@ -30,6 +31,7 @@ public class MMinimalistLoginSteps extends StepDefs{
 
     @cucumber.api.java.zh_cn.同时("^点击jijian的申请$")
     public void 点击jijian的申请() throws Throwable {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,50)");
         MMinimalistLoginPage.submit.click();
     }
 
