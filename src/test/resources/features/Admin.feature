@@ -9,17 +9,6 @@
     同时 单击登陆按钮
     那么 进入admin页面
 
-  @register_source_statistic
-  场景: admin页面
-    假如 我admin登陆页"http://admin.rongzi.com"
-    并且 输入登录信息
-    同时 单击登陆按钮
-    那么 进入admin页面
-    同时 点击数据统计下注册来源统计
-    那么 进入注册来源统计页面
-    并且 点击注册来源统计页面搜索按钮
-
-
   @userinfo_search
   场景: admin用户信息页面
     假如 我admin登陆页"http://admin.rongzi.com"
@@ -31,7 +20,17 @@
     同时 输入手机号
     并且 单击查询
 
-  @market_config
+  @register_source_statistic
+  场景: admin页面
+    假如 我admin登陆页"http://admin.rongzi.com"
+    并且 输入登录信息
+    同时 单击登陆按钮
+    那么 进入admin页面
+    同时 点击数据统计下注册来源统计
+    那么 进入注册来源统计页面
+    并且 点击注册来源统计页面搜索按钮
+
+  @market_config_search
   场景: admin市场配置来源信息页面
     假如 我admin登陆页"http://admin.rongzi.com"
     并且 输入登录信息
@@ -42,8 +41,19 @@
     并且 清空搜索栏并输入来源名称
     同时 单击搜索进行查询
 
-  @market_config
-  场景: admin权限管理下权限分配页面
+  @market_config_add_user
+  场景: admin权限管理下新增用户页面
+    假如 我admin登陆页"http://admin.rongzi.com"
+    并且 输入登录信息
+    同时 单击登陆按钮
+    那么 进入admin页面
+    并且 点击权限管理下新增用户
+    那么 进入新增用户页面
+    并且 输入信息
+    同时 单击确定
+
+  @market_config_edit_user
+  场景: admin权限管理下权限分配页面编辑用户
     假如 我admin登陆页"http://admin.rongzi.com"
     并且 输入登录信息
     同时 单击登陆按钮
@@ -52,6 +62,7 @@
     那么 进入权限分配页面
     并且 清空搜索栏并输入用户名
     同时 单击搜索进行权限管理查询
+    那么 在查询结果列表单击编辑按钮
 
   @custom_reqirement_auditing
   场景: admin质检融资需求书页面

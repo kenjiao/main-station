@@ -18,7 +18,7 @@ public class AdminRegisterSourceSteps  extends StepDefs {
     @cucumber.api.java.zh_cn.同时("^点击数据统计下注册来源统计$")
     public void 点击数据统计下注册来源统计() throws Throwable {
         PageFactory.initElements(driver, AdminPage.class);
-        if  (!AdminPage.login_user_name.getText().contains("CS")) {
+        if (!driver.getTitle().matches("RegisterSource")){
             wait.until(ExpectedConditions.elementToBeClickable(AdminPage.data_statistic)).click();
             wait.until(ExpectedConditions.elementToBeClickable(AdminPage.register_source_statistic)).click();
         }else{

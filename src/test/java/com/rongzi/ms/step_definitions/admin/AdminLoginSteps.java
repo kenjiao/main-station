@@ -18,7 +18,7 @@ public class AdminLoginSteps extends StepDefs {
     @cucumber.api.java.zh_cn.并且("^输入登录信息$")
     public void 输入登录信息() throws Throwable {
         PageFactory.initElements(driver, AdminLoginPage.class);
-        AdminLoginPage.username.sendKeys("superadmin");
+        AdminLoginPage.username.sendKeys("CS6927");
         AdminLoginPage.password.sendKeys("123456");
         WebDriverWait wait = new WebDriverWait(driver, 20);
     }

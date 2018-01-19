@@ -33,10 +33,10 @@ public class AdminCustomRequirePage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@class=\"call-phone\"]/i")
     public static WebElement call_btn;
 
-    @FindBy(how=How.XPATH, using="//div[@id=\"layui-layer1\"]")
+    @FindBy(how=How.XPATH, using="//*[@type=\"dialog\"]")
     public static WebElement dialog_box;
 
-    @FindBy(how=How.XPATH, using="//div[@id=\"layui-layer1\"]/div[3]/a[1]")
+    @FindBy(how=How.XPATH, using="//*[@class=\"layui-layer-btn\"]/a[1]")
     public static WebElement dial;
 
 }

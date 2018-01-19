@@ -18,7 +18,7 @@ public class AdminUserInfoSteps extends StepDefs {
     @cucumber.api.java.zh_cn.并且("^点击用户管理$")
     public void 点击用户管理() throws Throwable {
         PageFactory.initElements(driver, AdminPage.class);
-        if  (AdminPage.login_user_name.getText().contains("CS")){
+        if(!driver.getTitle().matches("用户管理")){
             wait.until(ExpectedConditions.visibilityOf(AdminPage.user_manager)).click();
             wait.until(ExpectedConditions.visibilityOf(AdminPage.user_info)).click();
         }else{
