@@ -6,6 +6,8 @@ import com.rongzi.ms.step_definitions.StepDefs;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 /**
  * Created by Administrator on 2018/1/17.
@@ -16,8 +18,12 @@ public class AdminUserInfoSteps extends StepDefs {
     @cucumber.api.java.zh_cn.并且("^点击用户管理$")
     public void 点击用户管理() throws Throwable {
         PageFactory.initElements(driver, AdminPage.class);
-        wait.until(ExpectedConditions.elementToBeClickable(AdminPage.user_manager)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(AdminPage.user_info)).click();
+        if  (AdminPage.login_user_name.getText().contains("CS")){
+            wait.until(ExpectedConditions.visibilityOf(AdminPage.user_manager)).click();
+            wait.until(ExpectedConditions.visibilityOf(AdminPage.user_info)).click();
+        }else{
+            Reporter.log("the current page is user info");
+        }
     }
 
     @cucumber.api.java.zh_cn.那么("^进入用户信息页面$")
@@ -37,6 +43,5 @@ public class AdminUserInfoSteps extends StepDefs {
     @cucumber.api.java.zh_cn.并且("^单击查询$")
     public void 单击查询() throws Throwable {
         wait.until(ExpectedConditions.elementToBeClickable(AdminUserInfoPage.search)).click();
-        Thread.sleep(1000 * 5);
     }
 }

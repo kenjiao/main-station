@@ -16,7 +16,6 @@ public class AdminUserInfoPage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@id=\"btnSearch\"]")
     public static WebElement search;
 
-
     @FindBy(how=How.XPATH, using="//*[@id=\"Cell_phone\"]")
     public static WebElement cellphone;
 
