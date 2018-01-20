@@ -1,9 +1,8 @@
-package com.rongzi.ms.step_definitions.admin;
+package com.rongzi.ms.step_definitions.web.admin;
 
-import com.rongzi.ms.pageobjects.admin.AdminPage;
-import com.rongzi.ms.pageobjects.admin.AdminAddPermissionUserPage;
+import com.rongzi.ms.pageobjects.web.admin.AdminPage;
+import com.rongzi.ms.pageobjects.web.admin.AdminAddPermissionUserPage;
 import com.rongzi.ms.step_definitions.StepDefs;
-import cucumber.api.PendingException;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;

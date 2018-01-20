@@ -1,4 +1,4 @@
-package com.rongzi.ms.pageobjects.admin;
+package com.rongzi.ms.pageobjects.web.admin;
 
 import com.rongzi.ms.pageobjects.BaseClass;
 import org.openqa.selenium.WebDriver;

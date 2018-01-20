@@ -2,15 +2,9 @@ package com.rongzi.ms.step_definitions.mobile;
 
 import com.rongzi.ms.helpers.Env;
 import com.rongzi.ms.modules.MLoginPageProceed;
-import com.rongzi.ms.pageobjects.mobile.MCepingLoginPage;
 import com.rongzi.ms.pageobjects.mobile.MCreditLoginPage;
-import com.rongzi.ms.pageobjects.mobile.MRecommendLoanMoneyPage;
 import com.rongzi.ms.step_definitions.StepDefs;
-import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.假如;
-import cucumber.api.java.zh_cn.同时;
-import cucumber.api.java.zh_cn.并且;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
