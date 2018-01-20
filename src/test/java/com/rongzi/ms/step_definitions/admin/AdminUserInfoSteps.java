@@ -19,8 +19,8 @@ public class AdminUserInfoSteps extends StepDefs {
     public void 点击用户管理() throws Throwable {
         PageFactory.initElements(driver, AdminPage.class);
         if(!driver.getTitle().matches("用户管理")){
-            wait.until(ExpectedConditions.visibilityOf(AdminPage.user_manager)).click();
-            wait.until(ExpectedConditions.visibilityOf(AdminPage.user_info)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(AdminPage.user_manager)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(AdminPage.user_info)).click();
         }else{
             Reporter.log("the current page is user info");
         }

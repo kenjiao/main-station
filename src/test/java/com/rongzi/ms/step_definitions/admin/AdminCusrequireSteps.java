@@ -50,4 +50,10 @@ public class AdminCusrequireSteps extends StepDefs {
        Thread.sleep(1000 * 2);
    }
 
+    @cucumber.api.java.zh_cn.并且("^单击电审按钮$")
+    public void 单击电审按钮() throws Throwable {
+        AdminCustomRequirePage.auditing.click();
+        Thread.sleep(1000 * 2);
+    }
+
 }

@@ -39,4 +39,7 @@ public class AdminCustomRequirePage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@class=\"layui-layer-btn\"]/a[1]")
     public static WebElement dial;
 
+    @FindBy(how=How.XPATH, using="//*[@class=\"btn btn-sm btn-warning e-auditing\"]")
+    public static WebElement auditing;
+
 }
