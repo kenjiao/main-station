@@ -3,8 +3,10 @@ package com.rongzi.ms.step_definitions.web.admin;
 import com.rongzi.ms.pageobjects.web.admin.AdminLoginPage;
 import com.rongzi.ms.pageobjects.web.admin.AdminPage;
 import com.rongzi.ms.step_definitions.StepDefs;
+import cucumber.api.PendingException;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
 /**
  * Created by Administrator on 2018/1/17.
@@ -28,9 +30,8 @@ public class AdminLoginSteps extends StepDefs {
         AdminLoginPage.login_button.click();
     }
 
-    @cucumber.api.java.zh_cn.那么("^进入admin页面$")
-    public void 进入admin页面() throws Throwable {
+    @cucumber.api.java.zh_cn.那么("^登陆成功$")
+    public void 登陆成功() throws Throwable {
         PageFactory.initElements(driver, AdminPage.class);
     }
-
 }

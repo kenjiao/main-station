@@ -7,7 +7,7 @@
     假如 我admin登陆页"http://admin.rongzi.com"
     并且 输入登录信息
     同时 单击登陆按钮
-    那么 进入admin页面
+    那么 登陆成功
 
   @userinfo_search
   场景: admin用户信息页面
