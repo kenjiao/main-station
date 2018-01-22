@@ -6,12 +6,12 @@ import com.rongzi.ms.step_definitions.StepDefs;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
+import com.rongzi.ms.helpers.Log;
 
 /**
- * Created by Administrator on 2018/1/19.
+ * Created by Administrator on 2018/1/22.
  */
-public class AdminRegisterSourceSteps  extends StepDefs {
+public class AdminRegisterSourceSteps extends StepDefs {
     private WebDriverWait wait = new WebDriverWait(driver, 5);
 
     @cucumber.api.java.zh_cn.同时("^点击数据统计下注册来源统计$")
@@ -21,7 +21,7 @@ public class AdminRegisterSourceSteps  extends StepDefs {
             wait.until(ExpectedConditions.elementToBeClickable(AdminPage.data_statistic)).click();
             wait.until(ExpectedConditions.elementToBeClickable(AdminPage.register_source_statistic)).click();
         }else{
-            Reporter.log("the current page is register source");
+            Log.info("the current page is register source");
         }
     }
 

@@ -27,5 +27,4 @@ public class AdminRegisterSourcePage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@id=\"form_search_condition\"]/ul/li[4]/button")
     public static WebElement search;
 
-
 }

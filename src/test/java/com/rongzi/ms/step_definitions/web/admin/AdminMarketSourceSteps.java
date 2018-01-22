@@ -1,16 +1,17 @@
 package com.rongzi.ms.step_definitions.web.admin;
 
-import com.rongzi.ms.pageobjects.web.admin.AdminPage;
 import com.rongzi.ms.pageobjects.web.admin.AdminMarketSourcePage;
+import com.rongzi.ms.pageobjects.web.admin.AdminPage;
 import com.rongzi.ms.step_definitions.StepDefs;
+import cucumber.api.PendingException;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Created by Administrator on 2018/1/19.
+ * Created by Administrator on 2018/1/22.
  */
-public class AdminMarketSourceSteps  extends StepDefs {
+public class AdminMarketSourceSteps extends StepDefs {
     private WebDriverWait wait = new WebDriverWait(driver, 5);
 
     @cucumber.api.java.zh_cn.并且("^点击市场配置来源信息$")
@@ -35,5 +36,4 @@ public class AdminMarketSourceSteps  extends StepDefs {
     public void 单击搜索进行查询() throws Throwable {
         wait.until(ExpectedConditions.elementToBeClickable(AdminMarketSourcePage.search)).click();
     }
-
 }

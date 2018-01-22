@@ -22,5 +22,4 @@ public class AdminMarketSourcePage extends BaseClass {
     @FindBy(how=How.XPATH, using="//*[@id=\"btnSearch\"]")
     public static WebElement search;
 
-
 }

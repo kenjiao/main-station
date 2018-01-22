@@ -37,6 +37,7 @@ public class AdminCusrequireSteps extends StepDefs {
     @cucumber.api.java.zh_cn.并且("^单击查询按钮$")
     public void 单击查询按钮() throws Throwable {
         wait.until(ExpectedConditions.visibilityOf(AdminCustomRequirePage.search)).click();
+        Thread.sleep(1000 * 5);
     }
 
    @cucumber.api.java.zh_cn.那么("^拨打客服电话$")
@@ -53,5 +54,4 @@ public class AdminCusrequireSteps extends StepDefs {
         AdminCustomRequirePage.auditing.click();
         Thread.sleep(1000 * 2);
     }
-
 }

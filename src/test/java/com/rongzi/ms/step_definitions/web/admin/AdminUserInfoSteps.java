@@ -6,8 +6,7 @@ import com.rongzi.ms.step_definitions.StepDefs;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.Reporter;
+import com.rongzi.ms.helpers.Log;
 
 /**
  * Created by Administrator on 2018/1/17.
@@ -22,7 +21,7 @@ public class AdminUserInfoSteps extends StepDefs {
             wait.until(ExpectedConditions.elementToBeClickable(AdminPage.user_manager)).click();
             wait.until(ExpectedConditions.elementToBeClickable(AdminPage.user_info)).click();
         }else{
-            Reporter.log("the current page is user info");
+            Log.info("the current page is user info");
         }
     }
 

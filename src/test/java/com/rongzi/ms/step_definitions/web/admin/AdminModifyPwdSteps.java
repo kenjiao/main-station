@@ -4,13 +4,13 @@ import com.rongzi.ms.pageobjects.web.admin.AdminPage;
 import com.rongzi.ms.pageobjects.web.admin.AdminModifyPwdPage;
 import com.rongzi.ms.step_definitions.StepDefs;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Created by Administrator on 2018/1/20.
+ * Created by Administrator on 2018/1/22.
  */
-public class AdminModifyPwdSteps  extends StepDefs {
+public class AdminModifyPwdSteps extends StepDefs {
     private WebDriverWait wait = new WebDriverWait(driver, 5);
 
     @cucumber.api.java.zh_cn.并且("^点击系统管理下修改密码$")
